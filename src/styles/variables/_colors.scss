@@ -1,0 +1,12 @@
+$colors: (
+  primaty-gray: rgba(189, 189, 189, 1),
+  secondary-gray: rgba(166, 166, 166, 1),
+  success-green: rgba(36, 204, 167, 1),
+  wrong-pink: rgba(255, 101, 150, 1),
+  full-white: rgba(255, 255, 255, 1),
+  full-black: rgba(0, 0, 0, 1),
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}

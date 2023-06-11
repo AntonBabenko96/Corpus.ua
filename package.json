@@ -1,0 +1,30 @@
+{
+  "name": "parcel-template",
+  "version": "1.0.0",
+  "description": "DevCore Project template on Parcel bundler",
+  "homepage": "https://DevCore-ua.github.io/parcel-template",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevCore-ua/parcel-template.git"
+  },
+  "keywords": [],
+  "author": "Yevhenii Kravchuk <kravchukmail23@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevCore-ua/parcel-template/issues"
+  },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}

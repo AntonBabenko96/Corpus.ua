@@ -1,0 +1,33 @@
+@mixin main-font(
+  $weight,
+  $size,
+  $height,
+  $letter: 0em,
+  $style: normal,
+  $transform: none
+) {
+  font-family: 'Circe', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: calc($height / $size);
+  letter-spacing: $letter;
+  font-style: $style;
+  text-transform: $transform;
+}
+
+@mixin second-font(
+  $weight,
+  $size,
+  $height,
+  $letter: 0em,
+  $style: normal,
+  $transform: none
+) {
+  font-family: 'Poppins', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: calc($height / $size);
+  letter-spacing: $letter;
+  font-style: $style;
+  text-transform: $transform;
+}
