@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import styles from './AboutUs.module.scss';
-// import aboutUs from '../../../public/images/aboutUs.mainmob@1x.png';
+
 
 export default function AboutUs() {
   return (
     <section>
       <div className={styles.aboutUsBackground}>
         <div className={styles.aboutUsFrame}></div>
-        <Image scr={'../../../public/images/aboutUs.mainmob@1x.png'} width={358} height={358} />
-        className={styles.aboutUsImg}
+        <Image src="/images/aboutUs/aboutUs.png"  priority alt="aaa" width={358} height={358} className={styles.aboutUsImg} />
+     
         {/* <img src="../public/images/aboutUs.mainmob@1x.png" alt="corpus.about us" className={styles.aboutUsImg} /> */}
         <h2 className={styles.aboutUstitle}>KORPUS</h2>
         <p className={styles.aboutUsContent}>
