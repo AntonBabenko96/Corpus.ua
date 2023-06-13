@@ -1,4 +1,6 @@
-import AboutUs from "./MainPage/AboutUs/AboutUs";
+
+
+import AboutUs from "./AboutUs/AboutUs";
 
 export default function Home() {
   return <main>
