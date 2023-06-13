@@ -1,35 +1,47 @@
 @import '../../../styles/index.scss';
 
-// section {
-
-// }
+section {
+  position: relative;
+}
 
 .aboutUsBackground {
   position: relative;
   margin-top: 60px;
+  padding-top: 400px;
   margin-left: 16px;
   background-color: getColor(primary-navy);
   padding-bottom: 91px;
 }
 
 .aboutUsFrame {
-  border: 2px solid getColor(full-white);
+  position: absolute;
+  top: 24px;
+  left: 0;
+  border-top: 2px solid getColor(full-white);
+  border-right: 2px solid getColor(full-white);
+  border-bottom: 2px solid getColor(full-white);
+  width: 343px;
+  height: 328px;
 }
 
 .aboutUsImg {
+  z-index: 99;
   position: absolute;
   top: 48px;
-  left: 0;
-  margin-bottom: 28px;
+  left: 1px;
 }
 
-.aboutUstitle {
+.aboutUsTitle {
+  // position: absolute;
   color: getColor(full-white);
-  margin-top: 400px;
   margin-bottom: 16px;
   margin-left: 16px;
 }
-
+.aboutUsText{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+}
 .aboutUsContent {
   color: getColor(full-white);
   margin-left: 16px;
@@ -37,4 +49,7 @@
 }
 
 .floatingImg {
+  position: absolute;
+  top:735px;
+  left:225px;
 }
