@@ -11,17 +11,33 @@ section {
   margin-left: 16px;
   background-color: getColor(primary-navy);
   padding-bottom: 91px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include media-min(desktop) {
+    margin-left: 364px;
+    margin-top: 120px;
+    padding-top: 80px;
+    padding-bottom: 360px;
+    padding-left: 472px;
+  }
 }
 
 .aboutUsFrame {
   position: absolute;
   top: 24px;
   left: 0;
-  border-top: 2px solid getColor(full-white);
-  border-right: 2px solid getColor(full-white);
-  border-bottom: 2px solid getColor(full-white);
+  border-top: 5px solid getColor(light-pink);
+  border-right: 5px solid getColor(light-pink);
+  border-bottom: 5px solid getColor(light-pink);
   width: 343px;
   height: 328px;
+  @include media-min(desktop) {
+    width: 375px;
+    height: 580px;
+    top: 84px;
+    left: 0;
+  }
 }
 
 .aboutUsImg {
@@ -29,6 +45,12 @@ section {
   position: absolute;
   top: 48px;
   left: 1px;
+  @include media-min(desktop) {
+    top: 116px;
+    left: 142px;
+    width: 568px;
+    height: 580px;
+  }
 }
 
 .aboutUsTitle {
@@ -36,20 +58,36 @@ section {
   color: getColor(full-white);
   margin-bottom: 16px;
   margin-left: 16px;
+  @include second-font(700, 24px, 29px);
+  @include media-min(desktop) {
+    // margin-left: 473px;
+  }
 }
-.aboutUsText{
+.aboutUsText {
   display: flex;
   flex-direction: column;
-  gap:16px;
+  gap: 16px;
 }
 .aboutUsContent {
   color: getColor(full-white);
-  margin-left: 16px;
-  margin-right: 16px;
+  @include main-font(400, 16px, 22px, 0.05em);
+  letter-spacing: 0.05em;
+
+  @include media-min(desktop) {
+    // margin-left: 472px;
+    // margin-right: 134px;
+  }
 }
 
 .floatingImg {
   position: absolute;
-  top:735px;
-  left:225px;
+  top: 735px;
+  left: 225px;
+
+  @include media-min(desktop) {
+    left: 933px;
+    top:542px;
+    width:469px;
+    height:394px;
+  }
 }
