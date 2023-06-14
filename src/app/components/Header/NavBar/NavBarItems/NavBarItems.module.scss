@@ -1,0 +1,45 @@
+.item {
+  // padding-left: 16px;
+  margin: 14px 0;
+  color: #fdfdfd;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: calc(22 / 16);
+
+  &:hover {
+    color: #ffe0b2;
+  }
+
+  .itemText {
+    font-size: 1.2em;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    .togglebtn {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+  }
+
+  &.open > .itemText .togglebtn {
+    transform: rotate(180deg);
+  }
+
+  .itemSubMenu {
+    padding-top: 0.25em;
+    height: 0;
+    overflow: hidden;
+
+    li {
+      border-bottom: 1.5px solid rgba(176, 190, 197, 0.3);
+    }
+  }
+}
+
+.item.open > .itemSubMenu {
+  height: auto;
+}
