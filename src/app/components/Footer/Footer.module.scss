@@ -23,7 +23,7 @@ footer {
     gap: 75px;
   }
 }
-.footelList {
+.footerList {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
@@ -35,12 +35,15 @@ footer {
 }
 
 .footerLogo{
+    margin-left: 135px;
+    width: 124px;
+    height: 72px;
     @include media-max(mobile){
         display: none;
     }
    
 }
-.footelItem {
+.footerItem {
   width: 125px;
 //   @include media-min(desktop){
 //     width:100%;
@@ -51,8 +54,14 @@ footer {
   color: getColor(light-pink);
   @include main-font(400, 16px, 22px, 0.05em);
   margin-bottom: 20px;
-  width: 163px;
+  width: 100%;
   
+}
+
+.footerItemWide{
+  @include media-min(desktop){
+    width: 266px;
+  }
 }
 
 .footerItemText {
@@ -63,11 +72,12 @@ footer {
 
 .footerLink {
   color: getColor(full-white);
+  cursor: pointer;
   @include main-font(400, 16px, 22px, 0.05em);
 }
 
 .footerConact {
-  width: 100%;
+  width: 189px;
 }
 
 .footerLicence {
