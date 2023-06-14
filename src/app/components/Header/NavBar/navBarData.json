@@ -7,7 +7,14 @@
   {
     "id": "2",
     "text": "каталог",
-    "link": "/catalog"
+    "link": "/catalog",
+    "childrens": [
+      {
+        "id": "21",
+        "text": "на замовлення",
+        "link": "/"
+      }
+    ]
   },
   {
     "id": "3",

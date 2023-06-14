@@ -4,12 +4,12 @@ import Link from 'next/link';
 import items from './navBarData';
 import s from './NavBar.module.scss';
 import { useState } from 'react';
+import Burger from '../Burger/Burger';
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
-  console.log('show:', show);
 
-  const handleClick = () => {
+  const handleShow = () => {
     setShow(!show);
   };
 
@@ -21,8 +21,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div onClick={handleClick} className={s.burger}></div>
-      {/* <ul className={s.list}>{elements}</ul> */}
+      <Burger handleShow={handleShow} show={show} />
       <ul className={`${s.list} ${show ? s.active : ''}`}>{elements}</ul>
     </>
   );
