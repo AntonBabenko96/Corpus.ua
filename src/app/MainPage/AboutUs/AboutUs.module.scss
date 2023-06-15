@@ -59,7 +59,7 @@ section {
   color: getColor(full-white);
   margin-bottom: 16px;
   margin-left: 16px;
-  @include second-font(700, 24px, 29px);
+  @include main-font(700, 24px, 29px);
   @include media-min(desktop) {
     // margin-left: 473px;
   }
