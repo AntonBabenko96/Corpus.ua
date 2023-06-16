@@ -51,6 +51,7 @@
 
     @media (min-width: 768px) {
       position: absolute;
+      width: 268px;
       top: 78px;
       padding: 16px 36px 12px 24px;
       background: rgba(0, 0, 0, 0.3);
@@ -79,6 +80,8 @@
           top: 0;
           transform: translateX(100%);
           height: 100%;
+          backdrop-filter: blur(7px);
+
           &::before {
             content: '';
             position: absolute;
