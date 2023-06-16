@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './Footer.module.scss';
-import Logo from '../Header/Logo/Logo';
+import Logo from './LogoFooter/LogoFooter'
 export default function Footer() {
   return (
     <footer>
@@ -15,11 +15,11 @@ export default function Footer() {
         className={styles.footerImage}
       />
       <div className={styles.footerContent}>
-        <ul className={styles.footelList}>
+        <ul className={styles.footerList}>
           <li className={styles.footerLogo}>
             <Logo />
           </li>
-          <li className={styles.footelItem}>
+          <li className={styles.footerItem}>
             <h2 className={styles.footerTitle}>ПРО НАС</h2>
             <ul className={styles.footerItemText}>
               <li className={styles.footerLink}>
@@ -40,7 +40,7 @@ export default function Footer() {
               </li>
             </ul>
           </li>
-          <li className={styles.footelItem}>
+          <li className={styles.footerItem}>
             <h2 className={styles.footerTitle}>СЕРІЙНІ МЕБЛІ</h2>
             <ul className={styles.footerItemText}>
               <li className={styles.footerLink}>
@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
             </ul>
           </li>
-          <li className={styles.footelItem}>
+          <li className={styles.footerItemWide}>
             <h2 className={styles.footerTitle}>ІНДИВІДУАЛЬНЕ ЗАМОВЛЕННЯ</h2>
             <ul className={styles.footerItemText}>
               <li className={styles.footerLink}>

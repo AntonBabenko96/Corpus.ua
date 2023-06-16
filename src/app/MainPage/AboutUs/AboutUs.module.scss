@@ -18,8 +18,9 @@ section {
     margin-left: 364px;
     margin-top: 120px;
     padding-top: 80px;
-    padding-bottom: 360px;
+    padding-bottom: 356px;
     padding-left: 472px;
+    padding-right: 134px;
   }
 }
 
@@ -46,8 +47,8 @@ section {
   top: 48px;
   left: 1px;
   @include media-min(desktop) {
-    top: 116px;
-    left: 142px;
+    top: 240px;
+    left: 145px;
     width: 568px;
     height: 580px;
   }
@@ -58,7 +59,7 @@ section {
   color: getColor(full-white);
   margin-bottom: 16px;
   margin-left: 16px;
-  @include second-font(700, 24px, 29px);
+  @include main-font(700, 24px, 29px);
   @include media-min(desktop) {
     // margin-left: 473px;
   }
@@ -74,8 +75,7 @@ section {
   letter-spacing: 0.05em;
 
   @include media-min(desktop) {
-    // margin-left: 472px;
-    // margin-right: 134px;
+    @include main-font(400, 18px, 22px, 0.05em);
   }
 }
 
