@@ -1,10 +1,10 @@
 'use client';
 
-import Link from 'next/link';
-import items from './navBarData';
-import s from './NavBar.module.scss';
 import { useState } from 'react';
 import Burger from '../Burger/Burger';
+import items from '../NavBar/navBarData.json';
+import NavBarItems from './NavBarItems/NavBarItems';
+import s from './NavBar.module.scss';
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
@@ -13,16 +13,14 @@ const NavBar = () => {
     setShow(!show);
   };
 
-  const elements = items.map(({ id, text, link }) => (
-    <li key={id} className={s.item}>
-      <Link href="">{text}</Link>
-    </li>
-  ));
-
   return (
     <>
       <Burger handleShow={handleShow} show={show} />
-      <ul className={`${s.list} ${show ? s.active : ''}`}>{elements}</ul>
+      <ul className={`${s.list} ${show ? s.active : ''}`}>
+        {items.map(item => (
+          <NavBarItems key={item.id} item={item} />
+        ))}
+      </ul>
     </>
   );
 };
