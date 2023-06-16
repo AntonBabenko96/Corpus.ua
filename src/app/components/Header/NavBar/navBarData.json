@@ -7,12 +7,12 @@
   {
     "id": "1",
     "text": "про компанію",
-    "link": "/about"
+    "link": "/"
   },
   {
     "id": "2",
     "text": "каталог",
-    "link": "/catalog",
+    "link": "/",
     "childrens": [
       {
         "id": "21",
@@ -22,22 +22,22 @@
           {
             "id": "22",
             "text": "кухні",
-            "link": "/"
+            "link": "kitchen"
           },
           {
             "id": "23",
             "text": "шафи",
-            "link": "/"
+            "link": "cupboard"
           },
           {
             "id": "24",
             "text": "тумби",
-            "link": "/"
+            "link": "cabinets"
           },
           {
             "id": "25",
             "text": "комоди",
-            "link": "/"
+            "link": "commode"
           }
         ]
       },
@@ -66,16 +66,16 @@
   {
     "id": "3",
     "text": "наші проекти",
-    "link": "/projects"
+    "link": "/"
   },
   {
     "id": "4",
     "text": "акції",
-    "link": "/action"
+    "link": "/"
   },
   {
     "id": "5",
     "text": "відгуки",
-    "link": "/reviews"
+    "link": "/"
   }
 ]

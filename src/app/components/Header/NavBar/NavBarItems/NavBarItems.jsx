@@ -12,12 +12,12 @@ const NavBarItems = ({ item }) => {
     return (
       <li className={`${s.item} ${open ? s.open : ''}`}>
         <div className={s.itemText}>
-          <Link href="#">
-            <span>{item.text}</span>
+          <Link href={``} onClick={() => setOpen(!open)}>
+            <p>{item.text}</p>
             <Image
               src="/images/header/Vector.svg"
-              width={'20'}
-              height={'20'}
+              width={12}
+              height={7.41}
               alt="Vector"
               className={s.togglebtn}
               onClick={() => setOpen(!open)}
@@ -25,16 +25,18 @@ const NavBarItems = ({ item }) => {
           </Link>
         </div>
         <ul className={s.itemSubMenu}>
-          {item.childrens.map(child => (
-            <NavBarItems key={child.id} item={child} />
-          ))}
+          {item.childrens.map(child => {
+            return <NavBarItems key={child.id} item={child} />;
+          })}
         </ul>
       </li>
     );
   } else {
     return (
       <li className={`${s.item}`}>
-        <Link href="#">{item.text}</Link>
+        <Link href={`/catalog/${item.link}`}>
+          <p>{item.text}</p>
+        </Link>
       </li>
     );
   }

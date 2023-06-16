@@ -45,4 +45,8 @@
       transform: rotate(-45deg) translate(35px, 35px);
     }
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

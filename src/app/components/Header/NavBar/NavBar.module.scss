@@ -9,6 +9,18 @@
   height: 100%;
   transition: all 0.3s;
   z-index: 100;
+
+  &:first-child {
+    height: 64px;
+  }
+
+  @media (min-width: 768px) {
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: static;
+  }
 }
 
 .burger {
