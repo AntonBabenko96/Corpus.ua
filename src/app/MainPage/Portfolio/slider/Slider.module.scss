@@ -1,19 +1,13 @@
-// @import 'swiper/css/navigation';
+@import '../../../../styles/index.scss';
 
-// .swiper {
-//   width: 1170px;
-// }
+.swiper {
+  max-width: 1170px;
+  @include media-max(mobile) {
+    width: 100%;
+  }
+}
 
-// .swiper-button-prev,
-// .swiper-button-next {
-//   background-color: red;
-//   // Ваши стили для кнопок навигации
-//   color: red;
-// }
-
-// .swiper-slide img {
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
+.img {
+  width: 100%;
+  display: block;
+}
