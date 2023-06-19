@@ -17,8 +17,6 @@ export default ({ images }) => {
       spaceBetween={30}
       navigation
       loop
-      onSwiper={swiper => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
       breakpoints={{
         // Коли екран є 375px або більше
         375: {
