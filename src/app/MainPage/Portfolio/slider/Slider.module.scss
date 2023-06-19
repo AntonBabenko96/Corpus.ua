@@ -1,0 +1,13 @@
+@import '../../../../styles/index.scss';
+
+.swiper {
+  max-width: 1170px;
+  @include media-max(mobile) {
+    width: 100%;
+  }
+}
+
+.img {
+  width: 100%;
+  display: block;
+}
