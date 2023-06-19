@@ -1,19 +1,53 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import s from './NavBarItems.module.scss';
 import Link from 'next/link';
+import Dropdown from './Dropdown/Dropdown';
 
-const NavBarItems = ({ item }) => {
-  const [open, setOpen] = useState(false);
+const NavBarItems = ({ items, depthLevel }) => {
+  const [dropdown, setDropdown] = useState(false);
 
-  if (item.childrens) {
-    return (
-      <li className={`${s.item} ${open ? s.open : ''}`}>
-        <div className={s.itemText}>
-          <Link href={``} onClick={() => setOpen(!open)}>
-            <p>{item.text}</p>
+  let ref = useRef();
+
+  useEffect(() => {
+    const handler = event => {
+      if (dropdown && ref.current && !ref.current.contains(event.target)) {
+        setDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    document.addEventListener('touchstart', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+  }, [dropdown]);
+
+  const onMouseEnter = () => {
+    window.innerWidth > 768 && setDropdown(true);
+  };
+
+  const onMouseLeave = () => {
+    window.innerWidth > 768 && setDropdown(false);
+  };
+
+  return (
+    <li
+      className={`${s.item} ${dropdown ? s.open : ''}`}
+      ref={ref}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {items.childrens ? (
+        <>
+          <Link
+            href=""
+            aria-expanded={dropdown ? 'true' : 'false'}
+            onClick={() => setDropdown(prev => !prev)}
+          >
+            <span className={s.itemSpan}>{items.text}</span>
             <Image
               src="/images/header/Vector.svg"
               width={12}
@@ -23,23 +57,20 @@ const NavBarItems = ({ item }) => {
               onClick={() => setOpen(!open)}
             />
           </Link>
-        </div>
-        <ul className={s.itemSubMenu}>
-          {item.childrens.map(child => {
-            return <NavBarItems key={child.id} item={child} />;
-          })}
-        </ul>
-      </li>
-    );
-  } else {
-    return (
-      <li className={`${s.item}`}>
-        <Link href={`/catalog/${item.link}`}>
-          <p>{item.text}</p>
+
+          <Dropdown
+            depthLevel={depthLevel}
+            submenus={items.childrens}
+            dropdown={dropdown}
+          />
+        </>
+      ) : (
+        <Link href={`/catalog/${items.link}`}>
+          <span className={s.itemSpan}>{items.text}</span>
         </Link>
-      </li>
-    );
-  }
+      )}
+    </li>
+  );
 };
 
 export default NavBarItems;
