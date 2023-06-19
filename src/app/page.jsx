@@ -1,3 +1,6 @@
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import AboutUs from './MainPage/AboutUs/AboutUs';
 import Hero from './MainPage/Hero/Hero';
 import Services from './MainPage/Services/Services';
@@ -16,6 +19,7 @@ export default function Home() {
       <ContactForm />
       <Promotions />
       <Footer />
+      <ToastContainer />
     </main>
   );
 }
