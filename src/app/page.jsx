@@ -12,10 +12,10 @@ import Portfolio from './MainPage/Portfolio/Portfolio';
 export default function Home() {
   return (
     <main>
+      <Hero />
       <AboutUs />
       <Services />
       <Portfolio />
-      <Hero />
       <ContactForm />
       <Promotions />
       <Footer />

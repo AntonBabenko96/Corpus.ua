@@ -26,11 +26,13 @@ const NavBarItems = ({ items, depthLevel }) => {
   }, [dropdown]);
 
   const onMouseEnter = () => {
-    window.innerWidth > 768 && setDropdown(true);
+    window.innerWidth > 1440 && setDropdown(true);
+    // window.innerWidth > 768 && setDropdown(true);
   };
 
   const onMouseLeave = () => {
-    window.innerWidth > 768 && setDropdown(false);
+    window.innerWidth > 1440 && setDropdown(false);
+    // window.innerWidth > 768 && setDropdown(false);
   };
 
   return (
@@ -43,9 +45,10 @@ const NavBarItems = ({ items, depthLevel }) => {
       {items.childrens ? (
         <>
           <Link
-            href=""
+            href="#"
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown(prev => !prev)}
+            className={s.itemLink}
           >
             <span className={s.itemSpan}>{items.text}</span>
             <Image
@@ -54,7 +57,6 @@ const NavBarItems = ({ items, depthLevel }) => {
               height={7.41}
               alt="Vector"
               className={s.togglebtn}
-              onClick={() => setOpen(!open)}
             />
           </Link>
 

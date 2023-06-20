@@ -6,6 +6,16 @@
   line-height: calc(22 / 16);
   text-transform: uppercase;
 
+  @media (max-width: 767px) {
+    &:first-child {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1.5px solid #ffe0b2;
+    }
+  }
+
   &:hover {
     color: #ffe0b2;
   }
@@ -37,7 +47,7 @@
     }
 
     a {
-      padding: 34px 0 28px 0;
+      padding: 34px 0 29px 0;
     }
   }
 
@@ -50,82 +60,9 @@
         font-size: 16px;
       }
     }
+
+    .itemLink {
+      width: calc(100% + 24px);
+    }
   }
-
-  // .itemText {
-  //   justify-content: space-between;
-
-  //   a {
-  //     display: flex;
-  //     align-items: center;
-
-  //     p {
-  //       margin-right: 14px;
-  //     }
-  //   }
-
-  //   .togglebtn {
-  //     cursor: pointer;
-  //     transition: transform 0.3s;
-  //   }
-  // }
-
-  // .itemSubMenu {
-  //   height: 0;
-  //   display: none;
-
-  //   li {
-  //     border-bottom: 1.5px solid rgba(176, 190, 197, 0.3);
-  //     text-transform: none;
-
-  // p::first-letter {
-  //   text-transform: uppercase !important;
-  // }
-  //   }
-
-  //   @media (min-width: 768px) {
-  // position: absolute;
-  // width: 268px;
-  // top: 78px;
-  // padding: 16px 36px 12px 24px;
-  // background: rgba(0, 0, 0, 0.3);
-  // backdrop-filter: blur(7px);
-
-  //     .item {
-  //       border-bottom: 0;
-
-  //       font-size: 14px;
-
-  //       &:not(:last-child) {
-  //         margin-bottom: 12px;
-  //       }
-
-  //       a {
-  //         width: 100%;
-  //         padding: 4px 36px 4px 12px;
-
-  //         &:hover {
-  //           background-color: #263238;
-  //         }
-  //       }
-
-  //       .itemSubMenu {
-  //         right: 0;
-  //         top: 0;
-  //         transform: translateX(100%);
-  //         height: 100%;
-  //         backdrop-filter: blur(7px);
-
-  //         &::before {
-  //           content: '';
-  //           position: absolute;
-  //           left: 0;
-  //           width: 1.5px;
-  //           height: 85%;
-  //           background-color: #cfd8dc;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
