@@ -1,11 +1,11 @@
 @import '../../../styles/index.scss';
 
-section {
-  position: relative;
-}
+// section {
+//   position: relative;
+// }
 
 .aboutUsBackground {
-  position: relative;
+  // position: relative;
   margin-top: 60px;
   padding-top: 400px;
   margin-left: 16px;
@@ -26,8 +26,8 @@ section {
 
 .aboutUsFrame {
   position: absolute;
-  top: 24px;
-  left: 0;
+  top: 468px;
+  left: 1px;
   border-top: 5px solid getColor(light-pink);
   border-right: 5px solid getColor(light-pink);
   border-bottom: 5px solid getColor(light-pink);
@@ -36,19 +36,19 @@ section {
   @include media-min(desktop) {
     width: 375px;
     height: 580px;
-    top: 84px;
-    left: 0;
+    top: 958px;
+    left: 366px;
   }
 }
 
 .aboutUsImg {
   z-index: 99;
   position: absolute;
-  top: 48px;
+  top: 492px;
   left: 1px;
   @include media-min(desktop) {
-    top: 240px;
-    left: 145px;
+    top: 990px;
+    left: 136px;
     width: 568px;
     height: 580px;
   }
@@ -81,13 +81,14 @@ section {
 
 .floatingImg {
   position: absolute;
-  top: 735px;
-  left: 225px;
+  top: 1140px;
+  left:  221px;
 
   @include media-min(desktop) {
-    left: 933px;
-    top:542px;
+    left: 833px;
+    top:1314px;
     width:469px;
     height:394px;
+    margin-bottom: 60px;
   }
 }
