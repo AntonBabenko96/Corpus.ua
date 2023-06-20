@@ -6,17 +6,17 @@
   padding-right: 20px;
 
   @include media-min(mobile-resp) {
-    width: 573px;
+    max-width: 573px;
 
     margin-left: auto;
     margin-right: auto;
   }
 
   @include media-min(tablet) {
-    width: 768px;
+    max-width: 768px;
   }
 
   @include media-min(desktop) {
-    width: 1280px;
+    max-width: 1280px;
   }
 }
