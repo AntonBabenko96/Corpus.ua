@@ -51,6 +51,12 @@
     }
   }
 
+  @media (max-width: 1439px) {
+    &:nth-child(3) {
+      order: -1;
+    }
+  }
+
   @media (min-width: 1440px) {
     font-size: 16px;
 
