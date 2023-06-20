@@ -11,7 +11,7 @@
   }
 
   @media (min-width: 1440px) {
-    height: 665px;
+    height: calc(100vh - 88px);
   }
 
   &::before {

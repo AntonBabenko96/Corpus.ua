@@ -10,8 +10,17 @@
   transition: all 0.3s;
   z-index: 1000;
 
-  &:first-child {
-    height: 64px;
+  @media (max-width: 767px) {
+    li li {
+      border-bottom: 1.5px solid rgba(176, 190, 197, 0.3) !important;
+      height: auto !important;
+      display: block !important;
+      margin-bottom: 0 !important;
+
+      li {
+        border-bottom: none !important;
+      }
+    }
   }
 
   @media (min-width: 768px) {
