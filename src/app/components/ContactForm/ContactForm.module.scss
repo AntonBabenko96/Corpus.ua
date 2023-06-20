@@ -4,7 +4,8 @@
   position: fixed;
   z-index: 101;
   right: -100%;
-  top: 150px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   background-color: getColor(primary-navy);
   padding-top: 67px;
@@ -49,7 +50,8 @@
   position: fixed;
   font-size: 12px;
   right: 0;
-  top: 150px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 4px;
