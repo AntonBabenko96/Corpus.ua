@@ -1,7 +1,16 @@
 import React from 'react';
+import ProductCard from './[productId]';
 
-const Kitchen = () => {
-  return <div>Kitchen</div>;
+
+export default function Kitchen () {
+  
+  return (
+    <div>
+      {TestData.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  );
 };
 
-export default Kitchen;
+
