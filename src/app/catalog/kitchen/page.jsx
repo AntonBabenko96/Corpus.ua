@@ -6,9 +6,9 @@ export default function Kitchen () {
   
   return (
     <div>
-      {TestData.map((product) => (
+      {/* {TestData.map((product) => (
         <ProductCard key={product.id} product={product} />
-      ))}
+      ))} */}
     </div>
   );
 };
