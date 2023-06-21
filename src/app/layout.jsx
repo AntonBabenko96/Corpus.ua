@@ -1,5 +1,6 @@
 // import 'styles/index.scss';
 import '../styles/index.scss';
+import './global.css';
 import Header from './components/Header/Header';
 
 export const metadata = {

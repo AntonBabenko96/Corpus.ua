@@ -11,6 +11,6 @@ $colors: (
   @return map-get($colors, $key);
 }
 
-:root {
-  --toastify-color-success: rgba(38, 50, 56, 1);
-}
+// :root {
+//   --toastify-color-success: rgba(38, 50, 56, 1);
+// }

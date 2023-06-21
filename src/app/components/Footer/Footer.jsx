@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './Footer.module.scss';
-import Logo from './LogoFooter/LogoFooter'
+import Logo from './LogoFooter/LogoFooter';
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <Image
         src="/images/footer/image1.jpg"
         priority
