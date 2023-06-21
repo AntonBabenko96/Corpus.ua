@@ -1,6 +1,5 @@
 // @client
 'use client';
-import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper/core';
@@ -8,11 +7,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import styles from './Promotions.module.scss';
+import PromotionItem from './PromotionItem/PromotionItem';
 
 // Встановлюємо плагіни
 SwiperCore.use([Navigation]);
 
-const imageNames = [
+const promotionsData = [
   {
     name: 'RIO',
     src: '/images/promotions/RIO.jpg',
@@ -52,13 +52,9 @@ const imageNames = [
   // ...інші зображення...
 ];
 
-function formatNumber(num) {
-  return new Intl.NumberFormat('uk-UA').format(num);
-}
-
 const Promotions = () => {
   return (
-    <section className={styles.promotionContainer} id="promotions">
+<section className={`${styles.promotionContainer} container`} id="promotions">
       <h2 className={styles.promotionTitle}>АКЦІЇ</h2>
       <Swiper
         slidesPerView={1}
@@ -70,36 +66,16 @@ const Promotions = () => {
             slidesPerView: 1,
             spaceBetween: 20,
           },
-          // Коли екран є 1440px або більше
+          // Коли екран є 1440px або більше(900 бо якщо меньше то не вмістяться 2 картинки)
           900: {
             slidesPerView: 2,
             spaceBetween: 30,
           },
         }}
       >
-        {imageNames.map((imageName, index) => (
+        {promotionsData.map((promotion, index) => (
           <SwiperSlide key={index}>
-            <figure>
-              <img
-                className={styles.kitchenImage}
-                src={imageName.src}
-                alt={`Кухня ${imageName.name}`}
-              />
-              <figcaption className={styles.slideContent}>
-                <div className={styles.mainContent}>
-                  <h3 className={styles.title}>Кухня {imageName.name}</h3>
-                  <div className={styles.price}>
-                    <p className={styles.oldPrice}>
-                      {formatNumber(imageName.oldPrice)} грн
-                    </p>
-                    <p className={styles.newPrice}>
-                      {formatNumber(imageName.newPrice)} грн
-                    </p>
-                  </div>
-                  <button className={styles.button}>Докладніше</button>
-                </div>
-              </figcaption>
-            </figure>
+            <PromotionItem promotion={promotion} />
           </SwiperSlide>
         ))}
       </Swiper>
