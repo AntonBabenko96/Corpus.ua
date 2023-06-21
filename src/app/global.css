@@ -35,6 +35,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 ul,
 ol {
   list-style: none;

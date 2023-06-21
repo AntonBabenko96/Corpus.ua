@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Burger from '../Burger/Burger';
 import items from '../NavBar/navBarData.json';
 
@@ -14,6 +14,14 @@ const NavBar = () => {
     setShow(!show);
   };
 
+  useEffect(() => {
+    if (show) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [show]);
+
   return (
     <>
       <Burger handleShow={handleShow} show={show} />
@@ -21,7 +29,12 @@ const NavBar = () => {
         {items.map((item, index) => {
           const depthLevel = 0;
           return (
-            <NavBarItems items={item} key={index} depthLevel={depthLevel} />
+            <NavBarItems
+              items={item}
+              key={index}
+              depthLevel={depthLevel}
+              setShow={setShow}
+            />
           );
         })}
       </ul>

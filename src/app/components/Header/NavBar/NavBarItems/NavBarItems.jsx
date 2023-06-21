@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import Dropdown from './Dropdown/Dropdown';
 
-const NavBarItems = ({ items, depthLevel }) => {
+const NavBarItems = ({ items, depthLevel, setShow }) => {
   const [dropdown, setDropdown] = useState(false);
 
   let ref = useRef();
@@ -76,11 +76,17 @@ const NavBarItems = ({ items, depthLevel }) => {
               offset={-20}
               smooth={true}
               duration={50}
+              onClick={() => setShow(false)}
             >
               <span className={s.itemSpan}>{items.text}</span>
             </ScrollLink>
           ) : (
-            <Link href={`${items.link}`}>{items.text}</Link>
+            <Link
+              href={`/catalog/${items.link}`}
+              onClick={() => setShow(false)}
+            >
+              {items.text}
+            </Link>
           )}
         </>
       )}
