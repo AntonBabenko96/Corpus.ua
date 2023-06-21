@@ -54,7 +54,7 @@ const promotionsData = [
 
 const Promotions = () => {
   return (
-    <section className={`${styles.promotionContainer} container`}>
+<section className={`${styles.promotionContainer} container`} id="promotions">
       <h2 className={styles.promotionTitle}>АКЦІЇ</h2>
       <Swiper
         slidesPerView={1}

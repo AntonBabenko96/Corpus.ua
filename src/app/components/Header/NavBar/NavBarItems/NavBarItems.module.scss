@@ -6,6 +6,8 @@
   line-height: calc(22 / 16);
   text-transform: uppercase;
 
+  transition: all 0.2s;
+
   @media (max-width: 767px) {
     &:first-child {
       height: 64px;
@@ -27,6 +29,7 @@
 
     img {
       margin-left: 14px;
+      transition: all 0.2s;
     }
   }
 
@@ -51,7 +54,7 @@
     }
   }
 
-  @media (max-width: 1439px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     &:nth-child(3) {
       order: -1;
     }
