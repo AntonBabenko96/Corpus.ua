@@ -1,6 +1,6 @@
 @import '../../../styles/index.scss';
 
-footer {
+.footer {
   margin: 0 auto;
 }
 
@@ -34,20 +34,19 @@ footer {
   }
 }
 
-.footerLogo{
-    margin-left: 135px;
-    width: 124px;
-    height: 72px;
-    @include media-max(mobile){
-        display: none;
-    }
-   
+.footerLogo {
+  margin-left: 135px;
+  width: 124px;
+  height: 72px;
+  @include media-max(mobile) {
+    display: none;
+  }
 }
 .footerItem {
   width: 125px;
-//   @include media-min(desktop){
-//     width:100%;
-//   }
+  //   @include media-min(desktop){
+  //     width:100%;
+  //   }
 }
 
 .footerTitle {
@@ -55,11 +54,10 @@ footer {
   @include main-font(400, 16px, 22px, 0.05em);
   margin-bottom: 20px;
   width: 100%;
-  
 }
 
-.footerItemWide{
-  @include media-min(desktop){
+.footerItemWide {
+  @include media-min(desktop) {
     width: 266px;
   }
 }
