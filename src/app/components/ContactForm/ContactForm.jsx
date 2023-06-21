@@ -67,7 +67,7 @@ export default function ContactForm() {
           width={16}
           height={16}
         />
-        <span className={styles.buttontext}> Замовити прорахунок</span>
+        <span className={styles.buttontext}> Замовити&nbspпрорахунок</span>
       </button>
       <div className={`${styles.contactForm} ${isOpen && styles.active}`}>
         <Image
