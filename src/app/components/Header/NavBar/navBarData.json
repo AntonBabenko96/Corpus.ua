@@ -7,7 +7,8 @@
   {
     "id": "1",
     "text": "про компанію",
-    "link": "/"
+    "link": "/",
+    "scrollLink": "about"
   },
   {
     "id": "2",
@@ -66,12 +67,14 @@
   {
     "id": "3",
     "text": "наші проекти",
-    "link": "/"
+    "link": "",
+    "scrollLink": "projects"
   },
   {
     "id": "4",
     "text": "акції",
-    "link": "/"
+    "link": "/",
+    "scrollLink": "promotions"
   },
   {
     "id": "5",
