@@ -3,7 +3,7 @@ import styles from './AboutUs.module.scss';
 
 export default function AboutUs() {
   return (
-    <section>
+    <section id="about">
       <Image
         src="/images/aboutUs/aboutUs.png"
         priority

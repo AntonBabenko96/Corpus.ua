@@ -58,7 +58,7 @@ function formatNumber(num) {
 
 const Promotions = () => {
   return (
-    <section className={styles.promotionContainer}>
+    <section className={styles.promotionContainer} id="promotions">
       <h2 className={styles.promotionTitle}>АКЦІЇ</h2>
       <Swiper
         slidesPerView={1}

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import s from './NavBarItems.module.scss';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import Dropdown from './Dropdown/Dropdown';
 
 const NavBarItems = ({ items, depthLevel }) => {
@@ -59,7 +60,6 @@ const NavBarItems = ({ items, depthLevel }) => {
               className={s.togglebtn}
             />
           </Link>
-
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.childrens}
@@ -67,9 +67,22 @@ const NavBarItems = ({ items, depthLevel }) => {
           />
         </>
       ) : (
-        <Link href={`/catalog/${items.link}`}>
-          <span className={s.itemSpan}>{items.text}</span>
-        </Link>
+        <>
+          {items.scrollLink ? (
+            <ScrollLink
+              to={`${items.scrollLink}`}
+              className="test6"
+              style={{ cursor: 'pointer' }}
+              offset={-20}
+              smooth={true}
+              duration={50}
+            >
+              <span className={s.itemSpan}>{items.text}</span>
+            </ScrollLink>
+          ) : (
+            <Link href={`${items.link}`}>{items.text}</Link>
+          )}
+        </>
       )}
     </li>
   );

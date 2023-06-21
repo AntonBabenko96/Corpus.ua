@@ -10,7 +10,7 @@ const images = [
 
 const Portfolio = () => {
   return (
-    <section className={styles.portfolio}>
+    <section className={styles.portfolio} id="projects">
       <div className={styles.blackAccent}></div>
       <h2 className={styles.title}>НАШІ ПРОЕКТИ</h2>
       <Slider images={images} />
