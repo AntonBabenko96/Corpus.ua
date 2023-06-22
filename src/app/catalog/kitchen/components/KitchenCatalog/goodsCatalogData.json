@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Кухня “Ірма”",
+    "price": "30 750 грн.",
+    "priceOld": "",
+    "src": "/images/kitchen/kitchen1.jpg",
+    "sale": false
+  },
+  {
+    "id": "2",
+    "title": "Кухня “Меган”",
+    "price": "35 750 грн.",
+    "priceOld": "",
+    "src": "/images/kitchen/kitchen2.jpg",
+    "sale": false
+  },
+  {
+    "id": "3",
+    "title": "Кухня “Парма”",
+    "price": "40 750 грн.",
+    "priceOld": "45 750 грн",
+    "src": "/images/kitchen/kitchen3.jpg",
+    "sale": true
+  },
+  {
+    "id": "4",
+    "title": "Кухня “Грін”",
+    "price": "42 260 грн.",
+    "priceOld": "",
+    "src": "/images/kitchen/kitchen4.jpg",
+    "sale": false
+  },
+  {
+    "id": "5",
+    "title": "Кухня “Кіра”",
+    "price": "38 950 грн.",
+    "priceOld": "",
+    "src": "/images/kitchen/kitchen5.jpg",
+    "sale": false
+  },
+  {
+    "id": "6",
+    "title": "Кухня “Вайт”",
+    "price": "40 750 грн.",
+    "priceOld": "",
+    "src": "/images/kitchen/kitchen6.jpg",
+    "sale": false
+  }
+]
