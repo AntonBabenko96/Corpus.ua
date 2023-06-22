@@ -9,6 +9,7 @@ const Pagination = ({
   paginate,
   currentPage,
   setCurrentPage,
+  currentArr,
 }) => {
   const pageNumbers = [];
 
@@ -26,8 +27,8 @@ const Pagination = ({
 
   return (
     <ul className={s.paginationList}>
-      {items.length / arrPerPage === currentPage ? (
-        <button onClick={prevPage}>
+      {1 === currentPage ? (
+        <button disabled onClick={prevPage} style={{ opacity: '0.3' }}>
           <Image
             src="/images/pagination/left.svg"
             width={18}
@@ -36,7 +37,7 @@ const Pagination = ({
           />
         </button>
       ) : (
-        <button disabled onClick={prevPage} style={{ opacity: '0.3' }}>
+        <button onClick={prevPage}>
           <Image
             src="/images/pagination/left.svg"
             width={18}
@@ -60,7 +61,8 @@ const Pagination = ({
         );
       })}
 
-      {items.length / arrPerPage === currentPage ? (
+      {items.length / arrPerPage === currentPage ||
+      currentArr.length < arrPerPage ? (
         <button disabled onClick={nextPage} style={{ opacity: '0.3' }}>
           <Image
             src="/images/pagination/right.svg"
