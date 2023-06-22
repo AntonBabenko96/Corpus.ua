@@ -45,22 +45,22 @@
       {
         "id": "22",
         "text": "кухні",
-        "link": "/"
+        "link": "kitchen"
       },
       {
         "id": "23",
         "text": "шафи",
-        "link": "/"
+        "link": "cupboard"
       },
       {
         "id": "24",
         "text": "тумби",
-        "link": "/"
+        "link": "nightstand"
       },
       {
         "id": "25",
         "text": "комоди",
-        "link": "/"
+        "link": "commode"
       }
     ]
   },
