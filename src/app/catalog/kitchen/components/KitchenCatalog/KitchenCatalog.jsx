@@ -27,6 +27,7 @@ const KitchenCatalog = () => {
           paginate={paginate}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
+          currentArr={currentArr}
         />
       </div>
     </section>
