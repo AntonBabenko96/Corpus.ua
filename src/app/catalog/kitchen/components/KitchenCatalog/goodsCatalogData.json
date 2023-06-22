@@ -94,5 +94,13 @@
     "priceOld": "45 750 грн",
     "src": "/images/kitchen/kitchen1.jpg",
     "sale": true
+  },
+  {
+    "id": "13",
+    "title": "Кухня “Грін”",
+    "price": "42 260 грн.",
+    "priceOld": "",
+    "src": "/images/kitchen/kitchen4.jpg",
+    "sale": false
   }
 ]
