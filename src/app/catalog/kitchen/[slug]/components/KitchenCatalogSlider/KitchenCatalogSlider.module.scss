@@ -1,0 +1,14 @@
+.sliderWrapper {
+  position: relative;
+  margin-bottom: 32px;
+
+  .sale {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 4px 18px;
+    background-color: #d81b60;
+    color: #eceff1;
+    text-transform: uppercase;
+  }
+}
