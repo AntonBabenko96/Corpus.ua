@@ -2,6 +2,15 @@
   position: relative;
   margin-bottom: 32px;
 
+
+  @media (min-width: 768px) {
+    margin-right: 30px;
+  }
+
+  @media (min-width: 1440px) {
+    width: calc(50% - 15px);
+  }
+
   .sale {
     position: absolute;
     top: 16px;

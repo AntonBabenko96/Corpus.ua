@@ -1,4 +1,16 @@
 .kitchenPage {
+  .kitchenSliderWrap {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    .kitchenSliderAbout {
+      @media (min-width: 1440px) {
+        width: calc(50% - 15px);
+      }
+    }
+  }
+
   .title {
     margin-bottom: 8px;
     color: #263238;
@@ -14,6 +26,15 @@
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 0.8px;
+  }
+
+  .priceBtnWrap {
+    @media (min-width: 1440px) {
+      display: flex;
+      // width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   .color {
