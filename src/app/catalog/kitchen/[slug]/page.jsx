@@ -28,7 +28,7 @@ const KitchenAboutPage = ({ params }) => {
         <div className="container">
           {elements?.map(el => (
             <div key={el.id}>
-              <Breadcrumbs />
+              <Breadcrumbs id={el.id} />
 
               <div className={s.kitchenSliderWrap}>
                 <KitchenCatalogSlider
