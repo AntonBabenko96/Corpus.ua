@@ -7,6 +7,40 @@ import items from '../components/KitchenCatalog/goodsCatalogData.json';
 import KitchenCatalogOrderBtn from './components/KitchenCatalogOrderBtn/KitchenCatalogOrderBtn';
 import KitchenCatalogSlider from './components/KitchenCatalogSlider/KitchenCatalogSlider';
 import s from './KitchenPage.module.scss';
+import Image from 'next/image';
+
+const colors = [
+  {
+    id: '1',
+    src: '/images/kitchenAbout/color1.png',
+    color: 'Дуб сонома',
+  },
+  {
+    id: '2',
+    src: '/images/kitchenAbout/color2.png',
+    color: 'Дуб трюфель',
+  },
+  {
+    id: '3',
+    src: '/images/kitchenAbout/color3.png',
+    color: 'Білий',
+  },
+  {
+    id: '4',
+    src: '/images/kitchenAbout/color4.png',
+    color: 'Дуб венге',
+  },
+  {
+    id: '5',
+    src: '/images/kitchenAbout/color5.png',
+    color: 'Ясен шимо',
+  },
+  {
+    id: '6',
+    src: '/images/kitchenAbout/color6.png',
+    color: 'Шамоні світлий',
+  },
+];
 
 const KitchenAboutPage = ({ params }) => {
   const elements = items.filter(el => el.id === params.slug);
@@ -39,7 +73,20 @@ const KitchenAboutPage = ({ params }) => {
                 <div className={s.kitchenSliderAbout}>
                   <h1 className={s.title}>{el.title}</h1>
                   <span className={s.article}>Артикул: {el.id}</span>
-                  <p className={s.color}>Колір:</p>
+                  <p className={s.colorTitle}>Колір:</p>
+                  <ul className={s.colors}>
+                    {colors.map(el => (
+                      <li key={el.id}>
+                        <Image
+                          src={el.src}
+                          width={40}
+                          height={40}
+                          alt={el.color}
+                        />
+                        <span>{el.color}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <div className={s.priceBtnWrap}>
                     {el?.priceOld ? (
                       <div className={s.priceWrap}>

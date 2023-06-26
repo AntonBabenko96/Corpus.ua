@@ -3,12 +3,10 @@
 .aboutUs {
   position: relative;
 
-
   // width: 349px;
   @include media-min(desktop) {
     width: 100%;
-    overflow: visible;
-   
+    // overflow: visible;
   }
 }
 
@@ -30,7 +28,6 @@
     padding-bottom: 356px;
     padding-left: 472px;
     padding-right: 134px;
-   
   }
 }
 
@@ -92,8 +89,7 @@
   }
 }
 .img {
-
-  overflow: hidden;
+  // overflow: hidden;
   // overflow: hidden;
   // background-image: url('/images/aboutUs/floatingImg.png');
   // background-repeat: no-repeat;
@@ -115,29 +111,29 @@
   //   height: 394px;
   //   margin-bottom: 60px;
   // }
-
 }
 
-.floatingImg{
+.aboutImg {
   overflow: hidden;
-  background-image: url('/images/aboutUs/floatingImg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  width:262px;
-  height:219px;
+  width: 162px;
+  height: 219px;
   z-index: 50;
   position: absolute;
   top: calc(100% - 108px);
   left: calc(100% - 162px);
-  // top: 705px;
-  // left: 145px;
   @include media-min(desktop) {
     top: calc(100% - 108px);
     left: calc(100% - 162px);
     width: 469px;
     height: 394px;
     margin-bottom: 60px;
+  }
+
+  img {
+    max-width: none;
   }
 }

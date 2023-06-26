@@ -37,11 +37,30 @@
     }
   }
 
-  .color {
+  .colorTitle {
+    display: inline-block;
     margin-bottom: 16px;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
+  }
+
+  .colors {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      width: 51px;
+      text-align: center;
+      // height: 40px;
+    }
+
+    span {
+      color: #b0bec5;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+    }
   }
 
   .price {

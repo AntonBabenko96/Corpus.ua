@@ -5,7 +5,6 @@ export default function AboutUs() {
   return (
     // <div className="container">
     <section id="about" className={styles.aboutUs}>
-   
       <Image
         src="/images/aboutUs/aboutUs.png"
         priority
@@ -34,18 +33,19 @@ export default function AboutUs() {
             забеспечуємо довговічність та естетичність наших виробів.
           </p>
         </div>
+        <div className={styles.aboutImg}>
+          <Image
+            src="/images/aboutUs/floatingImg.png"
+            priority
+            alt="корпус меблі"
+            width={262}
+            height={219}
+            className={styles.floatingImg}
+          />
+        </div>
       </div>
       {/* <div className={styles.img}> */}
-      <Image
-        src="/images/aboutUs/floatingImg.png"
-        priority
-        alt="корпус меблі"
-        width={262}
-        height={219}
-        className={styles.floatingImg}
-      />
       {/* </div> */}
-     
     </section>
     // </div>
   );
