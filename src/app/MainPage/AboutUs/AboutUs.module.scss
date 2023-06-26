@@ -6,13 +6,12 @@
   // width: 349px;
   @include media-min(desktop) {
     width: 100%;
-    // overflow: visible;
+    
   }
 }
 
 .aboutUsBackground {
   position: relative;
-
   margin-top: 60px;
   padding-top: 400px;
   // margin-left: 16px;
@@ -21,7 +20,7 @@
   padding-left: 16px;
   padding-right: 16px;
 
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     margin-left: 364px;
     margin-top: 120px;
     padding-top: 80px;
@@ -40,7 +39,7 @@
   border-bottom: 2px solid getColor(light-pink);
   width: 333px;
   height: 328px;
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     width: 357px;
     height: 580px;
     top: 84px;
@@ -56,7 +55,7 @@
   position: absolute;
   top: 40px;
   left: -28px;
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     top: 124px;
     width: 568px;
     height: 580px;
@@ -70,7 +69,7 @@
   margin-bottom: 16px;
   // margin-left: 16px;
   @include main-font(700, 24px, 29px);
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     margin-bottom: 60px;
   }
 }
@@ -84,68 +83,36 @@
   @include main-font(400, 16px, 22px, 0.05em);
   letter-spacing: 0.05em;
 
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     @include main-font(400, 18px, 22px, 0.05em);
   }
 }
 
-.aboutUsImg {
+.floatingImg {
   max-width: none;
-  @include media-min(desktop){
-    max-width: 100%;
+  @include media-min(tablet){
+    width: 469px;
+    height: 394px;
   }
-}
-.img {
-  // overflow: hidden;
-  // overflow: hidden;
-  // background-image: url('/images/aboutUs/floatingImg.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
-
-  // width:262px;
-  // height:219px;
-  // z-index: 50;
-  // position: absolute;
-  // top: calc(100% - 108px);
-  // left: calc(100% - 162px);
-  // // top: 705px;
-  // // left: 145px;
-  // @include media-min(desktop) {
-  //   top: calc(100% - 108px);
-  //   left: calc(100% - 162px);
-  //   width: 469px;
-  //   height: 394px;
-  //   margin-bottom: 60px;
-  // }
 }
 
 
 .aboutNightStandImg{
-
   overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
   width: 162px;
   height: 219px;
   z-index: 50;
   position: absolute;
   top: calc(100% - 108px);
   left: calc(100% - 162px);
-
-  .floatingImg {
-    max-width: none;
-  }
-
-  @include media-min(desktop) {
-    top: 50%;
-    left: 50%;
+  @include media-min(tablet) {
+    top: calc(100% -  281px);
+    left: calc(100% - 484px);
     width: 469px;
     height: 394px;
     margin-bottom: 60px;
     overflow: visible;
+  }
 
 
 }

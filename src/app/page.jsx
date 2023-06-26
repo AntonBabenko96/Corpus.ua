@@ -8,6 +8,7 @@ import Promotions from './components/Promotions/Promotions';
 import ContactForm from './components/ContactForm/ContactForm';
 import Portfolio from './MainPage/Portfolio/Portfolio';
 import FooterImage from './components/FooterImage/FooterImage';
+import NotFaund from './NotFoundPage/NotFound';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Promotions />
       <FooterImage/>
       <ToastContainer />
+      <NotFaund/>
     </main>
   );
 }

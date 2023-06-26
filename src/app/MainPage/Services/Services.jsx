@@ -1,7 +1,9 @@
 import styles from './Services.module.scss';
+
 export default function Services() {
   return (
     <section className={styles.section}>
+      {/* <div className="container"> */}
       <div
         className={styles.services}
         style={{ backgroundImage: `url('/images/services/image1.jpg')` }}
@@ -26,6 +28,7 @@ export default function Services() {
       >
         <p className={styles.servicesText}>Індивідуальний підхід</p>
       </div>
+      {/* </div> */}
     </section>
   );
 }
