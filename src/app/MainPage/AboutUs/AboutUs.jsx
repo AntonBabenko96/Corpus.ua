@@ -33,7 +33,7 @@ export default function AboutUs() {
             забеспечуємо довговічність та естетичність наших виробів.
           </p>
         </div>
-        <div className={styles.aboutImg}>
+        <div className={styles.aboutNighstandImg}>
           <Image
             src="/images/aboutUs/floatingImg.png"
             priority
