@@ -44,9 +44,8 @@ export default function AboutUs() {
           />
         </div>
       </div>
-      {/* <div className={styles.img}> */}
-      {/* </div> */}
+    
     </section>
-    // </div>
+    
   );
 }
