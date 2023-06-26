@@ -26,7 +26,10 @@ const KitchenCatalogList = ({ items }) => {
               )}
             </div>
           </div>
-          <Link href={'#'} className={s.link}>
+          <Link
+            href={`/catalog/kitchen/${id}`}
+            className={s.link}
+          >
             Детальніше
           </Link>
         </li>

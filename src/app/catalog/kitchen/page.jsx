@@ -1,7 +1,7 @@
-import React from 'react';
+'use client';
+
 import KitchenCatalog from './components/KitchenCatalog/KitchenCatalog';
 import CardDesignEl from '../components/cardDesignEl/CardDesignEl';
-// import ProductCard from './[productId]';
 
 export default function Kitchen() {
   return (
