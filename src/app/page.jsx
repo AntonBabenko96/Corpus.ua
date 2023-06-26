@@ -7,6 +7,7 @@ import Services from './MainPage/Services/Services';
 import Promotions from './components/Promotions/Promotions';
 import ContactForm from './components/ContactForm/ContactForm';
 import Portfolio from './MainPage/Portfolio/Portfolio';
+import FooterImage from './components/FooterImage/FooterImage';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Portfolio />
       <ContactForm />
       <Promotions />
+      <FooterImage/>
       <ToastContainer />
     </main>
   );
