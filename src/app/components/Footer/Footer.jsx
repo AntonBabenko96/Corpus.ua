@@ -6,14 +6,7 @@ import Logo from './LogoFooter/LogoFooter';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <Image
-        src="/images/footer/image1.jpg"
-        priority
-        alt="корпус меблі"
-        width={1000}
-        height={100}
-        className={styles.footerImage}
-      />
+    <div className="container">
       <div className={styles.footerContent}>
         <ul className={styles.footerList}>
           <li className={styles.footerLogo}>
@@ -99,6 +92,7 @@ export default function Footer() {
           {' '}
           Сайт розроблено компанієй <Link href="/">“DevCore”</Link>
         </p>
+      </div>
       </div>
     </footer>
   );

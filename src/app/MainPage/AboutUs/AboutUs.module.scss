@@ -88,6 +88,13 @@
     @include main-font(400, 18px, 22px, 0.05em);
   }
 }
+
+.aboutUsImg {
+  max-width: none;
+  @include media-min(desktop){
+    max-width: 100%;
+  }
+}
 .img {
   // overflow: hidden;
   // overflow: hidden;
@@ -113,7 +120,7 @@
   // }
 }
 
-.aboutImg {
+.aboutNightStandImg{
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,9 +138,8 @@
     width: 469px;
     height: 394px;
     margin-bottom: 60px;
+    overflow: visible;
   }
 
-  img {
-    max-width: none;
-  }
+
 }
