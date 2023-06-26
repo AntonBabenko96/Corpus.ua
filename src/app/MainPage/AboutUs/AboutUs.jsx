@@ -3,7 +3,9 @@ import styles from './AboutUs.module.scss';
 
 export default function AboutUs() {
   return (
-    <section id="about">
+    // <div className="container">
+    <section id="about" className={styles.aboutUs}>
+   
       <Image
         src="/images/aboutUs/aboutUs.png"
         priority
@@ -33,6 +35,7 @@ export default function AboutUs() {
           </p>
         </div>
       </div>
+      {/* <div className={styles.img}> */}
       <Image
         src="/images/aboutUs/floatingImg.png"
         priority
@@ -41,6 +44,9 @@ export default function AboutUs() {
         height={219}
         className={styles.floatingImg}
       />
+      {/* </div> */}
+     
     </section>
+    // </div>
   );
 }
