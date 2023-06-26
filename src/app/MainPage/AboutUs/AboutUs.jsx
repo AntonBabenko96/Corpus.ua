@@ -33,7 +33,9 @@ export default function AboutUs() {
             забеспечуємо довговічність та естетичність наших виробів.
           </p>
         </div>
+
         <div className={styles.aboutNightStandImg}>
+
           <Image
             src="/images/aboutUs/floatingImg.png"
             priority
