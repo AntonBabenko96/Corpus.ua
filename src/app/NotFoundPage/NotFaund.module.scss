@@ -1,0 +1,145 @@
+@import '../../styles/index.scss';
+
+.notFound {
+  background-color: getColor(primary-navy);
+}
+.content {
+  position: relative;
+  @include media-min(tablet) {
+    display: flex;
+  }
+}
+.contentImg {
+  height: 375px;
+  @include media-min(tablet) {
+    height: 917px;
+  }
+}
+.circle {
+  background-color: #b0bec5;
+  border-radius: 50%;
+  position: absolute;
+  left: 70px;
+  top: 26px;
+  height: 238px;
+  width: 238px;
+  z-index: 2;
+  @include media-min(tablet) {
+    height: 310px;
+    width: 310px;
+    left: 416px;
+    top: 81px;
+  }
+  @include media-min(desktop) {
+    height: 551px;
+    width: 551px;
+    left: 786px;
+  }
+}
+
+.rocketImg {
+  position: absolute;
+  left: 1px;
+  top: 96px;
+  z-index: 98;
+  @include media-min(tablet) {
+    left: 332px;
+    top: 177px;
+    width: 238.82px;
+    height: 344.71px;
+  }
+  @include media-min(desktop) {
+    width: 451.62px;
+    height: 628.97px;
+    left: 630px;
+    top: 249px;
+  }
+}
+.notFoundImg {
+  position: absolute;
+  left: 108px;
+  top: 94px;
+  z-index: 97;
+  @include media-min(tablet) {
+    left: 470px;
+    top: 171px;
+    width: 195.82px;
+    height: 121.71px;
+}
+  
+  // width:356.82px;
+  // height:222.71px;
+
+  @include media-min(desktop) {
+    left: 884px;
+    top: 240px;
+    width: 356.82px;
+    height: 222.71px;
+  }
+}
+.cosmonautImg {
+  position: absolute;
+  right: 45px;
+  top: 95px;
+  z-index: 98;
+  @include media-min(tablet) {
+    left: 665px;
+    top: 163px;
+    width: 94.82px;
+    height: 185.71px;
+  }
+  @include media-min(desktop) {
+    width: 168.98px;
+    height: 325.76px;
+    left: 1240px;
+    top: 225px;
+  }
+}
+
+.textContent {
+  margin-top: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  @include media-min(tablet) {
+    width: 400px;
+    margin-top: 190px;
+  }
+  @include media-min(desktop) {
+    width: 588px;
+    margin-top: 302px;
+    padding-left: 79px;
+  }
+}
+
+.text {
+  color: getColor(full-white);
+  @include main-font(700, 20px, 27px, 0.05em);
+  @include media-min(tablet){
+    @include main-font(700, 24px, 39px, 0.05em);
+  }
+  @include media-min(desktop){
+    @include main-font(700, 32px, 39px, 0.05em);
+  }
+}
+
+.btn {
+  color: getColor(full-white);
+  padding: 18.5px 36px;
+  margin-top: 20px;
+  margin-left: 36.5px;
+  border: 1.5px solid getColor(full-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 64px;
+  @include main-font(700, 20px, 27px, 0.05em);
+  @include media-min(tablet){
+    margin-top: 48px;
+    margin-left: 0;
+   
+  }
+}

@@ -9,9 +9,9 @@ export default function AboutUs() {
         src="/images/aboutUs/aboutUs.png"
         priority
         alt="корпус меблі"
-        width={343}
-        height={344}
-        className={styles.aboutUsImg}
+        width={358}
+        height={348}
+         className={styles.aboutUsImg}
       />
       <div className={styles.aboutUsBackground}>
         <div className={styles.aboutUsFrame}></div>
@@ -33,7 +33,7 @@ export default function AboutUs() {
             забеспечуємо довговічність та естетичність наших виробів.
           </p>
         </div>
-        <div className={styles.aboutNighstandImg}>
+        <div className={styles.aboutNightStandImg}>
           <Image
             src="/images/aboutUs/floatingImg.png"
             priority
@@ -44,9 +44,8 @@ export default function AboutUs() {
           />
         </div>
       </div>
-      {/* <div className={styles.img}> */}
-      {/* </div> */}
+    
     </section>
-    // </div>
+    
   );
 }

@@ -6,13 +6,12 @@
   // width: 349px;
   @include media-min(desktop) {
     width: 100%;
-    // overflow: visible;
+    
   }
 }
 
 .aboutUsBackground {
   position: relative;
-
   margin-top: 60px;
   padding-top: 400px;
   // margin-left: 16px;
@@ -21,15 +20,24 @@
   padding-left: 16px;
   padding-right: 16px;
 
-  @include media-min(desktop) {
-    margin-left: 364px;
+  @include media-min(tablet) {
+    margin-left: 99px;
     margin-top: 120px;
     padding-top: 80px;
-    padding-bottom: 356px;
-    padding-left: 472px;
-    padding-right: 134px;
-  }
+    padding-bottom: 268px;
+    padding-left: 354px;
+    padding-right: 74px;
 }
+    @include media-min(desktop) {
+      margin-left: 364px;
+      margin-top: 120px;
+      padding-top: 80px;
+      padding-bottom: 356px;
+      padding-left: 472px;
+      padding-right: 134px;
+    }
+  }
+
 
 .aboutUsFrame {
   position: absolute;
@@ -40,6 +48,16 @@
   border-bottom: 2px solid getColor(light-pink);
   width: 333px;
   height: 328px;
+  @include media-min(tablet) {
+    width: 274px;
+    height: 413px;
+    top: 84px;
+    left: 0;
+    border-top: 5px solid getColor(light-pink);
+    border-right: 5px solid getColor(light-pink);
+    border-bottom: 5px solid getColor(light-pink);
+  }
+
   @include media-min(desktop) {
     width: 357px;
     height: 580px;
@@ -56,10 +74,16 @@
   position: absolute;
   top: 40px;
   left: -28px;
+  @include media-min(tablet) {
+    top: 104px;
+    width: 406px;
+    height: 439px;
+    left: -47px;
+  }
   @include media-min(desktop) {
     top: 124px;
     width: 568px;
-    height: 580px;
+    height: 568px;
     left: 136px;
   }
 }
@@ -70,7 +94,7 @@
   margin-bottom: 16px;
   // margin-left: 16px;
   @include main-font(700, 24px, 29px);
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     margin-bottom: 60px;
   }
 }
@@ -84,63 +108,36 @@
   @include main-font(400, 16px, 22px, 0.05em);
   letter-spacing: 0.05em;
 
-  @include media-min(desktop) {
+  @include media-min(tablet) {
     @include main-font(400, 18px, 22px, 0.05em);
   }
 }
-.img {
-  // overflow: hidden;
-  // overflow: hidden;
-  // background-image: url('/images/aboutUs/floatingImg.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
 
-  // width:262px;
-  // height:219px;
-  // z-index: 50;
-  // position: absolute;
-  // top: calc(100% - 108px);
-  // left: calc(100% - 162px);
-  // // top: 705px;
-  // // left: 145px;
-  // @include media-min(desktop) {
-  //   top: calc(100% - 108px);
-  //   left: calc(100% - 162px);
-  //   width: 469px;
-  //   height: 394px;
-  //   margin-bottom: 60px;
-  // }
+.floatingImg {
+  max-width: none;
+  @include media-min(tablet){
+    width: 469px;
+    height: 394px;
+  }
 }
 
-.aboutNighstandImg {
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 
+.aboutNightStandImg{
+  overflow: hidden;
   width: 162px;
   height: 219px;
   z-index: 50;
   position: absolute;
   top: calc(100% - 108px);
   left: calc(100% - 162px);
-
-  .floatingImg {
-    max-width: none;
-  }
-
-  @include media-min(desktop) {
-    top: 50%;
-    left: 50%;
+  @include media-min(tablet) {
+    top: calc(100% -  281px);
+    left: calc(100% - 484px);
     width: 469px;
     height: 394px;
     margin-bottom: 60px;
     overflow: visible;
-
-    .floatingImg {
-      width: 100%;
-      height: 100%;
-    }
   }
+
+
 }
