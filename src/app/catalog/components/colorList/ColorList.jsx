@@ -1,4 +1,4 @@
-import TestData from '../../../../data/productData'
+import TestData from '../../../../../data/productData'
 
 import styles from './ColorList.module.scss';
 

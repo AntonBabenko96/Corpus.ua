@@ -8,6 +8,7 @@ import KitchenCatalogOrderBtn from './components/KitchenCatalogOrderBtn/KitchenC
 import KitchenCatalogSlider from './components/KitchenCatalogSlider/KitchenCatalogSlider';
 import s from './KitchenPage.module.scss';
 import Image from 'next/image';
+import ProductDescription from '../../components/productDescription/ProductDescription';
 
 const colors = [
   {
@@ -46,7 +47,7 @@ const KitchenAboutPage = ({ params }) => {
   const elements = items.filter(el => el.id === params.slug);
 
   const [images, setImages] = useState();
-
+  const productId = '274628';
   useEffect(() => {
     setImages(
       Array.from(Array(3).keys()).map(id => ({
@@ -106,6 +107,7 @@ const KitchenAboutPage = ({ params }) => {
               </div>
             </div>
           ))}
+          <ProductDescription id={productId}/>
           <CardDesignEl />
         </div>
       </section>
