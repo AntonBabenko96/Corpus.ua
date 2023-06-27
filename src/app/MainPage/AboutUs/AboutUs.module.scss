@@ -21,14 +21,23 @@
   padding-right: 16px;
 
   @include media-min(tablet) {
-    margin-left: 364px;
+    margin-left: 99px;
     margin-top: 120px;
     padding-top: 80px;
-    padding-bottom: 356px;
-    padding-left: 472px;
-    padding-right: 134px;
-  }
+    padding-bottom: 268px;
+    padding-left: 354px;
+    padding-right: 74px;
 }
+    @include media-min(desktop) {
+      margin-left: 364px;
+      margin-top: 120px;
+      padding-top: 80px;
+      padding-bottom: 356px;
+      padding-left: 472px;
+      padding-right: 134px;
+    }
+  }
+
 
 .aboutUsFrame {
   position: absolute;
@@ -40,6 +49,16 @@
   width: 333px;
   height: 328px;
   @include media-min(tablet) {
+    width: 274px;
+    height: 413px;
+    top: 84px;
+    left: 0;
+    border-top: 5px solid getColor(light-pink);
+    border-right: 5px solid getColor(light-pink);
+    border-bottom: 5px solid getColor(light-pink);
+  }
+
+  @include media-min(desktop) {
     width: 357px;
     height: 580px;
     top: 84px;
@@ -56,9 +75,15 @@
   top: 40px;
   left: -28px;
   @include media-min(tablet) {
+    top: 104px;
+    width: 406px;
+    height: 439px;
+    left: -47px;
+  }
+  @include media-min(desktop) {
     top: 124px;
     width: 568px;
-    height: 580px;
+    height: 568px;
     left: 136px;
   }
 }
