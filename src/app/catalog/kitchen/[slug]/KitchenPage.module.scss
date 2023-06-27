@@ -5,9 +5,11 @@
       justify-content: space-between;
     }
 
-    .kitchenSliderAbout {
-      @media (min-width: 1440px) {
-        width: calc(50% - 15px);
+    @media (min-width: 1440px) {
+      justify-content: flex-start;
+
+      .kitchenSliderAbout {
+        width: 300px;
       }
     }
   }
@@ -21,7 +23,7 @@
     letter-spacing: 1.2px;
   }
   .article {
-    display: inline-block;
+    display: block;
     margin-bottom: 32px;
     color: #b0bec5;
     font-size: 16px;
@@ -50,9 +52,16 @@
     justify-content: space-between;
 
     li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 51px;
+      margin-bottom: 32px;
       text-align: center;
-      // height: 40px;
+
+      img {
+        margin-bottom: 4px;
+      }
     }
 
     span {
@@ -60,6 +69,35 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.6px;
+    }
+
+    @media (min-width: 1440px) {
+      flex-wrap: wrap;
+      justify-content: start;
+
+      li {
+        width: 70px;
+        height: 70px;
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover span {
+          opacity: 1;
+        }
+      }
+
+      span {
+        transition: all 0.3s;
+        width: 110px;
+        opacity: 0;
+        font-weight: 700;
+      }
     }
   }
 
@@ -98,5 +136,10 @@
     &.active {
       color: #d81b60;
     }
+  }
+
+  @media (min-width: 1440px) {
+    height: 112px;
+    margin-bottom: 0;
   }
 }
