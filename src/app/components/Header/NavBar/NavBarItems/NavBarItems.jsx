@@ -7,7 +7,6 @@ import { Link as ScrollLink } from 'react-scroll';
 import Link from 'next/link';
 import Dropdown from './Dropdown/Dropdown';
 
-import { useState, useEffect } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const NavBarItems = ({ items, depthLevel, setShow }) => {
