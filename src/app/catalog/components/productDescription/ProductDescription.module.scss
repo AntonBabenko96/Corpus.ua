@@ -1,10 +1,10 @@
 @import '../../../../styles/index.scss';
 
-.productDescrSection{
-    @include media-min(desktop) {
+.productDescrSection {
+  // @include media-min(desktop) {
 
-        padding-left: 56px;
-    }
+  //     padding-left: 56px;
+  // }
 }
 .productDescriptionLinks {
   display: flex;
@@ -18,69 +18,144 @@
 }
 
 .link {
-    // background-color:transparent;
-    padding:12px;
-    color: getColor(primary-navy);
+
+  padding: 12px;
+  color: getColor(primary-navy);
   @include main-font(600, 16px, 22px);
   @include media-min(desktop) {
     @include main-font(400, 18px, 24.5px);
-    padding:12px 24px;}
-  &:active {
-    background-color: getColor(primary-navy);
-    color: getColor(full-white);
-   
+    padding: 12px 24px;
+  }
+
+}
+.active{
+  padding: 12px;
+  background-color: getColor(primary-navy);
+  color: getColor(full-white);
+  @include main-font(600, 16px, 22px);
+  @include media-min(desktop) {
+    @include main-font(400, 18px, 24.5px);
+    padding: 12px 24px;
   }
 }
-.productDesc{
-    @include media-min(desktop){
-        display: flex;
-        gap: 30px;
-        padding-bottom: 16px;
-        margin-bottom: 44px;
-
-    }
+.productDesc {
+  margin-bottom: 20px;
+  @include media-min(tablet) {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 16px;
+    margin-bottom: 44px;
+  }
+  // @include media-min(desktop) {
+  //   display: flex;
+  //   gap: 30px;
+  //   padding-bottom: 16px;
+  //   margin-bottom: 44px;
+  // }
 }
 
-.title{
-    @include main-font(700, 20px, 27px, 0.05em);
-    margin-bottom: 16px;
-    color: getColor(primary-navy);
-    @include media-min(desktop) {
-      @include main-font(700, 24px, 33px, 0.05em);
-      margin-bottom: 40px;
-    }
-
+.title {
+  @include main-font(700, 20px, 27px, 0.05em);
+  margin-bottom: 16px;
+  color: getColor(primary-navy);
+  @include media-min(desktop) {
+    @include main-font(700, 24px, 33px, 0.05em);
+    margin-bottom: 40px;
+  }
 }
 
-.productDescText{
-    color: getColor(primary-navy);
-    padding-right: 4px;
-    height:400px;
-    overflow-y: auto;
-    @include main-font(600, 16px, 22px,  0.05em);
-    @include media-min(desktop) {
-      @include main-font(400, 18px, 24.5px,  0.05em);
-      width:554px;
-      height:408px;
-     
-      padding-right: 8px;
-    }
-
+.productDescText {
+  color: getColor(primary-navy);
+  padding-right: 4px;
+  height: 400px;
+  overflow-y: auto;
+  @include main-font(600, 16px, 22px, 0.05em);
+  @include media-min(tablet) {
+    @include main-font(400, 18px, 24.5px, 0.05em);
+    width: 328px;
+    height: 310px;
+    padding-right: 8px;
+  }
+  @include media-min(desktop) {
+    @include main-font(400, 18px, 24.5px, 0.05em);
+    width: 554px;
+    height: 476px;
+    padding-right: 8px;
+  }
 }
 
-.productDescrImg{
-    @include media-max(mobile){
-        display:none;
-    }
-   
+.productDescrImg {
+  @include media-max(mobile) {
+    display: none;
+  }
+  @include media-min(tablet){
+    width: 350px;
+    height: 310px ;
+  }
+  @include media-min(desktop){
+    width: 570px;
+    height: 480px ;
+  }
 
 }
-.productDescrAlbum{
-    @include media-max(mobile){
-        display:none;
-    }
-   
+.productDescrAlbum {
+  @include media-max(mobile) {
+    display: none;
+  }
+
+  @include media-min(tablet){
     display: flex;
     gap: 30px;
+    width: 400px;
+    height: 300px ;
+    margin-bottom: 80px;
+  }
+  @include media-min(desktop){
+    gap: 72px;
+    width: 570px;
+    height: 300px ;
+    margin-bottom: 120px;
+  }
+}
 
+.productCharacteristics {
+  display: flex;
+  overflow-y: auto;
+  gap: 10px;
+  width: 100%;
+}
+.productCharacteristicsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.productCharacteristicsItemTitle {
+  color: #78909c;
+  @include main-font(600, 16px, 22px, 0.05em);
+  @include media-min(desktop) {
+    @include main-font(400, 18px, 24.5px, 0.05em);
+    width: 198px;
+  }
+
+}
+.productCharacteristicsItem {
+  display: flex;
+gap: 10px;
+  justify-content: space-between;
+}
+.productCharacteristicsValue {
+  color: getColor(primary-navy);
+  @include main-font(400, 16px, 22px, 0.05em);
+  width: 155px;
+  @include media-min(desktop) {
+    @include main-font(400, 18px, 24.5px, 0.05em);
+    width: 354px;
+  }
+}
+
+.sliderWrapper{
+  margin-top: 60px;
+  @include media-min(tablet){
+    display: none
+  }
 }
