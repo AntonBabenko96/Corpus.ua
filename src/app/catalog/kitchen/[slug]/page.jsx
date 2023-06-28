@@ -66,11 +66,7 @@ const KitchenAboutPage = ({ params }) => {
               <Breadcrumbs id={el.id} />
 
               <div className={s.kitchenSliderWrap}>
-                <KitchenCatalogSlider
-                  image={el.src}
-                  sale={el.sale}
-                  images={images}
-                />
+                <KitchenCatalogSlider sale={el.sale} images={images} />
                 <div className={s.kitchenSliderAbout}>
                   <h1 className={s.title}>{el.title}</h1>
                   <span className={s.article}>Артикул: {el.id}</span>
@@ -107,7 +103,7 @@ const KitchenAboutPage = ({ params }) => {
               </div>
             </div>
           ))}
-          <ProductDescription id={productId}/>
+          <ProductDescription id={productId} />
           <CardDesignEl />
         </div>
       </section>

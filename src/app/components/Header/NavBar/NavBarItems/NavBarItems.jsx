@@ -3,15 +3,19 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import s from './NavBarItems.module.scss';
-import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
+import Link from 'next/link';
 import Dropdown from './Dropdown/Dropdown';
+
+import { useState, useEffect } from 'react';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const NavBarItems = ({ items, depthLevel, setShow }) => {
   const [dropdown, setDropdown] = useState(false);
 
-  let ref = useRef();
+  const isMobile = useMediaQuery('(max-width: 767px');
 
+  let ref = useRef();
   useEffect(() => {
     const handler = event => {
       if (dropdown && ref.current && !ref.current.contains(event.target)) {
@@ -54,8 +58,8 @@ const NavBarItems = ({ items, depthLevel, setShow }) => {
             <span className={s.itemSpan}>{items.text}</span>
             <Image
               src="/images/header/Vector.svg"
-              width={12}
-              height={7.41}
+              width="0"
+              height="0"
               alt="Vector"
               className={s.togglebtn}
             />
@@ -81,12 +85,13 @@ const NavBarItems = ({ items, depthLevel, setShow }) => {
               <span className={s.itemSpan}>{items.text}</span>
             </ScrollLink>
           ) : (
-            <Link
-              href={`/catalog/${items.link}`}
-              onClick={() => setShow(false)}
-            >
-              {items.text}
-            </Link>
+            <>
+              {isMobile ? (
+                <a href={`/catalog/${items.link}`}>{items.text}</a>
+              ) : (
+                <Link href={`/catalog/${items.link}`}>{items.text}</Link>
+              )}
+            </>
           )}
         </>
       )}
