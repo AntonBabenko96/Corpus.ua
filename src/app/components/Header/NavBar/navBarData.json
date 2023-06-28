@@ -2,7 +2,7 @@
   {
     "id": "6",
     "text": "+38 095 555 55 22",
-    "link": "tel:+380955555522"
+    "link": "/"
   },
   {
     "id": "1",
@@ -43,22 +43,22 @@
         ]
       },
       {
-        "id": "22",
+        "id": "26",
         "text": "кухні",
         "link": "kitchen"
       },
       {
-        "id": "23",
+        "id": "27",
         "text": "шафи",
         "link": "cupboard"
       },
       {
-        "id": "24",
+        "id": "28",
         "text": "тумби",
         "link": "nightstand"
       },
       {
-        "id": "25",
+        "id": "29",
         "text": "комоди",
         "link": "commode"
       }
@@ -67,7 +67,7 @@
   {
     "id": "3",
     "text": "наші проекти",
-    "link": "",
+    "link": "/",
     "scrollLink": "projects"
   },
   {

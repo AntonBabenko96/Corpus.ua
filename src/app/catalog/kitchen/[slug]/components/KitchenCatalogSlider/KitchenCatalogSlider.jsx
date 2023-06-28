@@ -4,7 +4,7 @@ import Image from 'next/image';
 import s from './KitchenCatalogSlider.module.scss';
 import { useEffect, useRef, useState } from 'react';
 
-const KitchenCatalogSlider = ({ image, sale, images }) => {
+const KitchenCatalogSlider = ({ sale, images }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState();
   const carouselItemsRef = useRef([]);
