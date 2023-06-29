@@ -10,6 +10,8 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [nameError, setNameError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
 
   const sendEmail = async data => {
     const res = await fetch(`/api/email`, {
@@ -35,6 +37,33 @@ export default function ContactForm() {
 
   const formSubmitHandler = async event => {
     event.preventDefault();
+    setNameError('');
+    setPhoneError('');
+
+    let hasError = false;
+
+    if (name.trim() === '') {
+      setNameError('Будь ласка, введіть ім\'я');
+      hasError = true;
+    } else if (!/^[A-Za-z]+$/.test(name.trim())) {
+      setNameError('Дані введені некоректно');
+      hasError = true;
+    }
+
+    if (phone.trim() === '') {
+      setPhoneError('Будь ласка, введіть номер телефону');
+      hasError = true;
+    } else {
+      const phonePattern = /^\+38 \(\d{3}\) \d{3} \d{2} \d{2}$/;
+      if (!phonePattern.test(phone.trim())) {
+        setPhoneError('Дані введені некоректно');
+        hasError = true;
+      }
+    }
+
+    if (hasError) {
+      return;
+    }
     try {
       const data = { name, phone, message };
       await sendEmail(data);
@@ -45,9 +74,20 @@ export default function ContactForm() {
     } catch (error) {}
   };
 
-  // useEffect(() => {
-  //   setIsOpen(true);
-  // }, []);
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+    if (event.target.value.trim() === '') {
+      setNameError('');
+    }
+  };
+
+  const handlePhoneChange = (event) => {
+    setPhone(event.target.value);
+    if (event.target.value.trim() === '') {
+      setPhoneError('');
+    }
+  };
+ 
 
   const handleClose = () => {
     setIsOpen(false);
@@ -106,8 +146,12 @@ export default function ContactForm() {
                 required
                 placeholder="Ім’я"
                 value={name}
-                onChange={event => setName(event.target.value)}
+                onChange={handleNameChange}
+                style={{
+                  borderBottomColor: nameError ? '#D81B60' : (name.trim() === '' ? '#ECEFF1 ' : 'currentColor'),
+                }}
               />
+               {nameError && <span className={styles.error}>{nameError}</span>}
             </div>
             <div className={styles.control}>
               <span className={styles.inputIcon}>
@@ -120,20 +164,27 @@ export default function ContactForm() {
               </span>
               <input
                 type="number"
-                id="pnone"
+                id="phone"
                 required
                 placeholder="+38 (099) 000 00 00"
                 value={phone}
-                onChange={event => setPhone(event.target.value)}
+                onChange={handlePhoneChange }
+                style={{
+                  borderBottomColor: phoneError ? '#D81B60' : (phone.trim() === '' ? '#ECEFF1 ': 'currentColor'),
+                }}
+               
               />
+              {phoneError && <span className={styles.error}>{phoneError}</span>}
             </div>
             <div className={styles.control}>
               <input
-                type="text"
+                type="tel"
                 id="message"
                 placeholder="Введіть свій коментар"
                 value={message}
                 onChange={event => setMessage(event.target.value)}
+                className={styles.textarea}
+              
               />
             </div>
           </div>
