@@ -32,6 +32,10 @@
   }
 
   .priceBtnWrap {
+    @media (max-width: 767px) {
+      margin-bottom: 60px;
+    }
+
     @media (min-width: 1440px) {
       display: flex;
       justify-content: space-between;
@@ -112,7 +116,7 @@
 .priceWrap {
   display: flex;
   align-items: center;
-  margin-bottom: 34px;
+  // margin-bottom: 34px;
 
   .priceOld {
     position: relative;
