@@ -9,6 +9,8 @@ import KitchenCatalogSlider from './components/KitchenCatalogSlider/KitchenCatal
 import s from './KitchenPage.module.scss';
 import Image from 'next/image';
 import ProductDescription from '../../components/productDescription/ProductDescription';
+import ContactForm from '@/app/components/ContactForm/ContactForm';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const colors = [
   {
@@ -45,6 +47,8 @@ const colors = [
 
 const KitchenAboutPage = ({ params }) => {
   const elements = items.filter(el => el.id === params.slug);
+
+  const isDesktop = useMediaQuery('(min-width: 1440px');
 
   const [images, setImages] = useState();
   const productId = '274628';
@@ -97,7 +101,7 @@ const KitchenAboutPage = ({ params }) => {
                         <p className={s.price}>{el.price}</p>
                       </div>
                     )}
-                    <KitchenCatalogOrderBtn />
+                    {/* <KitchenCatalogOrderBtn /> */}
                   </div>
                 </div>
               </div>
@@ -105,6 +109,8 @@ const KitchenAboutPage = ({ params }) => {
           ))}
           <ProductDescription id={productId} />
           <CardDesignEl />
+          <ContactForm />
+          {/* {isDesktop && <ContactForm />} */}
         </div>
       </section>
     </>
