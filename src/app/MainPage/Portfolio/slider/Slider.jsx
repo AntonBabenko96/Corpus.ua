@@ -30,11 +30,12 @@ export default ({ images }) => {
         },
       }}
     >
-      {images.map(({ id, src, desc }) => (
-        <SwiperSlide key={id}>
+      {/* {images.map(({ id, src, desc }) => ( */}
+      {images.map((image, index) => (
+        <SwiperSlide key={index}>
           <img
-            src={src}
-            alt={desc}
+            src={image}
+            alt={`Slide ${index + 1}`}
             width="570"
             height="355"
             className={styles.img}
