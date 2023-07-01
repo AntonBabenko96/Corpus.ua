@@ -39,36 +39,39 @@
   }
 
 
-.aboutUsFrame {
-  position: absolute;
-  top: 24px;
-  left: 1px;
-  border-top: 2px solid getColor(light-pink);
-  border-right: 2px solid getColor(light-pink);
-  border-bottom: 2px solid getColor(light-pink);
-  width: 333px;
-  height: 328px;
-  @include media-min(tablet) {
-    width: 274px;
-    height: 413px;
-    top: 84px;
-    left: 0;
-    border-top: 5px solid getColor(light-pink);
-    border-right: 5px solid getColor(light-pink);
-    border-bottom: 5px solid getColor(light-pink);
+  .aboutUsFrame {
+    position: absolute;
+    top: 24px;
+    left: 1px;
+    border-top: 2px solid getColor(light-pink);
+    border-right: 2px solid getColor(light-pink);
+    border-bottom: 2px solid getColor(light-pink);
+    height: 328px;
+   
+    @media only screen and (min-width: 375px) {
+      width: 333px;
+    }
+  
+    @include media-min(tablet) {
+      width: 274px;
+      height: 413px;
+      top: 84px;
+      left: 0;
+      border-top: 5px solid getColor(light-pink);
+      border-right: 5px solid getColor(light-pink);
+      border-bottom: 5px solid getColor(light-pink);
+    }
+  
+    @include media-min(desktop) {
+      width: 357px;
+      height: 580px;
+      top: 84px;
+      left: 0;
+      border-top: 5px solid getColor(light-pink);
+      border-right: 5px solid getColor(light-pink);
+      border-bottom: 5px solid getColor(light-pink);
+    }
   }
-
-  @include media-min(desktop) {
-    width: 357px;
-    height: 580px;
-    top: 84px;
-    left: 0;
-    border-top: 5px solid getColor(light-pink);
-    border-right: 5px solid getColor(light-pink);
-    border-bottom: 5px solid getColor(light-pink);
-  }
-}
-
 .aboutUsImg {
   z-index: 99;
   position: absolute;
