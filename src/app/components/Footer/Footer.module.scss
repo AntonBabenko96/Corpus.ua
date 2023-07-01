@@ -11,6 +11,9 @@
   left: 0;
   right: 0;
   border-bottom: 1px solid getColor(full-white);
+  @include media-min(desktop){
+    bottom: 29%; 
+  }
   }
 }
 
@@ -82,6 +85,9 @@
   color: getColor(full-white);
   cursor: pointer;
   @include main-font(400, 16px, 22px, 0.05em);
+  &:hover {
+    color: getColor(light-pink);
+    }
 }
 
 .footerConact {
