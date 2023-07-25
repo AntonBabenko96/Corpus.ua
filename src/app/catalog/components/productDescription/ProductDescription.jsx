@@ -8,7 +8,6 @@ import Image from 'next/image';
 export default function ProductDescription({ id }) {
   const [activeLink, setActiveLink] = useState('description');
 
-
   function getProductById(productId) {
     return TestData.find(product => product.id === productId);
   }
@@ -25,7 +24,6 @@ export default function ProductDescription({ id }) {
     return null;
   }
   const { name, description, images, characteristics } = product;
-  console.log(product);
   const displayedImages = images.slice(0, 2);
   const characteristicsData = Object.entries(characteristics);
 

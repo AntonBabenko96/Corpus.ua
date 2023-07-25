@@ -48,6 +48,15 @@ const colors = [
 const KitchenAboutPage = ({ params }) => {
   const elements = items.filter(el => el.id === params.slug);
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://korpus.onrender.com/api/products')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   const isDesktop = useMediaQuery('(min-width: 1440px');
 
   const [images, setImages] = useState();
