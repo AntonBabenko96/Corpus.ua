@@ -1,7 +1,8 @@
 // import 'styles/index.scss';
 // import '../styles/index.scss';
-// import './global.scss';
-// import Header from './components/Header/Header';
+import './global.scss';
+import '../styles/variables.scss'
+import Header from './components/Header/Header';
 // import Footer from './components/Footer/Footer';
 
 export const metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <Header /> */}
+        <Header />
         {children}
         {/* <Footer /> */}
       </body>
