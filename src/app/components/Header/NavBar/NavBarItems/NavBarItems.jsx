@@ -86,9 +86,9 @@ const NavBarItems = ({ items, depthLevel, setShow }) => {
           ) : (
             <>
               {isMobile ? (
-                <a href={`/catalog/${items.link}`}>{items.text}</a>
+                <a href={`/${items.link}`}>{items.text}</a>
               ) : (
-                <Link href={`/catalog/${items.link}`}>{items.text}</Link>
+                <Link href={`/${items.link}`}>{items.text}</Link>
               )}
             </>
           )}

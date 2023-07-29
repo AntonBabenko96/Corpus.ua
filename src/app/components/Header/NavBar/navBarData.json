@@ -16,33 +16,6 @@
     "link": "/",
     "childrens": [
       {
-        "id": "21",
-        "text": "на замовлення",
-        "link": "/",
-        "childrens": [
-          {
-            "id": "22",
-            "text": "кухні",
-            "link": "kitchen"
-          },
-          {
-            "id": "23",
-            "text": "шафи",
-            "link": "cupboard"
-          },
-          {
-            "id": "24",
-            "text": "тумби",
-            "link": "cabinets"
-          },
-          {
-            "id": "25",
-            "text": "комоди",
-            "link": "commode"
-          }
-        ]
-      },
-      {
         "id": "26",
         "text": "кухні",
         "link": "kitchen"

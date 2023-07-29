@@ -1,31 +1,11 @@
 'use client';
 import { useState } from 'react';
 import styles from './ProductDescription.module.scss';
-import { TestData } from '../../../../../data/productData';
 import Slider from '@/app/MainPage/Portfolio/slider/Slider';
 import Image from 'next/image';
 
-export default function ProductDescription({ id }) {
+export default function ProductDescription({ data }) {
   const [activeLink, setActiveLink] = useState('description');
-
-  function getProductById(productId) {
-    return TestData.find(product => product.id === productId);
-  }
-
-  const product = getProductById(id);
-
-  if (!product) {
-    return null;
-  }
-
-  const productCharacteristics = getProductById(id);
-
-  if (!productCharacteristics) {
-    return null;
-  }
-  const { name, description, images, characteristics } = product;
-  const displayedImages = images.slice(0, 2);
-  const characteristicsData = Object.entries(characteristics);
 
   const handleLinkClick = link => {
     setActiveLink(link);
@@ -56,15 +36,15 @@ export default function ProductDescription({ id }) {
           <div className={styles.productDescText}>
             {activeLink === 'description' ? (
               <>
-                <h2 className={styles.title}>Модульна кухня "{name}"</h2>
-                <div>{description}</div>{' '}
+                <h2 className={styles.title}>Модульна кухня "{data.name}"</h2>
+                <div>{data.description}</div>{' '}
               </>
             ) : (
               <div>
                 <h2 className={styles.title}>Характеристика</h2>
                 <div className={styles.productCharacteristics}>
                   <ul className={styles.productCharacteristicsList}>
-                    {characteristicsData.map(([key, value]) => (
+                    {Object.entries(data.properties).map(([key, value]) => (
                       <li
                         className={styles.productCharacteristicsItem}
                         key={key}
@@ -73,9 +53,8 @@ export default function ProductDescription({ id }) {
                           className={styles.productCharacteristicsItemTitle}
                         >
                           {key}
-                        </span>{' '}
+                        </span>
                         <span className={styles.productCharacteristicsValue}>
-                          {' '}
                           {value}
                         </span>
                       </li>
@@ -86,12 +65,12 @@ export default function ProductDescription({ id }) {
             )}
           </div>
         </div>
-        <div className={styles.sliderWrapper}>
+        {/* <div className={styles.sliderWrapper}>
           {' '}
           <Slider images={images} />
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <Image
             src={displayedImages[0]}
             priority
@@ -100,9 +79,9 @@ export default function ProductDescription({ id }) {
             height={480}
             className={styles.productDescrImg}
           />
-        </div>
+        </div> */}
       </div>
-      <div className={styles.productDescrAlbum}>
+      {/* <div className={styles.productDescrAlbum}>
         {displayedImages.map((image, index) => (
           <Image
             key={index}
@@ -114,7 +93,7 @@ export default function ProductDescription({ id }) {
             className={styles.productDescrImg}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
