@@ -1,99 +1,69 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
+import Container from '../Container/Container';
 import styles from './Footer.module.scss';
-import Logo from './LogoFooter/LogoFooter';
-export default function Footer() {
+import logo from '../../../image/Logo.png';
+
+async function getCategory() {
+  const response = await fetch(`https://korpus.onrender.com/api/categories`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return response.json();
+}
+
+export default async function Footer() {
+  const categoryList = await getCategory();
+  console.log(categoryList);
+
   return (
     <footer className={styles.footer}>
-    <div className="container">
-      <div className={styles.footerContent}>
-        <ul className={styles.footerList}>
-          <li className={styles.footerLogo}>
-            <Logo />
-          </li>
-          <li className={styles.footerItem}>
-            <h2 className={styles.footerTitle}>ПРО НАС</h2>
-            <ul className={styles.footerItemText}>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Про компанію
+      <Container>
+        <div className={styles.wrapper}>
+          <div className={styles.logo}>
+            <Image src={logo} />
+          </div>
+          <div className={styles.aboutUs}>
+            <h3 className={styles.title}>Про нас</h3>
+            <ul className={styles.list}>
+              <li>Про Компанію</li>
+              <li>Наші проекти</li>
+              <li>Акції</li>
+              <li>Відгуки</li>
+            </ul>
+          </div>
+          <div className={styles.catalog}>
+            <h3 className={styles.title}>Каталог</h3>
+            <ul className={styles.list}>
+              {categoryList.map(el => (
+                <li>
+                  <Link href={`/${el.name}`}>{el.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={styles.contacts}>
+            <h3 className={styles.title}>Контакти</h3>
+            <ul className={styles.list}>
+              <li>
+                <a href="tel:+38 095 555 55 22">+38 095 555 55 22</a>
               </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Наші проекти
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Акції
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Відгуки
+              <li>
+                <a href="mailto:korpus@gmail.com">korpus@gmail.com</a>
               </li>
             </ul>
-          </li>
-          <li className={styles.footerItem}>
-            <h2 className={styles.footerTitle}>СЕРІЙНІ МЕБЛІ</h2>
-            <ul className={styles.footerItemText}>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Кухні
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Шафи
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Тумби
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Комоди
-              </li>
-            </ul>
-          </li>
-          <li className={styles.footerItemWide}>
-            <h2 className={styles.footerTitle}>ІНДИВІДУАЛЬНЕ ЗАМОВЛЕННЯ</h2>
-            <ul className={styles.footerItemText}>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Кухні
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Шафи
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Тумби
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Комоди
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <div className={styles.footerConact}>
-          <h2 className={styles.footerTitle}>КОНТАКТИ</h2>
-          <ul className={styles.footerItemText}>
-            <li className={styles.footerLink}>+38 095 555 55 22</li>
-            <li className={styles.footerLink}>sales@korpus.com.ua</li>
-          </ul>
+          </div>
         </div>
-      </div>
-      <div className={styles.footerLicence}>
-        <p className={styles.license}>
-          2023 © Всі права захищені. Копіювання заборонено.
-        </p>
-        <p className={styles.license}>
-          {' '}
-          Сайт розроблено компанієй <Link href="/">“DevCore”</Link>
-        </p>
-      </div>
-      </div>
+        <div className={styles.root}>
+          <p className={styles.rootText}>
+            2023 © Всі права захищені. Копіювання заборонено.
+          </p>
+          <br />
+          <p className={styles.rootText}>Сайт розроблено компанією “DevCore”</p>
+        </div>
+      </Container>
     </footer>
   );
 }
