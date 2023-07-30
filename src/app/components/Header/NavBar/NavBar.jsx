@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Burger from '../Burger/Burger';
-import items from '../NavBar/navBarData.json';
+import items from '../navBarData.json';
 
 import NavBarItems from './NavBarItems/NavBarItems';
 import s from './NavBar.module.scss';
@@ -17,8 +17,8 @@ const NavBar = () => {
 
   return (
     <ul className={s.categoriesList}>
-      {items.map(({id, text, link}) => (
-        <li key={id} className={s.categoryItem}><Link href={link}>{text}</Link></li>
+      {items.map((item) => (
+        <NavBarItems item={item} />
       ))}
     </ul>
   )

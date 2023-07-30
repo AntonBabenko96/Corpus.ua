@@ -1,6 +1,7 @@
 .header {
   height: 64px;
   background-color: var(--dark-background-color);
+  position: relative;
 
   @media screen and (min-width: 768px) {
     height: 88px;
@@ -11,5 +12,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 29px 135px 18px;
+  padding: 16px;
+
+  @media screen and (min-width: 1440px) {
+    padding: 29px 135px 18px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
