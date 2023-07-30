@@ -1,98 +1,45 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
 import styles from './Footer.module.scss';
-import Logo from './LogoFooter/LogoFooter';
-export default function Footer() {
+
+async function getCategory() {
+  const response = await fetch(`https://korpus.onrender.com/api/categories`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return response.json();
+}
+
+export default async function Footer() {
+  const categoryList = await getCategory();
+  console.log(categoryList);
+
   return (
     <footer className={styles.footer}>
-    <div className="container">
-      <div className={styles.footerContent}>
-        <ul className={styles.footerList}>
-          <li className={styles.footerLogo}>
-            <Logo />
-          </li>
-          <li className={styles.footerItem}>
-            <h2 className={styles.footerTitle}>ПРО НАС</h2>
-            <ul className={styles.footerItemText}>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Про компанію
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Наші проекти
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Акції
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Відгуки
-              </li>
-            </ul>
-          </li>
-          <li className={styles.footerItem}>
-            <h2 className={styles.footerTitle}>СЕРІЙНІ МЕБЛІ</h2>
-            <ul className={styles.footerItemText}>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Кухні
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Шафи
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Тумби
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Комоди
-              </li>
-            </ul>
-          </li>
-          <li className={styles.footerItemWide}>
-            <h2 className={styles.footerTitle}>ІНДИВІДУАЛЬНЕ ЗАМОВЛЕННЯ</h2>
-            <ul className={styles.footerItemText}>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Кухні
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Шафи
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Тумби
-              </li>
-              <li className={styles.footerLink}>
-                <Link href="/" />
-                Комоди
-              </li>
-            </ul>
-          </li>
+      <div className={styles.logo}></div>
+      <div className={styles.aboutUs}>
+        <h3>Про нас</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
-        <div className={styles.footerConact}>
-          <h2 className={styles.footerTitle}>КОНТАКТИ</h2>
-          <ul className={styles.footerItemText}>
-            <li className={styles.footerLink}>+38 095 555 55 22</li>
-            <li className={styles.footerLink}>sales@korpus.com.ua</li>
-          </ul>
-        </div>
       </div>
-      <div className={styles.footerLicence}>
-        <p className={styles.license}>
-          2023 © Всі права захищені. Копіювання заборонено.
-        </p>
-        <p className={styles.license}>
-          {' '}
-          Сайт розроблено компанієй <Link href="/">“DevCore”</Link>
-        </p>
-      </div>
+      <div className={styles.catalog}></div>
+      <h3>Категорії</h3>
+      <ul>
+        {categoryList.map(el => (
+          <li>{el.name}</li>
+        ))}
+      </ul>
+      <div className={styles.contacts}>
+        <h3>Контакти</h3>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     </footer>
   );
