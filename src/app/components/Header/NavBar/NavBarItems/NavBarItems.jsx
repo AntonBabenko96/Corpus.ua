@@ -27,10 +27,10 @@ const NavBarItems = ({ item, depthLevel, setShow }) => {
         <Link href={item.link}>{item.text}</Link>
         {item.text === 'каталог' && (
           <Image
-            src="/images/header/Vector.svg"
+            src="/images/arrow.svg"
             alt="Vector"
-            width={12}
-            height={12}
+            width={24}
+            height={24}
             className={s.vectorIcon}
           />
         )}
