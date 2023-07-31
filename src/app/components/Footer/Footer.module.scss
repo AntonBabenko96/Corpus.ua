@@ -76,13 +76,26 @@ li {
   margin: 20px;
 }
 
-.catalog {
-  margin: 20px;
-  max-height: 200px;
+.catalogItem {
+  margin-right: 10px;
+}
+
+.catalogList {
+  max-height: 130px;
+
   overflow: auto;
   &::-webkit-scrollbar {
-    width: 0.5em;
+    width: 0.3em;
   }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-accent-color);
+    border-radius: 5px;
+  }
+}
+
+.catalog {
+  margin: 20px;
 }
 
 .contacts {
