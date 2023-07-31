@@ -35,9 +35,9 @@ export default async function Footer() {
           </div>
           <div className={styles.catalog}>
             <h3 className={styles.title}>Каталог</h3>
-            <ul className={styles.list}>
+            <ul className={styles.catalogList}>
               {categoryList.map(el => (
-                <li>
+                <li className={styles.catalogItem}>
                   <Link href={`/${el.name}`}>{el.name}</Link>
                 </li>
               ))}
