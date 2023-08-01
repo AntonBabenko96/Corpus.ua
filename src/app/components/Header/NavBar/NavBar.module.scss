@@ -1,6 +1,13 @@
 .categoriesList {
   display: flex;
+  align-items: center;
   gap: 36px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
 }
 
 

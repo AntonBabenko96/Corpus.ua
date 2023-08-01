@@ -3,33 +3,37 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Link as ScrollLink } from 'react-scroll';
-import Dropdown from './Dropdown/Dropdown';
 import s from './NavBarItems.module.scss';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-const NavBarItems = ({ item, depthLevel, setShow }) => {
+const NavBarItems = ({ item, showInnerMenu, handleInnerMenu }) => {
   return (
-    <li key={item.id} className={s.categoryItem}>
+    <li className={s.categoryItem}>
       <div className={s.innerWrapper}>
         <Link href={item.link} className={s.navLink}>
           {item.text}
         </Link>
         {item.text === 'каталог' && (
-          <button className={s.navBtn}>
+          <button className={s.navBtn} onClick={handleInnerMenu}>
             <Image
               src="/images/arrow.svg"
               alt="Vector"
               width={24}
               height={24}
-              className={s.vectorIcon}
+              className={`${s.vectorIcon} ${showInnerMenu ? s.rotate : ''}`}
             />
+            {/* <svg
+              className={`${s.vectorIcon} ${showInnerMenu ? s.rotate : ''}`}
+              width={24}
+              height={24}
+            >
+              <use href="public/images/arrow.svg"></use>
+            </svg> */}
           </button>
         )}
       </div>
-      {item.childrens && (
-        // <div className={`visually-hidden ${s.innerBox}`}>
+      {item.childrens && showInnerMenu && (
         <div className={s.innerBox}>
           <ul className={s.innerList}>
             {item.childrens.map(({ id, text, link }) => (

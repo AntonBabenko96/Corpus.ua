@@ -1,27 +1,29 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Burger from '../Burger/Burger';
+import Burger from '../BurgerButton/BurgerButton';
 import items from '../navBarData.json';
 
 import NavBarItems from './NavBarItems/NavBarItems';
 import s from './NavBar.module.scss';
 import Link from 'next/link';
 
-const NavBar = () => {
-  const {categories, setCategories} = useState([]);
+const NavBar = ({ showInnerMenu, handleInnerMenu }) => {
+  const { categories, setCategories } = useState([]);
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <ul className={s.categoriesList}>
-      {items.map((item) => (
-        <NavBarItems item={item} />
+      {items.map(item => (
+        <NavBarItems
+          item={item}
+          showInnerMenu={showInnerMenu}
+          handleInnerMenu={handleInnerMenu}
+        />
       ))}
     </ul>
-  )
+  );
   // const [show, setShow] = useState(false);
 
   // const handleShow = () => {

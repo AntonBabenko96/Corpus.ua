@@ -31,25 +31,25 @@
   margin-bottom: 20px;
 }
 
-a {
-  color: var(--light-text-color);
-  margin-bottom: 20px;
-  &:hover {
-    color: var(--primary-accent-color);
-  }
-}
+// a {
+//   color: var(--light-text-color);
+//   margin-bottom: 20px;
+//   &:hover {
+//     color: var(--primary-accent-color);
+//   }
+// }
 
-li {
-  color: var(--light-text-color);
-  margin-bottom: 20px;
-  cursor: pointer;
-  &:hover {
-    color: var(--primary-accent-color);
-  }
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
+// li {
+//   color: var(--light-text-color);
+//   margin-bottom: 20px;
+//   cursor: pointer;
+//   &:hover {
+//     color: var(--primary-accent-color);
+//   }
+//   &:last-child {
+//     margin-bottom: 0;
+//   }
+// }
 
 .wrapper {
   display: flex;
