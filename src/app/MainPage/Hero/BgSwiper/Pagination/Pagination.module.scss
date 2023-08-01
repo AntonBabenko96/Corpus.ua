@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+
+  @media screen and (min-width: 1199px) {
+    gap: 16px;
+  }
+}
+
+.bullet {
+  display: block;
+  width: 4px;
+  height: 4px;
+
+  background-color: var(--light-text-color);
+
+  cursor: pointer;
+
+  &:global(.active) {
+    background-color: var(--primary-accent-color);
+  }
+
+  @media screen and (min-width: 1199px) {
+    width: 8px;
+    height: 8px;
+  }
+}
