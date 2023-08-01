@@ -20,25 +20,27 @@ export default async function Footer() {
   return (
     <footer className={styles.footer}>
       <Container>
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
           <div className={styles.logo}>
             <Image src={logo} />
           </div>
           <div className={styles.aboutUs}>
             <h3 className={styles.title}>Про нас</h3>
             <ul className={styles.list}>
-              <li>Про Компанію</li>
-              <li>Наші проекти</li>
-              <li>Акції</li>
-              <li>Відгуки</li>
+              <li className={styles.item}>Про Компанію</li>
+              <li className={styles.item}>Наші проекти</li>
+              <li className={styles.item}>Акції</li>
+              <li className={styles.item}>Відгуки</li>
             </ul>
           </div>
           <div className={styles.catalog}>
             <h3 className={styles.title}>Каталог</h3>
             <ul className={styles.catalogList}>
               {categoryList.map(el => (
-                <li className={styles.catalogItem}>
-                  <Link href={`/${el.name}`}>{el.name}</Link>
+                <li className={styles.item}>
+                  <Link href={`/${el.name}`} className={styles.itemLink}>
+                    {el.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -47,22 +49,28 @@ export default async function Footer() {
           <div className={styles.contacts}>
             <h3 className={styles.title}>Контакти</h3>
             <ul className={styles.list}>
-              <li>
-                <a href="tel:+38 095 555 55 22">+38 095 555 55 22</a>
+              <li className={styles.item}>
+                <a className={styles.itemLink} href="tel:+38 095 555 55 22">
+                  +38 095 555 55 22
+                </a>
               </li>
-              <li>
-                <a href="mailto:korpus@gmail.com">korpus@gmail.com</a>
+              <li className={styles.item}>
+                <a className={styles.itemLink} href="mailto:korpus@gmail.com">
+                  korpus@gmail.com
+                </a>
               </li>
             </ul>
           </div>
-        </div>
-        <div className={styles.root}>
+        </section>
+      </Container>
+      <Container>
+        <section className={styles.root}>
           <p className={styles.rootText}>
             2023 © Всі права захищені. Копіювання заборонено.
           </p>
           <br />
           <p className={styles.rootText}>Сайт розроблено компанією “DevCore”</p>
-        </div>
+        </section>
       </Container>
     </footer>
   );
