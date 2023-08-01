@@ -2,7 +2,7 @@
 // import '../styles/index.scss';
 import './global.scss';
 import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 export const metadata = {
   title: 'KORPUS',
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

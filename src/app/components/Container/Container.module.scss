@@ -1,13 +1,23 @@
 .container {
-  $phone: 480px;
-  $desktop: 1024px;
+  $phone: 479px;
+  $desktop: 1199px;
+  $tablet: 768px;
 
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
-  max-width: 480px;
-  margin: auto;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 768px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
   @media screen and (min-width: $desktop) {
-    max-width: 1440px;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
