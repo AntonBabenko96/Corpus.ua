@@ -6,6 +6,8 @@ $textShadow: 0px 50px 100px 0px var(--white-color);
   width: 100%;
   height: 100%;
 
+  background-color: var(--dark-text-color);
+
   &::before {
     content: '';
     display: block;

@@ -50,7 +50,6 @@ function getImage(list, index) {
 export default function BgSwiper({ children }) {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const [imageIndex, setImageIndex] = useState(0);
-  const [opacity, setOpacity] = useState(1);
 
   const imageList = useMemo(
     () => (isMobile ? mobileBgImages : desktopBgImages),
@@ -67,7 +66,7 @@ export default function BgSwiper({ children }) {
     }, 10000);
 
     return () => window.clearInterval(intervalID);
-  }, [imageIndex, imageList, setOpacity]);
+  }, [imageIndex, imageList]);
 
   var imgSrc = getImage(imageList, imageIndex);
 
@@ -79,7 +78,8 @@ export default function BgSwiper({ children }) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        opacity,
+        maxWidth: '1600px',
+        margin: 'auto',
       }}
     >
       {children}

@@ -7,8 +7,8 @@ import styles from './Hero.module.scss';
 
 export default function Hero() {
   return (
-    <BgSwiper>
-      <section className={styles.section}>
+    <section className={styles.section}>
+      <BgSwiper>
         <Container>
           <div className={styles.content}>
             <h1 className={styles.title}>
@@ -20,7 +20,7 @@ export default function Hero() {
             </p>
           </div>
         </Container>
-      </section>
-    </BgSwiper>
+      </BgSwiper>
+    </section>
   );
 }
