@@ -2,7 +2,7 @@
 // import 'react-toastify/dist/ReactToastify.css';
 
 // import AboutUs from './MainPage/AboutUs/AboutUs';
-// import Hero from './MainPage/Hero/Hero';
+import Hero from './MainPage/Hero/Hero';
 // import Services from './MainPage/Services/Services';
 // import Promotions from './components/Promotions/Promotions';
 // import ContactForm from './components/ContactForm/ContactForm';
@@ -13,8 +13,8 @@
 export default function Home() {
   return (
     <main>
-      {/* <Hero />
-      <AboutUs />
+      <Hero />
+      {/* <AboutUs />
       <Services />
       <Portfolio />
       <ContactForm />
