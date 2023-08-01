@@ -1,0 +1,83 @@
+.wrapper {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonList {
+  display: flex;
+}
+
+.itemPage {
+  $desktop: 1199px;
+  $tablet: 768px;
+
+  color: var(--dark-background-color);
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+
+  @media screen and (min-width: $tablet) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.currentPage {
+  color: var(--light-text-color);
+  background-color: var(--dark-background-color);
+}
+
+.prevPage {
+  $desktop: 1199px;
+  $tablet: 768px;
+
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+
+  @media screen and (min-width: $tablet) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nextPage {
+  $desktop: 1199px;
+  $tablet: 768px;
+
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+
+  @media screen and (min-width: $tablet) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+// .item {
+//   $tablet: 768px;
+
+//   width: 26px;
+//   height: 26px;
+
+//   @media screen and (min-width: $tablet) {
+//     width: 40px;
+//     height: 40px;
+//   }
+// }
