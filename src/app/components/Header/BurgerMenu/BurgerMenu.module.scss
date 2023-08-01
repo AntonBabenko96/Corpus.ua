@@ -1,11 +1,12 @@
 .wrapper {
-    width: 100vw;
+    width: 480px;
     min-height: 100vh;
     padding: 24px 16px;
     border-top: 2px solid var(--primary-accent-color);
     background-color: var(--dark-background-color);
     position: absolute;
     top: 64px;
+    left: -1px;
     z-index: 9;
 }
 

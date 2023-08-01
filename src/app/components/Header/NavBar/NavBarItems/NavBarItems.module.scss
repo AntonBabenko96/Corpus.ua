@@ -1,4 +1,5 @@
 .categoryItem {
+  width: 100%;
   display: flex;
   flex-direction: column;
   color: var(--light-text-color);
@@ -12,7 +13,6 @@
 }
 
 .innerBox {
-  width: 140px;
   height: 156px;
   top: 102px;
 
@@ -26,6 +26,7 @@
 }
 
 .innerList {
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
@@ -39,14 +40,36 @@
 .innerItem {
   padding-top: 16px;
   padding-bottom: 12px;
+  position: relative;
+  // border-top: 1px solid red;
 
-  ::before {
+  &::before {
     content: '';
-    width: 100vw;
+    width: 480px;
     height: 1px;
-    background-color: red;
+    color: red;
+    position: absolute;
+    top: 0;
+    left: -16px;
   }
+
+  // &:last-child {
+  //   border-bottom: 1px solid red;
+  // }
 }
+
+.navLink {
+  color: inherit;
+}
+
+.navBtn {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 
 // .vectorIcon {
 //   margin-left: 8px;

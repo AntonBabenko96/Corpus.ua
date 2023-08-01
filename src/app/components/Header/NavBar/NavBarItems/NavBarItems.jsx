@@ -10,34 +10,36 @@ import s from './NavBarItems.module.scss';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const NavBarItems = ({ item, depthLevel, setShow }) => {
-  let markup = '';
-
-  if (item.childrens) {
-    const array = item.childrens;
-    markup = array.map(({ id, text, link }) => (
-      <li key={id} className={s.innerItem}>
-        <Link href={link}>{text}</Link>
-      </li>
-    ));
-  }
-
   return (
     <li key={item.id} className={s.categoryItem}>
       <div className={s.innerWrapper}>
-        <Link href={item.link}>{item.text}</Link>
+        <Link href={item.link} className={s.navLink}>
+          {item.text}
+        </Link>
         {item.text === 'каталог' && (
-          <Image
-            src="/images/arrow.svg"
-            alt="Vector"
-            width={24}
-            height={24}
-            className={s.vectorIcon}
-          />
+          <button className={s.navBtn}>
+            <Image
+              src="/images/arrow.svg"
+              alt="Vector"
+              width={24}
+              height={24}
+              className={s.vectorIcon}
+            />
+          </button>
         )}
       </div>
       {item.childrens && (
+        // <div className={`visually-hidden ${s.innerBox}`}>
         <div className={s.innerBox}>
-          <ul className={s.innerList}>{markup}</ul>
+          <ul className={s.innerList}>
+            {item.childrens.map(({ id, text, link }) => (
+              <li key={id} className={s.innerItem}>
+                <Link href={link} className={s.navLink}>
+                  {text}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </li>
