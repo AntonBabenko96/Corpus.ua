@@ -5,11 +5,11 @@ import imgNext from '../../../../image/nextPage.png';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-export default function Pagination({ currentPage, amountItems }) {
-  const [currentPageNum, setCurrentPageNum] = useState(1);
+export default function Pagination({ changePage, amountItems, currentPage }) {
+  const [currentPageNum, setCurrentPageNum] = useState(currentPage);
   const items = Array.from({ length: amountItems }, (_, index) => index + 1);
 
-  function handleClick(page) {
+  function handlePageClick(page) {
     if (page === 'prev' && currentPageNum > 1) {
       setCurrentPageNum(currentPageNum - 1);
     } else if (page === 'next' && currentPageNum < items.length) {
@@ -20,7 +20,7 @@ export default function Pagination({ currentPage, amountItems }) {
   }
 
   useEffect(() => {
-    currentPage(currentPageNum);
+    changePage(currentPageNum);
   });
 
   return (
@@ -29,7 +29,7 @@ export default function Pagination({ currentPage, amountItems }) {
         <li className={style.item}>
           <button
             className={style.prevPage}
-            onClick={() => handleClick('prev')}
+            onClick={() => handlePageClick('prev')}
           >
             <Image src={imgPrev} />
           </button>
@@ -37,7 +37,7 @@ export default function Pagination({ currentPage, amountItems }) {
         {items.map(item => (
           <li key={item} className={style.item}>
             <button
-              onClick={() => handleClick(item)}
+              onClick={() => handlePageClick(item)}
               className={`${style.itemPage} ${
                 item === currentPageNum ? style.currentPage : ''
               }`}
@@ -49,7 +49,7 @@ export default function Pagination({ currentPage, amountItems }) {
         <li className={style.item}>
           <button
             className={style.nextPage}
-            onClick={() => handleClick('next')}
+            onClick={() => handlePageClick('next')}
           >
             <Image src={imgNext} />
           </button>
