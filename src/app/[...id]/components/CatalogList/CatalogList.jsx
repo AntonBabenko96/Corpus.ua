@@ -6,7 +6,6 @@ import Container from '@/app/components/Container/Container';
 import img from '@/image/productItem.jpg';
 import Pagination from '../Pagination/Pagination';
 import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
 
 async function getProductsList(category, page) {
   const response = await fetch(
@@ -30,12 +29,15 @@ async function calcAmountPage(totalItems) {
 export default function CatalogList({ category }) {
   const [dataList, setDataList] = useState(null);
   const [totalItems, setTotalItems] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [pageUpdate, setPageUpdate] = useState(null);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const page = parseInt(urlParams.get('page') || '1');
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await getProductsList(category, currentPage);
+        const data = await getProductsList(category, page);
         setDataList(data.products);
         const totalItems = await calcAmountPage(data.total);
         setTotalItems(totalItems);
@@ -45,11 +47,54 @@ export default function CatalogList({ category }) {
     }
 
     fetchData();
-  }, [category, currentPage]);
+  }, [category, page]);
 
   function handleChangePage(newPage) {
-    setCurrentPage(newPage);
+    const newUrlParams = new URLSearchParams(window.location.search);
+    newUrlParams.set('page', newPage);
+    window.history.replaceState(
+      {},
+      '',
+      `${window.location.pathname}?${newUrlParams.toString()}`
+    );
+
+    setPageUpdate(newPage);
   }
+  // const [currentPage, setCurrentPage] = useState(() => {
+  //   const savedPage = localStorage.getItem('currentPage');
+  //   return savedPage ? parseInt(savedPage) : 1;
+  // });
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const data = await getProductsList(category, currentPage);
+  //       setDataList(data.products);
+  //       const totalItems = await calcAmountPage(data.total);
+  //       setTotalItems(totalItems);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+
+  //   fetchData();
+  // }, [category, currentPage]);
+
+  // useEffect(() => {
+  //   localStorage.setItem('currentPage', currentPage.toString());
+  // }, [currentPage]);
+
+  // function handleChangePage(newPage) {
+  //   const searchParams = new URLSearchParams(window.location.search);
+  //   searchParams.set('page', newPage.toString());
+  //   window.history.replaceState(
+  //     {},
+  //     '',
+  //     `${window.location.pathname}?${searchParams.toString()}`
+  //   );
+
+  //   setCurrentPage(newPage);
+  // }
 
   return (
     <section className={styles.wrapper}>
@@ -75,7 +120,11 @@ export default function CatalogList({ category }) {
             </li>
           ))}
         </ul>
-        <Pagination currentPage={handleChangePage} amountItems={totalItems} />
+        <Pagination
+          changePage={handleChangePage}
+          amountItems={totalItems}
+          currentPage={page}
+        />
       </Container>
     </section>
   );
