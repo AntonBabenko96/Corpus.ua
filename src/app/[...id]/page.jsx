@@ -1,5 +1,5 @@
-// import CatalogList from './components/CatalogList/CatalogList';
-// import CatalogItem from './components/CatalogItem/CtalogItem';
+import CatalogList from './components/CatalogList/CatalogList';
+import CatalogItem from './components/CatalogItem/CtalogItem';
 
 // async function getProductsList(category) {
 //   const response = await fetch(
@@ -12,27 +12,25 @@
 //   return response.json();
 // }
 
-// async function getProductItem(id) {
-//   const response = await fetch(
-//     `https://korpus.onrender.com/api/products/${id}`
-//   );
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch data');
-//   }
+async function getProductItem(id) {
+  const response = await fetch(
+    `https://korpus.onrender.com/api/products/${id}`
+  );
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
 
-//   return response.json();
-// }
+  return response.json();
+}
 
-// export default async function Catalog({ params }) {
-//   const category = params.id;
-//   console.log(category.length, 'length');
-
-//   if (category.length === 1) {
-//     const dataList = await getProductsList(category);
-//     return <CatalogList data={dataList} category={category} />;
-//   } else {
-//     const itemId = category[1];
-//     const dataItem = await getProductItem(itemId);
-//     return <CatalogItem data={dataItem} />;
-//   }
-// }
+export default async function Catalog({ params }) {
+  const category = params.id;
+  console.log(category);
+  if (category.length === 1) {
+    return <CatalogList category={params.id} />;
+  } else {
+    const itemId = category[1];
+    const dataItem = await getProductItem(itemId);
+    return <CatalogItem data={dataItem} />;
+  }
+}

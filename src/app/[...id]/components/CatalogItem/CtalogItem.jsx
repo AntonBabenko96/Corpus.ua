@@ -7,32 +7,32 @@ import CardDesignEl from '../cardDesignEl/CardDesignEl';
 const colors = [
   {
     id: '1',
-    src: '/images/kitchenAbout/color1.png',
+    src: '/images/colors/color2.png',
     color: 'Дуб сонома',
   },
   {
     id: '2',
-    src: '/images/kitchenAbout/color2.png',
+    src: '/images/colors/color2.png',
     color: 'Дуб трюфель',
   },
   {
     id: '3',
-    src: '/images/kitchenAbout/color3.png',
+    src: '/images/colors/color3.png',
     color: 'Білий',
   },
   {
     id: '4',
-    src: '/images/kitchenAbout/color4.png',
+    src: '/images/colors/color4.png',
     color: 'Дуб венге',
   },
   {
     id: '5',
-    src: '/images/kitchenAbout/color5.png',
+    src: '/images/colors/color5.png',
     color: 'Ясен шимо',
   },
   {
     id: '6',
-    src: '/images/kitchenAbout/color6.png',
+    src: '/images/colors/color6.png',
     color: 'Шамоні світлий',
   },
 ];
@@ -84,8 +84,8 @@ export default function CatalogItem({ data }) {
           </div>
 
           <ProductDescription data={data} />
-          <CardDesignEl />
-          <ContactForm />
+          {/* <CardDesignEl />
+          <ContactForm /> */}
         </div>
       </section>
     </>
