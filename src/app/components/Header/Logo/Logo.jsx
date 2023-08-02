@@ -6,13 +6,14 @@ const Logo = () => {
   return (
     <Link href="/" className={s.logoLink}>
       <Image
-        src="/images/header/Logo.svg"
+        src="/images/logo.svg"
         alt="Logotype"
-        width={102}
+        width={21}
         height={24}
         className={s.logo}
         priority
       />
+      <p className={s.logoText}>korpus</p>
     </Link>
   );
 };
