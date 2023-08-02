@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import NavBar from './NavBar/NavBar';
 import Logo from './Logo/Logo';
@@ -16,6 +16,14 @@ const Header = () => {
   const isTablet = useMediaQuery('(min-width: 768px)');
   const isMobile = useMediaQuery('(max-width: 767px)');
 
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showMenu]);
+
   const handleMenu = () => {
     setShowMenu(prevState => !prevState);
   };
@@ -27,7 +35,7 @@ const Header = () => {
   return (
     <header className={s.header}>
       <Container className={s.headerContainer}>
-        <Logo />
+        {!showMenu && <Logo />}
         {isMobile && (
           <>
             <BurgerButton showMenu={showMenu} toggleMenu={handleMenu} />

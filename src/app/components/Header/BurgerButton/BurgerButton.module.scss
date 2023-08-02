@@ -1,11 +1,11 @@
 .burgerWrap {
-  position: absolute;
-  right: 15px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  position: absolute;
+  right: 15px;
   cursor: pointer;
   z-index: 1111;
 }

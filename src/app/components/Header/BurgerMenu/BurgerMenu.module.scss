@@ -1,19 +1,19 @@
 .menuWrapper {
-    width: 480px;
-    min-height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 24px 16px;
-    border-top: 2px solid var(--primary-accent-color);
-    background-color: var(--dark-background-color);
-    position: absolute;
-    top: 64px;
-    left: -1px;
-    z-index: 9;
+  width: 480px;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 16px;
+  border-top: 2px solid var(--primary-accent-color);
+  background-color: var(--dark-background-color);
+  position: absolute;
+  top: 48px;
+  left: -1px;
+  z-index: 9;
 }
 
 .menuList {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
