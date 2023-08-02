@@ -1,5 +1,3 @@
-'use client';
-
 import Container from '@/app/components/Container/Container';
 import BgSwiper from './BgSwiper/BgSwiper';
 
