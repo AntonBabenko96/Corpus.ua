@@ -47,7 +47,13 @@ export default function ImageListSlider() {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.selectedImage}>
-        <Image src={selectedImage.url} alt="productIMG" />
+        <Image
+          src={selectedImage.url}
+          alt="productIMG"
+          width={200}
+          height={250}
+          className={styles.headImg}
+        />
         <div className={styles.buttonWrap}>
           <button className={styles.carouselButton} onClick={handleLeftClick}>
             <Image
@@ -58,7 +64,7 @@ export default function ImageListSlider() {
             />
           </button>
           <button
-            className={`${s.carouselButton} ${s.carouselButtonRight}`}
+            className={`${styles.carouselButton} ${styles.carouselButtonRight}`}
             onClick={handleRightClick}
           >
             <Image
@@ -82,7 +88,7 @@ export default function ImageListSlider() {
           >
             <Image
               src={image.url}
-              className={s.imgHead}
+              className={styles.imgList}
               width={40}
               height={40}
             />

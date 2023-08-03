@@ -36,8 +36,26 @@
 
   @media (min-width: $desktop) {
     width: 570px;
-    height: 323px;
+    height: 380px;
     margin-bottom: 32px;
+  }
+}
+
+.headImg {
+  $tablet: 768px;
+  $desktop: 1199px;
+
+  width: 100%;
+  min-height: 252px;
+
+  @media (min-width: 768px) {
+    width: 384px;
+    height: 323px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 570px;
+    height: 380px;
   }
 }
 
@@ -105,7 +123,7 @@
   }
 }
 
-.imgHead {
+.imgList {
   position: relative;
   $desktop: 1199px;
   $tablet: 768px;
