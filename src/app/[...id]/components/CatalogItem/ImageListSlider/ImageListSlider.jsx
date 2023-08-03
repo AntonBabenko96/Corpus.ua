@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import s from './ImageListSlider.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import styles from './ImageListSlider.module.scss';
+import { useState } from 'react';
 
 export default function ImageListSlider() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -45,11 +45,11 @@ export default function ImageListSlider() {
   };
 
   return (
-    <div className={s.carouselContainer}>
-      <div className={s.selectedImage}>
-        <Image src={selectedImage.url} layout="fill" objectFit="cover" alt="" />
-        <div className={s.buttonWrap}>
-          <button className={s.carouselButton} onClick={handleLeftClick}>
+    <div className={styles.carouselContainer}>
+      <div className={styles.selectedImage}>
+        <Image src={selectedImage.url} alt="productIMG" />
+        <div className={styles.buttonWrap}>
+          <button className={styles.carouselButton} onClick={handleLeftClick}>
             <Image
               src="/images/productItem/arrowLeft.svg"
               width={26}
@@ -71,12 +71,12 @@ export default function ImageListSlider() {
         </div>
       </div>
 
-      <div className={s.carouselImages}>
+      <div className={styles.carouselImages}>
         {images.map((image, idx) => (
           <div
             key={idx}
-            className={`${s.carouselImage} ${
-              selectedImageIndex === idx && s.imgHeadSelected
+            className={`${styles.carouselImage} ${
+              selectedImageIndex === idx && styles.imgHeadSelected
             }`}
             onClick={() => handleSelectedImageChange(idx)}
           >

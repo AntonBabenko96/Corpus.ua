@@ -54,9 +54,15 @@ export default function CatalogItem({ data }) {
               <p className={styles.colorTitle}>Колір:</p>
               <ul className={styles.colors}>
                 {colors.map(el => (
-                  <li key={el.id}>
-                    <Image src={el.src} width={40} height={40} alt={el.color} />
-                    <span>{el.color}</span>
+                  <li key={el.id} className={styles.colorItem}>
+                    <Image
+                      src={el.src}
+                      width={40}
+                      height={40}
+                      alt={el.color}
+                      className={styles.colorImgItem}
+                    />
+                    <span className={styles.colorTextItem}>{el.color}</span>
                   </li>
                 ))}
               </ul>
