@@ -61,10 +61,6 @@
   justify-content: center;
   cursor: pointer;
 
-  &.carouselButtonRight {
-    transform: rotate(180deg);
-  }
-
   @media (min-width: 1440px) {
     height: 40px;
     width: 40px;

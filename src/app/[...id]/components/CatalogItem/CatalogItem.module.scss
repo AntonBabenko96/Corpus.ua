@@ -7,9 +7,6 @@
   }
 }
 
-.itemAbout {
-}
-
 .title {
   font-family: Montserrat;
   font-size: 24px;
@@ -94,7 +91,7 @@
     width: 300px;
   }
 
-  li {
+  .colorItem {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +99,7 @@
 
     text-align: center;
 
-    img {
+    .colorImgItem {
       margin-bottom: 4px;
     }
 
@@ -111,7 +108,7 @@
     }
   }
 
-  span {
+  .colorTextItem {
     color: #b0bec5;
     font-size: 12px;
     font-weight: 600;
@@ -124,21 +121,21 @@
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    li {
+    .colorItem {
       width: 70px;
       height: 70px;
 
-      img {
+      .colorImgItem {
         width: 100%;
         height: 100%;
       }
 
-      &:hover span {
+      &:hover .colorTextItem {
         opacity: 1;
       }
     }
 
-    span {
+    .colorTextItem {
       transition: all 0.3s;
       width: 110px;
       opacity: 0;
