@@ -7,7 +7,13 @@ export default function Pagination({ amount, activeIndex, onClick }) {
     const classNames =
       activeIndex === i ? `${styles.bullet} active` : styles.bullet;
     elements.push(
-      <span className={classNames} onClick={e => onClick(i)} key={i}></span>
+      <div
+        key={i}
+        className={styles['bullet-wrapper']}
+        onClick={e => onClick(i)}
+      >
+        <span className={classNames}></span>
+      </div>
     );
   }
 
