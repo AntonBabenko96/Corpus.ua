@@ -63,15 +63,15 @@ export default async function Footer() {
           </div>
         </section>
       </Container>
-      <Container>
-        <section className={styles.root}>
+      <section className={styles.root}>
+        <Container>
           <p className={styles.rootText}>
             2023 © Всі права захищені. Копіювання заборонено.
           </p>
           <br />
           <p className={styles.rootText}>Сайт розроблено компанією “DevCore”</p>
-        </section>
-      </Container>
+        </Container>
+      </section>
     </footer>
   );
 }

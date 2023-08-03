@@ -1,149 +1,197 @@
-.kitchenPage {
-  .kitchenSliderWrap {
-    @media (min-width: 768px) {
-      display: flex;
-      justify-content: space-between;
-    }
+.wrapper {
+  $tablet: 768px;
+  $desktop: 1199px;
 
-    @media (min-width: 1440px) {
-      justify-content: flex-start;
-
-      .kitchenSliderAbout {
-        width: 300px;
-      }
-    }
-  }
-
-  .title {
-    margin-bottom: 8px;
-    color: #263238;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-  }
-  .article {
-    display: block;
-    margin-bottom: 32px;
-    color: #b0bec5;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0.8px;
-  }
-
-  .priceBtnWrap {
-    @media (max-width: 767px) {
-      margin-bottom: 60px;
-    }
-
-    @media (min-width: 1440px) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  .colorTitle {
-    display: inline-block;
-    margin-bottom: 16px;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-
-  .colors {
+  @media screen and (min-width: $tablet) {
     display: flex;
-    justify-content: space-between;
+  }
+}
+
+.itemAbout {
+}
+
+.title {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  color: var(--dark-background-color);
+  margin-bottom: 8px;
+}
+
+.article {
+  $tablet: 768px;
+
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  color: var(--primary-grey-color);
+  margin-bottom: 32px;
+  @media (min-width: $tablet) {
+    margin-bottom: 22px;
+  }
+}
+
+.price {
+  $tablet: 768px;
+  $desktop: 1199px;
+
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  color: var(--dark-background-color);
+  margin-bottom: 52px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 300px;
+  }
+}
+
+.colorTitle {
+  $tablet: 768px;
+
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+.colors {
+  $tablet: 768px;
+  $desktop: 1199px;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    margin-bottom: 50px;
+    width: 300px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 51px;
+
+    text-align: center;
+
+    img {
+      margin-bottom: 4px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  span {
+    color: #b0bec5;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+  }
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 
     li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 51px;
-      margin-bottom: 32px;
-      text-align: center;
+      width: 70px;
+      height: 70px;
 
       img {
-        margin-bottom: 4px;
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover span {
+        opacity: 1;
       }
     }
 
     span {
-      color: #b0bec5;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.6px;
+      transition: all 0.3s;
+      width: 110px;
+      opacity: 0;
+      font-weight: 700;
     }
-
-    @media (min-width: 1440px) {
-      flex-wrap: wrap;
-      justify-content: start;
-
-      li {
-        width: 70px;
-        height: 70px;
-        &:not(:last-child) {
-          margin-right: 30px;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
-
-        &:hover span {
-          opacity: 1;
-        }
-      }
-
-      span {
-        transition: all 0.3s;
-        width: 110px;
-        opacity: 0;
-        font-weight: 700;
-      }
-    }
-  }
-
-  .price {
-    font-weight: 700;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1.2px;
   }
 }
 
-.priceWrap {
-  display: flex;
-  align-items: center;
-  // margin-bottom: 34px;
+.orderButton {
+  $tablet: 768px;
+  $desktop: 1199px;
 
-  .priceOld {
-    position: relative;
-    margin-right: 16px;
-    color: #b0bec5;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    &::after {
-      content: '';
-      width: 100%;
-      height: 2px;
-      background-color: #263238;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-    }
-  }
-  .price {
-    &.active {
-      color: #d81b60;
-    }
+  display: block;
+  width: 100%;
+  max-width: 343px;
+  height: 64px;
+  border: none;
+  background-color: var(--dark-background-color);
+  box-shadow: 0px 4px 15px 0px rgba(38, 50, 56, 0.15);
+  color: var(--light-text-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-bottom: 60px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $tablet) {
+    width: 270px;
+    height: 64px;
+    margin-top: 0;
+    margin-left: 0;
   }
 
-  @media (min-width: 1440px) {
-    height: 112px;
-    margin-bottom: 0;
+  @media (min-width: $desktop) {
+    width: 270px;
+    height: 64px;
+    margin-top: 0px;
+    margin-left: 30px;
+  }
+}
+
+.btnPriceWrappper {
+  $tablet: 768px;
+  $desktop: 1199px;
+
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $desktop) {
+    align-items: baseline;
+    display: flex;
   }
 }

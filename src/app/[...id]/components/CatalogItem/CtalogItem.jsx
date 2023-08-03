@@ -1,8 +1,10 @@
-import s from './CatalogItem.module.scss';
+import styles from './CatalogItem.module.scss';
 import Image from 'next/image';
+import Container from '@/app/components/Container/Container';
 import ContactForm from '@/app/components/ContactForm/ContactForm';
 import ProductDescription from '../productDescription/ProductDescription';
 import CardDesignEl from '../cardDesignEl/CardDesignEl';
+import ImageListSlider from './ImageListSlider/ImageListSlider';
 
 const colors = [
   {
@@ -38,55 +40,33 @@ const colors = [
 ];
 
 export default function CatalogItem({ data }) {
-  console.log(data);
   return (
     <>
-      <section className={s.kitchenPage}>
-        <div className="container">
-          <div key={data._id}>
-            {/* <Breadcrumbs id={el.id} /> */}
-
-            <div className={s.kitchenSliderWrap}>
-              {/* <KitchenCatalogSlider sale={el.sale} images={images} /> */}
-              <div className={s.kitchenSliderAbout}>
-                <h1 className={s.title}>{data.name}</h1>
-                <span className={s.article}>Артикул: {data.article}</span>
-                <p className={s.colorTitle}>Колір:</p>
-                <ul className={s.colors}>
-                  {colors.map(el => (
-                    <li key={el.id}>
-                      <Image
-                        src={el.src}
-                        width={40}
-                        height={40}
-                        alt={el.color}
-                      />
-                      <span>{el.color}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className={s.priceBtnWrap}>
-                  {data?.priceOld ? (
-                    <div className={s.priceWrap}>
-                      <p className={s.priceOld}>{data.priceOld}</p>
-                      <p className={`${s.price} ${data.sale ? s.active : ''}`}>
-                        {data.price}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className={s.priceWrap}>
-                      <p className={s.price}>{data.price}</p>
-                    </div>
-                  )}
-                </div>
+      <section>
+        <Container>
+          <div className={styles.wrapper}>
+            <div className={styles.itemSlider}>
+              <ImageListSlider />
+            </div>
+            <div className={styles.itemAbout}>
+              <h3 className={styles.title}>{data.name}</h3>
+              <p className={styles.article}>Артикул: {data.article}</p>
+              <p className={styles.colorTitle}>Колір:</p>
+              <ul className={styles.colors}>
+                {colors.map(el => (
+                  <li key={el.id}>
+                    <Image src={el.src} width={40} height={40} alt={el.color} />
+                    <span>{el.color}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className={styles.btnPriceWrappper}>
+                <p className={styles.price}>від {data.price} грн</p>
+                <button className={styles.orderButton}>Замовити</button>
               </div>
             </div>
           </div>
-
-          <ProductDescription data={data} />
-          {/* <CardDesignEl />
-          <ContactForm /> */}
-        </div>
+        </Container>
       </section>
     </>
   );
