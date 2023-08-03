@@ -9,7 +9,7 @@ import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Container from '../Container/Container';
 import s from './Header.module.scss';
 
-const Header = () => {
+export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [showInnerMenu, setShowInnerMenu] = useState(false);
 
@@ -35,17 +35,9 @@ const Header = () => {
   return (
     <header className={s.header}>
       <Container className={s.headerContainer}>
-        {!showMenu && <Logo />}
+        <Logo />
         {isMobile && (
-          <>
-            <BurgerButton showMenu={showMenu} toggleMenu={handleMenu} />
-            {showMenu && (
-              <BurgerMenu
-                showInnerMenu={showInnerMenu}
-                handleInnerMenu={handleInnerMenu}
-              />
-            )}
-          </>
+          <BurgerButton showMenu={showMenu} toggleMenu={handleMenu} />
         )}
         {isTablet && (
           <NavBar
@@ -54,8 +46,12 @@ const Header = () => {
           />
         )}
       </Container>
+      {showMenu && (
+        <BurgerMenu
+          showInnerMenu={showInnerMenu}
+          handleInnerMenu={handleInnerMenu}
+        />
+      )}
     </header>
   );
-};
-
-export default Header;
+}

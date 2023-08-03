@@ -2,7 +2,7 @@ import NavBarItems from '../NavBar/NavBarItems/NavBarItems';
 import items from '../navBarData.json';
 import s from './BurgerMenu.module.scss';
 
-const BurgerMenu = ({ showInnerMenu, handleInnerMenu }) => {
+export default function BurgerMenu({ showInnerMenu, handleInnerMenu }) {
   return (
     <div className={s.menuWrapper}>
       <ul className={s.menuList}>
@@ -17,6 +17,4 @@ const BurgerMenu = ({ showInnerMenu, handleInnerMenu }) => {
       </ul>
     </div>
   );
-};
-
-export default BurgerMenu;
+}

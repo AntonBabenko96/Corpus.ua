@@ -1,9 +1,8 @@
 'use client';
 
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Link from 'next/link';
 import s from './NavBarItems.module.scss';
-
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const NavBarItems = ({ item, showInnerMenu, handleInnerMenu }) => {
   const isMobile = useMediaQuery('(max-width: 767px)');

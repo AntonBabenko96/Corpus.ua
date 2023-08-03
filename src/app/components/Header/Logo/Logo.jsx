@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import s from './Logo.module.scss';
 
-const Logo = () => {
+export default function Logo() {
   return (
     <Link href="/" className={s.logoLink}>
       <Image
@@ -16,6 +16,4 @@ const Logo = () => {
       <p className={s.logoText}>korpus</p>
     </Link>
   );
-};
-
-export default Logo;
+}

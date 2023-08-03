@@ -1,14 +1,12 @@
 .menuWrapper {
-  width: 480px;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding: 24px 16px;
-  border-top: 2px solid var(--primary-accent-color);
+  padding: 88px 16px 24px;
   background-color: var(--dark-background-color);
   position: absolute;
-  top: 48px;
-  left: -1px;
+  top: 0;
   z-index: 9;
 }
 

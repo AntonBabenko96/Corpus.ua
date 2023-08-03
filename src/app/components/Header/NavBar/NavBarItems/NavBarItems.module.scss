@@ -1,6 +1,8 @@
 .categoryItem {
   height: 24px;
   display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--light-text-color);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -50,7 +52,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     position: absolute;
-    top: 44px;
+    top: 43px;
     z-index: 10;
   }
 
@@ -70,48 +72,55 @@
   }
 
   @media screen and (min-width: 768px) {
-    gap: 12px;
+    gap: 4px;
     margin: 12px 0;
-    padding-right: 24px;
-    padding-left: 36px;
+    padding: 0 24px;
   }
 }
 
 .innerItem {
   color: var(--light-text-color);
 
-  @media screen and (max-width: 767px) {
-    padding-top: 16px;
-    padding-bottom: 12px;
-    position: relative;
-  }
-
   &:hover,
   &:focus-within {
     color: var(--primary-accent-color);
     outline: none;
+
+    @media screen and (min-width: 768px) {
+      background-color: var(--dark-background-color);
+    }
   }
 
-  &::before {
-    content: '';
-    display: block;
-    width: 480px;
-    height: 1px;
-    background-color: rgba(176, 190, 197, 0.3);
-    position: absolute;
-    top: 0;
-    left: -16px;
+  @media screen and (max-width: 767px) {
+    padding-top: 16px;
+    padding-bottom: 12px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: rgba(176, 190, 197, 0.3);
+      position: absolute;
+      top: 0;
+      left: -16px;
+    }
+
+    &:last-child::after {
+      content: '';
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: rgba(176, 190, 197, 0.3);
+      position: absolute;
+      top: 48px;
+      left: -16px;
+    }
   }
 
-  &:last-child::after {
-    content: '';
-    display: block;
-    width: 480px;
-    height: 1px;
-    background-color: rgba(176, 190, 197, 0.3);
-    position: absolute;
-    top: 48px;
-    left: -16px;
+  @media screen and (min-width: 768px) {
+    padding: 4px 12px;
   }
 }
 
@@ -134,5 +143,16 @@
 
 .contact {
   position: absolute;
-  top: -42px;
+  top: 21px;
+  padding-bottom: 21px;
+
+  &:last-child::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 2px;
+    background-color: var(--primary-accent-color);
+    position: absolute;
+    bottom: 0;
+  }
 }
