@@ -80,8 +80,6 @@ export default function BgSwiper({ children }) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        maxWidth: '1600px',
-        margin: 'auto',
       }}
     >
       {children}

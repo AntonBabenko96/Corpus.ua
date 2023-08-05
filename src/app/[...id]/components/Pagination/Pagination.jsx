@@ -31,7 +31,13 @@ export default function Pagination({ changePage, amountItems, currentPage }) {
             className={style.prevPage}
             onClick={() => handlePageClick('prev')}
           >
-            <Image src={imgPrev} />
+            <Image
+              src={imgPrev}
+              alt="prevPage"
+              className={style.svgPrev}
+              width={24}
+              height={24}
+            />
           </button>
         </li>
         {items.map(item => (
@@ -51,7 +57,13 @@ export default function Pagination({ changePage, amountItems, currentPage }) {
             className={style.nextPage}
             onClick={() => handlePageClick('next')}
           >
-            <Image src={imgNext} />
+            <Image
+              src={imgNext}
+              alt="nextPage"
+              className={style.svgNext}
+              width={24}
+              height={24}
+            />
           </button>
         </li>
       </ul>

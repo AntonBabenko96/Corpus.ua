@@ -6,7 +6,7 @@ import Container from '@/app/components/Container/Container';
 import img from '@/image/productItem.jpg';
 import Pagination from '../Pagination/Pagination';
 import { useEffect, useState } from 'react';
-
+import { useSearchParams } from 'next/navigation';
 async function getProductsList(category, page) {
   const response = await fetch(
     `https://korpus.onrender.com/api/products?page=${page}&limit=6&category=${category}`

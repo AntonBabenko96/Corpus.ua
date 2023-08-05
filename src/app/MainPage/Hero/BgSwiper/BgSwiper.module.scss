@@ -1,5 +1,9 @@
 .swiper {
   position: relative;
+
+  max-width: 1440px;
+  margin: auto;
+
   transition: background-image 0.5s ease-in-out;
 }
 
