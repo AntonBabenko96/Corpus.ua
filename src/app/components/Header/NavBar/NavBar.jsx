@@ -5,7 +5,11 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import NavBarItems from './NavBarItems/NavBarItems';
 import s from './NavBar.module.scss';
 
-export default function NavBar({ showInnerMenu, handleInnerMenu }) {
+export default function NavBar({
+  showInnerMenu,
+  handleShowInnerMenu,
+  handleHideInnerMenu,
+}) {
   const isTablet = useMediaQuery('(max-width: 1199px)');
 
   return (
@@ -17,9 +21,11 @@ export default function NavBar({ showInnerMenu, handleInnerMenu }) {
           }
           return (
             <NavBarItems
+              key={item.id}
               item={item}
               showInnerMenu={showInnerMenu}
-              handleInnerMenu={handleInnerMenu}
+              handleShowInnerMenu={handleShowInnerMenu}
+              handleHideInnerMenu={handleHideInnerMenu}
             />
           );
         })}

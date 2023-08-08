@@ -28,8 +28,12 @@ export default function Header() {
     setShowMenu(prevState => !prevState);
   };
 
-  const handleInnerMenu = () => {
-    setShowInnerMenu(prevState => !prevState);
+  const handleShowInnerMenu = () => {
+    setShowInnerMenu(true);
+  };
+
+  const handleHideInnerMenu = () => {
+    setShowInnerMenu(false);
   };
 
   return (
@@ -42,14 +46,17 @@ export default function Header() {
         {isTablet && (
           <NavBar
             showInnerMenu={showInnerMenu}
-            handleInnerMenu={handleInnerMenu}
+            handleShowInnerMenu={handleShowInnerMenu}
+            handleHideInnerMenu={handleHideInnerMenu}
           />
         )}
       </Container>
-      {showMenu && (
+      {showMenu && isMobile && (
         <BurgerMenu
+          showMenu={showMenu}
           showInnerMenu={showInnerMenu}
-          handleInnerMenu={handleInnerMenu}
+          handleShowInnerMenu={handleShowInnerMenu}
+          handleHideInnerMenu={handleHideInnerMenu}
         />
       )}
     </header>

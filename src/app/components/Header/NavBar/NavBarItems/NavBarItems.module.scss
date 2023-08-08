@@ -1,12 +1,10 @@
 .categoryItem {
-  height: 24px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
   color: var(--light-text-color);
   text-transform: uppercase;
   letter-spacing: 1px;
-  position: relative;
 
   &:hover,
   &:focus-within {
@@ -14,14 +12,19 @@
     outline: none;
   }
 
-  &:hover::after,
-  &:focus-within::after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    background-color: var(--primary-accent-color);
-    position: absolute;
-    top: 22px;
+  @media screen and (min-width: 768px) {
+    height: 24px;
+    position: relative;
+
+    &:hover::after,
+    &:focus-within::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: var(--primary-accent-color);
+      position: absolute;
+      top: 22px;
+    }
   }
 
   &:hover .vectorIcon,
@@ -30,7 +33,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    align-items: center;
+    justify-content: center;
     gap: 4px;
 
     @media scree and (min-width: 1200px) {
@@ -43,21 +46,27 @@
   }
 }
 
+.linkBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .vectorIcon {
   fill: var(--light-text-color);
 }
 
 .innerBox {
   @media screen and (min-width: 768px) {
-    background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     position: absolute;
-    top: 43px;
+    top: 0;
+    padding-top: 43px;
     z-index: 10;
   }
 
   @media screen and (min-width: 1200px) {
-    top: 47px;
+    padding-top: 47px;
   }
 }
 
@@ -73,8 +82,8 @@
 
   @media screen and (min-width: 768px) {
     gap: 4px;
-    margin: 12px 0;
-    padding: 0 24px;
+    padding: 12px 24px;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -99,7 +108,7 @@
     &::before {
       content: '';
       display: block;
-      width: 100vw;
+      width: 100%;
       height: 1px;
       background-color: rgba(176, 190, 197, 0.3);
       position: absolute;
@@ -110,7 +119,7 @@
     &:last-child::after {
       content: '';
       display: block;
-      width: 100vw;
+      width: 100%;
       height: 1px;
       background-color: rgba(176, 190, 197, 0.3);
       position: absolute;
@@ -135,6 +144,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: transform 350ms ease-in;
 }
 
 .rotate {
@@ -142,17 +152,10 @@
 }
 
 .contact {
+  height: 63px;
+  display: flex;
+  align-items: center;
   position: absolute;
-  top: 21px;
-  padding-bottom: 21px;
-
-  &:last-child::after {
-    content: '';
-    display: block;
-    width: 100vw;
-    height: 2px;
-    background-color: var(--primary-accent-color);
-    position: absolute;
-    bottom: 0;
-  }
+  top: 0;
+  padding: 24px 0;
 }
