@@ -1,7 +1,7 @@
 // import { ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
-// import AboutUs from './MainPage/AboutUs/AboutUs';
+import AboutUs from './MainPage/AboutUs/AboutUs';
 import Hero from './MainPage/Hero/Hero';
 import Advantages from './MainPage/Advantages/Advantages';
 // import Promotions from './components/Promotions/Promotions';
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <AboutUs /> */}
+      <AboutUs />
       <Advantages />
       {/* <Portfolio />
       <ContactForm />
