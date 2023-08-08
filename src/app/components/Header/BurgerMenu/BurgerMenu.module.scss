@@ -1,19 +1,35 @@
 .menuWrapper {
-  width: 480px;
-  min-height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 24px 16px;
-  border-top: 2px solid var(--primary-accent-color);
+  width: 100vw;
+  height: 100vh;
+  padding: 88px 16px 24px;
   background-color: var(--dark-background-color);
-  position: absolute;
-  top: 48px;
-  left: -1px;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
   z-index: 9;
+  transform: translateX(150%);
+  transition: all 2s ease-in-out;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 2px;
+    background-color: var(--primary-accent-color);
+    position: absolute;
+    top: 64px;
+    left: 0px;
+  }
 }
 
 .menuList {
   display: flex;
   flex-direction: column;
   gap: 28px;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
 }

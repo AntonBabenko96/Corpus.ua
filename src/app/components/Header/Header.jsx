@@ -9,7 +9,7 @@ import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Container from '../Container/Container';
 import s from './Header.module.scss';
 
-const Header = () => {
+export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [showInnerMenu, setShowInnerMenu] = useState(false);
 
@@ -28,34 +28,37 @@ const Header = () => {
     setShowMenu(prevState => !prevState);
   };
 
-  const handleInnerMenu = () => {
-    setShowInnerMenu(prevState => !prevState);
+  const handleShowInnerMenu = () => {
+    setShowInnerMenu(true);
+  };
+
+  const handleHideInnerMenu = () => {
+    setShowInnerMenu(false);
   };
 
   return (
     <header className={s.header}>
       <Container className={s.headerContainer}>
-        {!showMenu && <Logo />}
+        <Logo />
         {isMobile && (
-          <>
-            <BurgerButton showMenu={showMenu} toggleMenu={handleMenu} />
-            {showMenu && (
-              <BurgerMenu
-                showInnerMenu={showInnerMenu}
-                handleInnerMenu={handleInnerMenu}
-              />
-            )}
-          </>
+          <BurgerButton showMenu={showMenu} toggleMenu={handleMenu} />
         )}
         {isTablet && (
           <NavBar
             showInnerMenu={showInnerMenu}
-            handleInnerMenu={handleInnerMenu}
+            handleShowInnerMenu={handleShowInnerMenu}
+            handleHideInnerMenu={handleHideInnerMenu}
           />
         )}
       </Container>
+      {showMenu && isMobile && (
+        <BurgerMenu
+          showMenu={showMenu}
+          showInnerMenu={showInnerMenu}
+          handleShowInnerMenu={handleShowInnerMenu}
+          handleHideInnerMenu={handleHideInnerMenu}
+        />
+      )}
     </header>
   );
-};
-
-export default Header;
+}

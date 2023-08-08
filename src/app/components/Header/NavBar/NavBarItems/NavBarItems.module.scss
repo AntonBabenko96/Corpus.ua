@@ -1,10 +1,10 @@
 .categoryItem {
-  height: 24px;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: var(--light-text-color);
   text-transform: uppercase;
   letter-spacing: 1px;
-  position: relative;
 
   &:hover,
   &:focus-within {
@@ -12,14 +12,19 @@
     outline: none;
   }
 
-  &:hover::after,
-  &:focus-within::after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    background-color: var(--primary-accent-color);
-    position: absolute;
-    top: 22px;
+  @media screen and (min-width: 768px) {
+    height: 24px;
+    position: relative;
+
+    &:hover::after,
+    &:focus-within::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: var(--primary-accent-color);
+      position: absolute;
+      top: 22px;
+    }
   }
 
   &:hover .vectorIcon,
@@ -28,7 +33,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    align-items: center;
+    justify-content: center;
     gap: 4px;
 
     @media scree and (min-width: 1200px) {
@@ -41,21 +46,27 @@
   }
 }
 
+.linkBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .vectorIcon {
   fill: var(--light-text-color);
 }
 
 .innerBox {
   @media screen and (min-width: 768px) {
-    background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     position: absolute;
-    top: 44px;
+    top: 0;
+    padding-top: 43px;
     z-index: 10;
   }
 
   @media screen and (min-width: 1200px) {
-    top: 47px;
+    padding-top: 47px;
   }
 }
 
@@ -70,48 +81,55 @@
   }
 
   @media screen and (min-width: 768px) {
-    gap: 12px;
-    margin: 12px 0;
-    padding-right: 24px;
-    padding-left: 36px;
+    gap: 4px;
+    padding: 12px 24px;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
 .innerItem {
   color: var(--light-text-color);
 
-  @media screen and (max-width: 767px) {
-    padding-top: 16px;
-    padding-bottom: 12px;
-    position: relative;
-  }
-
   &:hover,
   &:focus-within {
     color: var(--primary-accent-color);
     outline: none;
+
+    @media screen and (min-width: 768px) {
+      background-color: var(--dark-background-color);
+    }
   }
 
-  &::before {
-    content: '';
-    display: block;
-    width: 480px;
-    height: 1px;
-    background-color: rgba(176, 190, 197, 0.3);
-    position: absolute;
-    top: 0;
-    left: -16px;
+  @media screen and (max-width: 767px) {
+    padding-top: 16px;
+    padding-bottom: 12px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(176, 190, 197, 0.3);
+      position: absolute;
+      top: 0;
+      left: -16px;
+    }
+
+    &:last-child::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(176, 190, 197, 0.3);
+      position: absolute;
+      top: 48px;
+      left: -16px;
+    }
   }
 
-  &:last-child::after {
-    content: '';
-    display: block;
-    width: 480px;
-    height: 1px;
-    background-color: rgba(176, 190, 197, 0.3);
-    position: absolute;
-    top: 48px;
-    left: -16px;
+  @media screen and (min-width: 768px) {
+    padding: 4px 12px;
   }
 }
 
@@ -126,6 +144,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: transform 350ms ease-in;
 }
 
 .rotate {
@@ -133,6 +152,10 @@
 }
 
 .contact {
+  height: 63px;
+  display: flex;
+  align-items: center;
   position: absolute;
-  top: -42px;
+  top: 0;
+  padding: 24px 0;
 }
