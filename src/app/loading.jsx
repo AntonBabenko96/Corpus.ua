@@ -13,7 +13,8 @@ export default function Loading() {
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"
-        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        colors={['#FFE0B2', '#263238', '#FFE0B2', '#263238', '#FFE0B2']}
+        className={styles.colorRing}
       />
     </div>
   );

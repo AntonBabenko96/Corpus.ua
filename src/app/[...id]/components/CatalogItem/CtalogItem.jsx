@@ -1,7 +1,6 @@
 import styles from './CatalogItem.module.scss';
 import Image from 'next/image';
 import Container from '@/app/components/Container/Container';
-import ContactForm from '@/app/components/ContactForm/ContactForm';
 import ProductDescription from '../productDescription/ProductDescription';
 import CardDesignEl from '../cardDesignEl/CardDesignEl';
 import ImageListSlider from './ImageListSlider/ImageListSlider';
@@ -57,8 +56,8 @@ export default function CatalogItem({ data }) {
                   <li key={el.id} className={styles.colorItem}>
                     <Image
                       src={el.src}
-                      width={40}
-                      height={40}
+                      width={100}
+                      height={100}
                       alt={el.color}
                       className={styles.colorImgItem}
                     />

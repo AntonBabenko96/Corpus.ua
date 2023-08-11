@@ -41,7 +41,9 @@ $tablet: 768px;
 
 .headImg {
   width: 100%;
-  min-height: 252px;
+  height: 252px;
+
+  object-fit: cover;
 
   @media (min-width: 768px) {
     width: 384px;

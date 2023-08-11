@@ -17,42 +17,51 @@ $tablet: 768px;
 
 .designElLast {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 180px;
+  height: 375px;
 
   @media (min-width: $tablet) {
     height: 430px;
+    margin-bottom: 30px;
   }
   @media (min-width: $desktop) {
     height: 600px;
+    margin-bottom: 30px;
   }
 }
 .designElFirst {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 180px;
+  height: 375px;
 
   @media (min-width: $tablet) {
     height: 430px;
+    margin-bottom: 30px;
   }
   @media (min-width: $desktop) {
     height: 600px;
+    margin-bottom: 30px;
   }
 }
 .designElSecond {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 180px;
+  height: 375px;
 
   @media (min-width: $tablet) {
     height: 430px;
+    margin-bottom: 30px;
   }
   @media (min-width: $desktop) {
     height: 600px;
+    margin-bottom: 30px;
   }
 }
 .designPink {
   background-color: var(--primary-accent-color);
   margin-left: 16px;
   padding: 40px 16px;
-  margin-top: 190px;
+  margin-top: 250px;
 
   @media (min-width: $tablet) {
     width: 600px;
@@ -62,8 +71,8 @@ $tablet: 768px;
     margin-top: 60px;
   }
   @media (min-width: $desktop) {
-    width: 770px;
-    height: 400px;
+    width: 700px;
+    height: 350px;
     padding: 60px 40px 68px 100px;
     margin-left: auto;
     margin-top: 60px;
@@ -74,7 +83,7 @@ $tablet: 768px;
   background-color: var(--primary-accent-color);
   margin-left: 16px;
   padding: 40px 16px;
-  margin-top: 190px;
+  margin-top: 250px;
 
   @media (min-width: $tablet) {
     width: 600px;
@@ -84,8 +93,8 @@ $tablet: 768px;
     margin-top: 60px;
   }
   @media (min-width: $desktop) {
-    width: 770px;
-    height: 400px;
+    width: 700px;
+    height: 350px;
     padding: 60px 40px 68px 100px;
     margin-left: auto;
     margin-top: 60px;
@@ -95,7 +104,7 @@ $tablet: 768px;
   background-color: var(--grey-background-color);
   margin-right: 16px;
   padding: 40px 16px;
-  margin-top: 190px;
+  margin-top: 250px;
   @media (min-width: $tablet) {
     width: 600px;
     height: 300px;
@@ -104,8 +113,8 @@ $tablet: 768px;
     margin-top: 60px;
   }
   @media (min-width: $desktop) {
-    width: 770px;
-    height: 400px;
+    width: 700px;
+    height: 350px;
     padding: 60px 40px 68px 100px;
     margin-right: auto;
     margin-top: 60px;
@@ -165,6 +174,9 @@ $tablet: 768px;
   position: absolute;
   top: 0;
   z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 375px;
   @media (min-width: $tablet) {
     width: 655px;
     height: 430px;
@@ -183,6 +195,9 @@ $tablet: 768px;
   position: absolute;
   top: 0;
   z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 375px;
   @media (min-width: $tablet) {
     width: 655px;
     height: 430px;
@@ -203,6 +218,9 @@ $tablet: 768px;
   top: 0;
   z-index: -1;
   right: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 375px;
   @media (min-width: $tablet) {
     width: 655px;
     height: 430px;

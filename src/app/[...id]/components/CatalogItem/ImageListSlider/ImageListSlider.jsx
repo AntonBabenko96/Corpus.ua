@@ -50,8 +50,8 @@ export default function ImageListSlider() {
         <Image
           src={selectedImage.url}
           alt="productIMG"
-          width={200}
-          height={250}
+          width={1000}
+          height={800}
           className={styles.headImg}
         />
         <div className={styles.buttonWrap}>
@@ -89,8 +89,8 @@ export default function ImageListSlider() {
             <Image
               src={image.url}
               className={styles.imgList}
-              width={40}
-              height={40}
+              width={150}
+              height={100}
             />
           </div>
         ))}
