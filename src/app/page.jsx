@@ -2,7 +2,7 @@
 // import 'react-toastify/dist/ReactToastify.css';
 
 import AboutUs from './MainPage/AboutUs/AboutUs';
-import Hero from './MainPage/Hero/Hero';
+// import Hero from './MainPage/Hero/Hero';
 import Advantages from './MainPage/Advantages/Advantages';
 // import Promotions from './components/Promotions/Promotions';
 // import ContactForm from './components/ContactForm/ContactForm';
@@ -13,7 +13,7 @@ import Advantages from './MainPage/Advantages/Advantages';
 export default function Home() {
   return (
     <main>
-      <Hero />
+      {/* <Hero /> */}
       <AboutUs />
       <Advantages />
       {/* <Portfolio />
