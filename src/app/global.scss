@@ -161,7 +161,70 @@ table {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/* сss для секції Promotions*/
+.swiper-button-next,
+.swiper-button-prev {
+  text-rendering: auto;
+}
+div.swiper-button-next,
+div.swiper-button-prev {
+  width: 24px !important;
+  height: 24px !important;
+  background: #263238;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+div.swiper-button-next::after {
+  content: 'next';
+}
+
+div.swiper-button-prev::after {
+  content: 'prev';
+}
+
+div.swiper-button-next::after,
+div.swiper-button-prev::after {
+  color: #fdfdfd !important;
+  font-size: 10px !important;
+
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  font-variant: normal;
+  line-height: 1;
+}
+
+/* Для екранів більше 768px */
+@media (min-width: 768px) {
+  div.swiper-button-next,
+  div.swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  div.swiper-button-next::after,
+  div.swiper-button-prev::after {
+    font-size: 20px !important;
+  }
 }

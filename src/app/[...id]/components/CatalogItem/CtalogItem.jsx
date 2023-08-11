@@ -72,6 +72,8 @@ export default function CatalogItem({ data }) {
               </div>
             </div>
           </div>
+          <ProductDescription data={data} />
+          <CardDesignEl />
         </Container>
       </section>
     </>

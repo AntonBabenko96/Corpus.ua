@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Container from '@/app/components/Container/Container';
 import img from '@/image/productItem.jpg';
 import Pagination from '../Pagination/Pagination';
+import CardDesignEl from '../cardDesignEl/CardDesignEl';
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+
 async function getProductsList(category, page) {
   const response = await fetch(
     `https://korpus.onrender.com/api/products?page=${page}&limit=6&category=${category}`
@@ -60,41 +61,6 @@ export default function CatalogList({ category }) {
 
     setPageUpdate(newPage);
   }
-  // const [currentPage, setCurrentPage] = useState(() => {
-  //   const savedPage = localStorage.getItem('currentPage');
-  //   return savedPage ? parseInt(savedPage) : 1;
-  // });
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const data = await getProductsList(category, currentPage);
-  //       setDataList(data.products);
-  //       const totalItems = await calcAmountPage(data.total);
-  //       setTotalItems(totalItems);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-
-  //   fetchData();
-  // }, [category, currentPage]);
-
-  // useEffect(() => {
-  //   localStorage.setItem('currentPage', currentPage.toString());
-  // }, [currentPage]);
-
-  // function handleChangePage(newPage) {
-  //   const searchParams = new URLSearchParams(window.location.search);
-  //   searchParams.set('page', newPage.toString());
-  //   window.history.replaceState(
-  //     {},
-  //     '',
-  //     `${window.location.pathname}?${searchParams.toString()}`
-  //   );
-
-  //   setCurrentPage(newPage);
-  // }
 
   return (
     <section className={styles.wrapper}>
@@ -125,6 +91,7 @@ export default function CatalogList({ category }) {
           amountItems={totalItems}
           currentPage={page}
         />
+        <CardDesignEl />
       </Container>
     </section>
   );

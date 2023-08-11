@@ -1,7 +1,7 @@
-.carouselContainer {
-  $tablet: 768px;
-  $desktop: 1199px;
+$desktop: 1199px;
+$tablet: 768px;
 
+.carouselContainer {
   position: relative;
   margin-bottom: 32px;
 
@@ -17,10 +17,8 @@
 }
 
 .selectedImage {
-  $tablet: 768px;
-  $desktop: 1199px;
-
   position: relative;
+  object-fit: cover;
   width: 100%;
   left: 0;
   min-height: 252px;
@@ -42,9 +40,6 @@
 }
 
 .headImg {
-  $tablet: 768px;
-  $desktop: 1199px;
-
   width: 100%;
   min-height: 252px;
 
@@ -79,15 +74,13 @@
   justify-content: center;
   cursor: pointer;
 
-  @media (min-width: 1440px) {
+  @media (min-width: $tablet) {
     height: 40px;
     width: 40px;
   }
 }
 
 .carouselImages {
-  $desktop: 1199px;
-  $tablet: 768px;
   display: flex;
 
   height: 68px;
@@ -103,7 +96,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--primary-accent-color);
+    background: var(--dark-background-color);
     border-radius: 5px;
   }
 

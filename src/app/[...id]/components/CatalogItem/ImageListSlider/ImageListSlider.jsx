@@ -58,8 +58,8 @@ export default function ImageListSlider() {
           <button className={styles.carouselButton} onClick={handleLeftClick}>
             <Image
               src="/images/productItem/arrowLeft.svg"
-              width={26}
-              height={26}
+              width={30}
+              height={30}
               alt="Arrow left"
             />
           </button>
@@ -69,8 +69,8 @@ export default function ImageListSlider() {
           >
             <Image
               src="/images/productItem/arrowRight.svg"
-              width={26}
-              height={26}
+              width={30}
+              height={30}
               alt="Arrow right"
             />
           </button>
