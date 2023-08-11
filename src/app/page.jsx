@@ -4,6 +4,7 @@
 import AboutUs from './MainPage/AboutUs/AboutUs';
 import Hero from './MainPage/Hero/Hero';
 import Advantages from './MainPage/Advantages/Advantages';
+import Feedbacks from './MainPage/Feedbacks/Feedbacks';
 // import Promotions from './components/Promotions/Promotions';
 // import ContactForm from './components/ContactForm/ContactForm';
 // import Portfolio from './MainPage/Portfolio/Portfolio';
@@ -16,8 +17,9 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <Advantages />
-      {/* <Portfolio />
-      <ContactForm />
+      {/* <Portfolio /> */}
+      <Feedbacks />
+      {/* <ContactForm />
       <Promotions />
       <FooterImage/>
       <ToastContainer /> */}
