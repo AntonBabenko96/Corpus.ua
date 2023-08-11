@@ -1,13 +1,15 @@
 import Image from 'next/image';
 
 import styles from './CardDesignEl.module.scss';
+const image =
+  'https://shurup.net.ua/image/cache/data/59/31/556dd0b8bd066cbc447358d21a3f09b0-750x560.jpg';
 
 export default function CardDesignEl() {
   return (
     <section className={styles.design}>
-      <div className={styles.designEl}>
+      <div className={styles.designElFirst}>
         <Image
-          src="/images/catalog/Image2.jpg"
+          src={image}
           priority
           alt="корпус меблі"
           width={375}
@@ -31,9 +33,9 @@ export default function CardDesignEl() {
           </div>
         </div>
       </div>
-      <div className={styles.designEl}>
+      <div className={styles.designElSecond}>
         <Image
-          src="/images/catalog/Image6.jpg"
+          src={image}
           priority
           alt="корпус меблі"
           width={375}
@@ -59,16 +61,16 @@ export default function CardDesignEl() {
           </div>
         </div>
       </div>
-      <div className={styles.designEl}>
+      <div className={styles.designElLast}>
         <Image
-          src="/images/catalog/Image5.jpg"
+          src={image}
           priority
           alt="корпус меблі"
           width={375}
           height={272}
-          className={styles.img}
+          className={styles.imgLast}
         />
-        <div className={styles.designPink}>
+        <div className={styles.designPinkLast}>
           <h2 className={styles.title}>Комплектація</h2>
           <div className={styles.text}>
             <p>
@@ -80,7 +82,6 @@ export default function CardDesignEl() {
               кухні.
             </p>
             <p>
-              {' '}
               Наша мета - забезпечити вам функціональну, зручну та стильну
               кухню, яка відповідає вашим потребам і створює комфортне
               середовище для готування та спілкування.
