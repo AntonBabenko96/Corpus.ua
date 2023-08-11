@@ -21,13 +21,13 @@ export default ({ images }) => {
         // Коли екран є 375px або більше
         375: {
           slidesPerView: 1,
-          spaceBetween: 20,
+          // spaceBetween: 20,
         },
         // Коли екран є 1440px або більше
-        1440: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
+        // 1440: {
+        //   slidesPerView: 2,
+        //   spaceBetween: 30,
+        // },
       }}
     >
       {/* {images.map(({ id, src, desc }) => ( */}

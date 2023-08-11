@@ -1,17 +1,6 @@
 import CatalogList from './components/CatalogList/CatalogList';
 import CatalogItem from './components/CatalogItem/CtalogItem';
 
-// async function getProductsList(category) {
-//   const response = await fetch(
-//     `https://korpus.onrender.com/api/products?page=1&limit=6&category=${category}`
-//   );
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch data');
-//   }
-
-//   return response.json();
-// }
-
 async function getProductItem(id) {
   const response = await fetch(
     `https://korpus.onrender.com/api/products/${id}`
@@ -25,7 +14,7 @@ async function getProductItem(id) {
 
 export default async function Catalog({ params }) {
   const category = params.id;
-  console.log(category);
+  console.log(params.id);
   if (category.length === 1) {
     return <CatalogList category={params.id} />;
   } else {

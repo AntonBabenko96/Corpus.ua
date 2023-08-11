@@ -1,11 +1,28 @@
 'use client';
 import { useState } from 'react';
 import styles from './ProductDescription.module.scss';
-import Slider from '@/app/MainPage/Portfolio/slider/Slider';
-import Image from 'next/image';
+import Slider from './Slider/Slider';
 
 export default function ProductDescription({ data }) {
   const [activeLink, setActiveLink] = useState('description');
+
+  const images = [
+    {
+      url: 'https://shurup.net.ua/image/cache/data/59/31/556dd0b8bd066cbc447358d21a3f09b0-750x560.jpg',
+    },
+    {
+      url: 'https://shurup.net.ua/image/cache/data/53/31/03501e32f6511402783d7cc00ffa1f16-750x560.jpg',
+    },
+    {
+      url: 'https://shurup.net.ua/image/cache/data/60/31/684300077caf87e4ae06259441a4c0a5-750x560.jpg',
+    },
+    {
+      url: 'https://shurup.net.ua/image/cache/data/64/31/2395e7268c445bf480f1475d7b660d68-750x560.jpg',
+    },
+    {
+      url: 'https://shurup.net.ua/image/cache/data/64/31/2395e7268c445bf480f1475d7b660d68-750x560.jpg',
+    },
+  ];
 
   const handleLinkClick = link => {
     setActiveLink(link);
@@ -14,86 +31,54 @@ export default function ProductDescription({ data }) {
   return (
     <section className={styles.productDescrSection}>
       <div className={styles.productDescriptionLinks}>
-        <div
+        <button
           className={`${styles.link} ${
             activeLink === 'description' ? styles.active : ''
           }`}
           onClick={() => handleLinkClick('description')}
         >
           Опис
-        </div>
-        <div
+        </button>
+        <button
           className={`${styles.link} ${
             activeLink === 'characteristics' ? styles.active : ''
           }`}
           onClick={() => handleLinkClick('characteristics')}
         >
           Характеристики
-        </div>
+        </button>
       </div>
       <div className={styles.productDesc}>
-        <div>
+        {activeLink === 'description' ? (
           <div className={styles.productDescText}>
-            {activeLink === 'description' ? (
-              <>
-                <h2 className={styles.title}>Модульна кухня "{data.name}"</h2>
-                <div>{data.description}</div>{' '}
-              </>
-            ) : (
-              <div>
-                <h2 className={styles.title}>Характеристика</h2>
-                <div className={styles.productCharacteristics}>
-                  <ul className={styles.productCharacteristicsList}>
-                    {Object.entries(data.properties).map(([key, value]) => (
-                      <li
-                        className={styles.productCharacteristicsItem}
-                        key={key}
-                      >
-                        <span
-                          className={styles.productCharacteristicsItemTitle}
-                        >
-                          {key}
-                        </span>
-                        <span className={styles.productCharacteristicsValue}>
-                          {value}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
+            <h3 className={styles.title}>Модульна кухня "{data.name}"</h3>
+            <div>{data.description}</div>
           </div>
-        </div>
-        {/* <div className={styles.sliderWrapper}>
-          {' '}
-          <Slider images={images} />
-        </div> */}
+        ) : (
+          <div className={styles.productDescText}>
+            <h2 className={styles.title}>Характеристика</h2>
+            <div className={styles.productCharacteristics}>
+              <ul className={styles.productCharacteristicsList}>
+                {Object.entries(data.properties).map(([key, value]) => (
+                  <li className={styles.productCharacteristicsItem} key={key}>
+                    <p className={styles.productCharacteristicsItemTitle}>
+                      {key}
+                    </p>
+                    <p className={styles.productCharacteristicsValue}>
+                      {value}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
 
-        {/* <div>
-          <Image
-            src={displayedImages[0]}
-            priority
-            alt="корпус меблі"
-            width={570}
-            height={480}
-            className={styles.productDescrImg}
-          />
-        </div> */}
+        <div className={styles.imgWrapped}>
+          <h3 className={styles.title}>Перегляньте в інших категоріях</h3>
+          <Slider images={images} />
+        </div>
       </div>
-      {/* <div className={styles.productDescrAlbum}>
-        {displayedImages.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            priority
-            alt="корпус меблі"
-            width={570}
-            height={300}
-            className={styles.productDescrImg}
-          />
-        ))}
-      </div> */}
     </section>
   );
 }
