@@ -1,3 +1,6 @@
+$desktop: 1199px;
+$tablet: 768px;
+
 .wrapper {
   margin-top: 32px;
   display: flex;
@@ -10,9 +13,6 @@
 }
 
 .itemPage {
-  $desktop: 1199px;
-  $tablet: 768px;
-
   color: var(--dark-background-color);
   background-color: transparent;
   width: 26px;
@@ -20,6 +20,8 @@
   justify-content: center;
   align-items: center;
   margin-right: 6px;
+  cursor: pointer;
+  border: none;
 
   @media screen and (min-width: $tablet) {
     width: 40px;
@@ -27,22 +29,17 @@
   }
 }
 
-button {
+.currentPage {
+  color: var(--light-text-color);
+  background-color: var(--dark-background-color);
   cursor: pointer;
   border: none;
 }
 
-.currentPage {
-  color: var(--light-text-color);
-  background-color: var(--dark-background-color);
-}
-
 .prevPage {
-  $desktop: 1199px;
-  $tablet: 768px;
-
   background-color: transparent;
-
+  cursor: pointer;
+  border: none;
   width: 26px;
   height: 26px;
   justify-content: center;
@@ -56,15 +53,14 @@ button {
 }
 
 .nextPage {
-  $desktop: 1199px;
-  $tablet: 768px;
-
   background-color: transparent;
   width: 26px;
   height: 26px;
   justify-content: center;
   align-items: center;
   margin-right: 6px;
+  cursor: pointer;
+  border: none;
 
   @media screen and (min-width: $tablet) {
     width: 40px;
