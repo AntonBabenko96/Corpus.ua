@@ -1,5 +1,46 @@
-@import url('../styles/variables.scss');
-@import url('../styles/fonts.scss');
+:root {
+  // Colors
+  --dark-background-color: #263238;
+  --light-background-color: #fdfdfd;
+  --grey-background-color: #cfd8dc;
+  --dark-text-color: #263238;
+  --light-text-color: #eceff1;
+  --white-color: #ffffff;
+  --primary-grey-color: #b0bec5;
+  --secondary-grey-color: #78909c;
+  --primary-accent-color: #ffe0b2;
+  --secondary-accent-color: #d81b60;
+}
+
+@font-face {
+  font-family: 'Bruno Ace';
+  src: url('../../public/fonts/Bruno_Ace/BrunoAce-Regular.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf')
+    format('truetype');
+}
 
 body,
 html,
