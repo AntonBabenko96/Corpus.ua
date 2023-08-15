@@ -26,8 +26,8 @@ export default function AboutUs() {
           <div className={s.border}></div>
           <Image
             src="/images/aboutUs/aboutUs1@2x.jpg"
-            width={334}
-            height={324}
+            width={1000}
+            height={1000}
             alt="Зображення інтер'єру"
             className={s.leftImage}
           />
@@ -35,8 +35,8 @@ export default function AboutUs() {
       </div>
       <Image
         src="/images/aboutUs/aboutUs2@2x.png"
-        width={262}
-        height={219}
+        width={780}
+        height={660}
         alt="Зображення тумби"
         className={s.rightImage}
       />
