@@ -1,27 +1,41 @@
 'use client';
 
-// import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Container from '@/app/components/Container/Container';
+import FeedbacksSlider from './FeedbacksSlider/FeedbacksSlider';
+import FeedbackModal from './FeedbackModal/FeedbackModal';
 import s from './Feedbacks.module.scss';
 
-export default function Feedbacks() {
-  // const [feedbacks, setFeedbacks] = useState([]);
+async function getFeedbacks() {
+  const response = await fetch(`https://korpus.onrender.com/api/feedbacks/`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
 
-  // useEffect(async () => {
-  //   const response = await fetch(`https://korpus.onrender.com/api/feedbacks/`);
-  //   if (!response.ok) {
-  //     throw new Error('Failed to fetch data');
-  //   }
-  //   const data = response.json();
+  return response.json();
+}
 
-  //   setFeedbacks(data);
-  // }, [setFeedbacks]);
+export default async function Feedbacks() {
+  const [showModal, setShowModal] = useState(false);
+  const feedbacks = await getFeedbacks();
+
+  function handleOpenModal() {
+    setShowModal(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+    document.body.style.overflow = 'auto';
+  }
 
   return (
-    <section className={s.feedbacks}>
-      <Container className={s.feedbacksContainer}>
-        <h1 className={s.title}>відгуки</h1>
-        <ul>
+    <>
+      <section className={s.feedbacks}>
+        <Container className={s.feedbacksContainer}>
+          <h1 className={s.title}>відгуки</h1>
+          <FeedbacksSlider feedbacks={feedbacks} />
+          {/* <ul>
           <li className={s.item}>
             <div className={s.innerBox}>
               <p className={s.userName}>Дмитро</p>
@@ -85,9 +99,9 @@ export default function Feedbacks() {
               майстрам та дизайнерам за неперевершену роботу
             </p>
           </li>
-        </ul>
-        <div className={s.arrowWrapper}>
-          <button className={s.arrowBtn}>
+        </ul> */}
+          {/* <div className={s.arrowWrapper}>
+          <button className={`${s.arrowBtn}`}>
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -111,9 +125,13 @@ export default function Feedbacks() {
               <path d="M13.333 8l-1.88 1.88 6.107 6.12-6.107 6.12 1.88 1.88 8-8-8-8z"></path>
             </svg>
           </button>
-        </div>
-        <button className={s.commentBtn}>Залишити відгук</button>
-      </Container>
-    </section>
+        </div> */}
+          <button className={s.commentBtn} onClick={handleOpenModal}>
+            Залишити відгук
+          </button>
+        </Container>
+      </section>
+      {showModal && <FeedbackModal handleCloseModal={handleCloseModal} />}
+    </>
   );
 }

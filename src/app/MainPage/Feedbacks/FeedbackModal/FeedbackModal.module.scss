@@ -1,0 +1,132 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(7px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+}
+
+.modalWrapper {
+  width: 100%;
+  min-height: 562px;
+  padding: 60px 16px 100px;
+  color: var(--white-color);
+  background-color: var(--dark-background-color);
+  position: absolute;
+  top: 136px;
+  left: 0;
+}
+
+.closeBtn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  color: var(--white-color);
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.text {
+  margin-bottom: 60px;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0.9;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: var(--white-color);
+  background-color: transparent;
+}
+
+.input {
+  border: none;
+  border-bottom: 1.5px solid var(--white-color);
+  background-color: transparent;
+  font-family: Open Sans;
+  font-size: 16px;
+  resize: none;
+}
+
+.ratingWrapper {
+  width: 102px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 24px;
+  position: relative;
+
+  &::before {
+    content: '★★★★★';
+    display: block;
+  }
+}
+
+.ratingItems {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.ratingItem {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+
+  &:checked,
+  &:checked ~ .ratingLabel {
+    color: #ffb400;
+  }
+}
+
+.ratingLabel {
+  flex: 0 0 20%;
+  height: 100%;
+  color: var(--primary-grey-color);
+  cursor: pointer;
+
+  &::before {
+    content: '★';
+    display: block;
+    transition: color 300ms easy;
+  }
+
+  &:hover,
+  &:hover ~ .ratingLabel,
+  &:checked ~ .ratingLabel:hover {
+    color: #ffb400;
+  }
+}
+
+.sendBtn {
+  width: 343px;
+  height: 64px;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-left: auto;
+  border: 1.5px solid var(--white-color);
+  color: var(--white-color);
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-align: center;
+}
