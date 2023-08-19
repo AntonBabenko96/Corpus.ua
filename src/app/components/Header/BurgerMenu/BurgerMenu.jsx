@@ -13,18 +13,7 @@ export default function BurgerMenu({
   return (
     <div className={`${s.menuWrapper} ${showMenu ? s.show : ''}`}>
       <Container>
-      <ul className={s.menuList}>
-        {items.map(item => (
-          <NavBarItems
-            key={item.id}
-            item={item}
-            categories={categories}
-            showInnerMenu={showInnerMenu}
-            handleShowInnerMenu={handleShowInnerMenu}
-            handleHideInnerMenu={handleHideInnerMenu}
-          />
-        ))}
-      </ul>
+        <NavBar categories={categories}/>
       </Container>
     </div>
   );

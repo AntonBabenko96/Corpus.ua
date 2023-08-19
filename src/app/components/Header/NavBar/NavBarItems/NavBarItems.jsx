@@ -8,23 +8,21 @@ import s from './NavBarItems.module.scss';
 export default function NavBarItems({
   item,
   categories,
-  // showInnerMenu,
-  // handleShowInnerMenu,
-  // handleHideInnerMenu,
+  showInnerMenu,
+  handleShowInnerMenu,
+  handleHideInnerMenu,
 }) {
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   return (
     <>
       {item.text === 'каталог' && (
-        <li className={s.categoryItem}
-        // onMouseEnter={handleShowInnerMenu}
-        >
+        <li className={s.categoryItem} onMouseEnter={handleShowInnerMenu}>
           <div className={s.linkBox}>
             <Link href={item.link} className={s.navLink}>
               {item.text}
             </Link>
-            {/* <button className={`${s.navBtn} ${showInnerMenu ? s.rotate : ''}`}>
+            <button className={`${s.navBtn} ${showInnerMenu ? s.rotate : ''}`}>
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,10 +33,14 @@ export default function NavBarItems({
               >
                 <path d="M22.12 11.453l-6.12 6.107-6.12-6.107-1.88 1.88 8 8 8-8-1.88-1.88z"></path>
               </svg>
-            </button> */}
+            </button>
           </div>
-          {/* {showInnerMenu && (
-            <Dropdown categories={categories}/>
+          {showInnerMenu && (
+            // <Dropdown
+            //   categories={categories}
+            //   handleShowInnerMenu={handleShowInnerMenu}
+            //   handleHideInnerMenu={handleHideInnerMenu}
+            // />
             <div
               className={s.innerBox}
               onMouseEnter={handleShowInnerMenu}
@@ -54,7 +56,7 @@ export default function NavBarItems({
                 ))}
               </ul>
             </div>
-          )} */}
+          )}
         </li>
       )}
       {item.text !== 'каталог' && (
