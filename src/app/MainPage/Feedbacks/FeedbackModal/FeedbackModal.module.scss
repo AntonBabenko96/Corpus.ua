@@ -18,11 +18,25 @@
   position: absolute;
   top: 136px;
   left: 0;
+
+  @media screen and (min-width: 768px) {
+    width: 480px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 672px;
+    min-height: 498px;
+    padding: 60px 100px;
+  }
 }
 
 .closeBtn {
   width: 24px;
   height: 24px;
+  padding: 0;
   border: none;
   color: var(--white-color);
   background-color: transparent;
@@ -32,101 +46,126 @@
   cursor: pointer;
 }
 
+.closeIcon {
+  fill: var(--white-color);
+}
+
 .text {
   margin-bottom: 60px;
   font-size: 18px;
   line-height: normal;
   letter-spacing: 0.9;
   text-align: center;
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  color: var(--white-color);
-  background-color: transparent;
-}
+  @media screen and (max-width: 767px) {
+    width: 168px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-.input {
-  border: none;
-  border-bottom: 1.5px solid var(--white-color);
-  background-color: transparent;
-  font-family: Open Sans;
-  font-size: 16px;
-  resize: none;
-}
-
-.ratingWrapper {
-  width: 102px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 24px;
-  position: relative;
-
-  &::before {
-    content: '★★★★★';
-    display: block;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 40px;
   }
 }
 
-.ratingItems {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row-reverse;
-  overflow: hidden;
-}
+// .form {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   color: var(--white-color);
+//   background-color: transparent;
+// }
 
-.ratingItem {
-  position: absolute;
-  width: 0%;
-  height: 0%;
-  opacity: 0;
-  visibility: hidden;
-  top: 0;
-  left: 0;
+// .input {
+//   width: 100%;
+//   border: none;
+//   border-bottom: 1.5px solid var(--white-color);
+//   color: var(--white-color);
+//   background-color: transparent;
+//   font-family: Open Sans;
+//   font-size: 16px;
+//   resize: none;
+//   outline: none;
 
-  &:checked,
-  &:checked ~ .ratingLabel {
-    color: #ffb400;
-  }
-}
+//   &:focus-within {
+//     border-bottom: 1px solid var();
+//   }
+// }
 
-.ratingLabel {
-  flex: 0 0 20%;
-  height: 100%;
-  color: var(--primary-grey-color);
-  cursor: pointer;
+// .ratingWrapper {
+//   width: 102px;
+//   margin-right: auto;
+//   margin-left: auto;
+//   font-size: 24px;
+//   position: relative;
 
-  &::before {
-    content: '★';
-    display: block;
-    transition: color 300ms easy;
-  }
+//   &::before {
+//     content: '★★★★★';
+//     display: block;
+//   }
+// }
 
-  &:hover,
-  &:hover ~ .ratingLabel,
-  &:checked ~ .ratingLabel:hover {
-    color: #ffb400;
-  }
-}
+// .ratingItems {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   display: flex;
+//   flex-direction: row-reverse;
+//   overflow: hidden;
+// }
 
-.sendBtn {
-  width: 343px;
-  height: 64px;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-left: auto;
-  border: 1.5px solid var(--white-color);
-  color: var(--white-color);
-  background-color: transparent;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 1px;
-  text-align: center;
-}
+// .ratingItem {
+//   position: absolute;
+//   width: 0%;
+//   height: 0%;
+//   opacity: 0;
+//   visibility: hidden;
+//   top: 0;
+//   left: 0;
+
+//   &:checked,
+//   &:checked ~ .ratingLabel {
+//     color: #ffb400;
+//   }
+// }
+
+// .ratingLabel {
+//   flex: 0 0 20%;
+//   height: 100%;
+//   color: var(--primary-grey-color);
+//   cursor: pointer;
+
+//   &::before {
+//     content: '★';
+//     display: block;
+//     transition: color 300ms easy;
+//   }
+
+//   &:hover,
+//   &:hover ~ .ratingLabel,
+//   &:checked ~ .ratingLabel:hover {
+//     color: #ffb400;
+//   }
+// }
+
+// .sendBtn {
+//   width: 343px;
+//   height: 64px;
+//   margin-right: auto;
+//   margin-top: 20px;
+//   margin-left: auto;
+//   border: 1.5px solid var(--white-color);
+//   color: var(--white-color);
+//   background-color: transparent;
+//   font-size: 20px;
+//   font-weight: 700;
+//   line-height: normal;
+//   letter-spacing: 1px;
+//   text-align: center;
+
+//   @media screen and (min-width: 1200px) {
+//     margin-top: 16px;
+//   }
+// }

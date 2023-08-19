@@ -4,6 +4,7 @@ import items from '../navBarData.json';
 import s from './BurgerMenu.module.scss';
 
 export default function BurgerMenu({
+  categories,
   showMenu,
   showInnerMenu,
   handleShowInnerMenu,
@@ -17,6 +18,7 @@ export default function BurgerMenu({
           <NavBarItems
             key={item.id}
             item={item}
+            categories={categories}
             showInnerMenu={showInnerMenu}
             handleShowInnerMenu={handleShowInnerMenu}
             handleHideInnerMenu={handleHideInnerMenu}

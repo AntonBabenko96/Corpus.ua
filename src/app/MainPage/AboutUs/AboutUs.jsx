@@ -4,7 +4,7 @@ import s from './AboutUs.module.scss';
 
 export default function AboutUs() {
   return (
-    <section className={s.aboutUs}>
+    <section className={s.aboutUs} id='about'>
       <Container className={s.aboutUsContainer}>
         <div className={s.wrapper}>
           <div className={s.inner}>

@@ -6,26 +6,29 @@ import NavBarItems from './NavBarItems/NavBarItems';
 import s from './NavBar.module.scss';
 
 export default function NavBar({
-  showInnerMenu,
-  handleShowInnerMenu,
-  handleHideInnerMenu,
+  categories,
+  // showInnerMenu,
+  // handleShowInnerMenu,
+  // handleHideInnerMenu,
 }) {
-  const isTablet = useMediaQuery('(max-width: 1199px)');
+  // const isTablet = useMediaQuery('(max-width: 1199px)');
+  console.log(categories)
 
   return (
     <nav>
       <ul className={s.categoriesList}>
         {items.map(item => {
-          if (isTablet && item.id === '6') {
-            return;
-          }
+          // if (isTablet && item.id === '6') {
+          //   return;
+          // }
           return (
             <NavBarItems
               key={item.id}
               item={item}
-              showInnerMenu={showInnerMenu}
-              handleShowInnerMenu={handleShowInnerMenu}
-              handleHideInnerMenu={handleHideInnerMenu}
+              // categories={categories}
+              // showInnerMenu={showInnerMenu}
+              // handleShowInnerMenu={handleShowInnerMenu}
+              // handleHideInnerMenu={handleHideInnerMenu}
             />
           );
         })}
