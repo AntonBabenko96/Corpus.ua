@@ -53,6 +53,7 @@ export default function NavBar({
                   key={item.id}
                   item={item}
                   categories={categories}
+                  handleMenuToggle={handleMenuToggle}
                   showInnerMenu={showInnerMenu}
                   handleShowInnerMenu={handleShowInnerMenu}
                   handleHideInnerMenu={handleHideInnerMenu}

@@ -153,12 +153,12 @@
 
 .contact {
   @media screen and (max-width: 767px) {
-  height: 63px;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  padding: 24px 0;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    padding: 24px 0;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {

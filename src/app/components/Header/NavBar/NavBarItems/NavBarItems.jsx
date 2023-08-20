@@ -1,13 +1,13 @@
-// 'use client';
+'use client';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Link from 'next/link';
-import Dropdown from '../../Dropdown/Dropdown';
 import s from './NavBarItems.module.scss';
 
 export default function NavBarItems({
   item,
   categories,
+  handleMenuToggle,
   showInnerMenu,
   handleShowInnerMenu,
   handleHideInnerMenu,
@@ -36,11 +36,6 @@ export default function NavBarItems({
             </button>
           </div>
           {showInnerMenu && (
-            // <Dropdown
-            //   categories={categories}
-            //   handleShowInnerMenu={handleShowInnerMenu}
-            //   handleHideInnerMenu={handleHideInnerMenu}
-            // />
             <div
               className={s.innerBox}
               onMouseEnter={handleShowInnerMenu}
@@ -49,7 +44,11 @@ export default function NavBarItems({
               <ul className={s.innerList}>
                 {item.childrens.map(({ id, text, link }) => (
                   <li key={id} className={s.innerItem}>
-                    <Link href={link} className={s.navLink}>
+                    <Link
+                      href={link}
+                      className={s.navLink}
+                      onClick={isMobile && handleMenuToggle}
+                    >
                       {text}
                     </Link>
                   </li>
@@ -65,7 +64,11 @@ export default function NavBarItems({
             isMobile && item.id === '6' && s.contact
           }`}
         >
-          <Link href={item.link} className={s.navLink}>
+          <Link
+            href={item.link}
+            className={s.navLink}
+            onClick={isMobile && handleMenuToggle}
+          >
             {item.text}
           </Link>
         </li>

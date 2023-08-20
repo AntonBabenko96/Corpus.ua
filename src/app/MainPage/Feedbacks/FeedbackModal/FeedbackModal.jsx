@@ -2,7 +2,6 @@ import FeedbackForm from './FeedbackForm/FeedbackForm';
 import s from './FeedbackModal.module.scss';
 
 export default function FeedbackModal({ handleCloseModal }) {
-
   return (
     <div className={s.overlay}>
       <div className={s.modalWrapper}>
