@@ -22,7 +22,7 @@ export default async function Footer() {
       <Container>
         <section className={styles.wrapper}>
           <div className={styles.logo}>
-            <Image src={logo} />
+            <Image src={logo} alt='logo' />
           </div>
           <div className={styles.aboutUs}>
             <h3 className={styles.title}>Про нас</h3>

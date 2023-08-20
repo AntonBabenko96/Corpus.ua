@@ -2,7 +2,7 @@
   {
     "id": "1",
     "text": "про компанію",
-    "link": "/",
+    "link": "/#about",
     "scrollLink": "about"
   },
   {
@@ -35,23 +35,25 @@
   {
     "id": "3",
     "text": "наші проекти",
-    "link": "/",
+    "link": "/#projects",
     "scrollLink": "projects"
   },
   {
     "id": "4",
     "text": "акції",
-    "link": "/",
+    "link": "/#promotions",
     "scrollLink": "promotions"
   },
   {
     "id": "5",
     "text": "відгуки",
-    "link": "/"
+    "link": "/#feedbacks",
+    "scrollLink": "feedbacks"
   },
   {
     "id": "6",
     "text": "+38 095 555 55 22",
-    "link": "/"
+    "link": "/",
+    "scrollLink": ""
   }
 ]
