@@ -91,6 +91,7 @@ export default function ImageListSlider() {
               className={styles.imgList}
               width={150}
               height={100}
+              alt="image"
             />
           </div>
         ))}
