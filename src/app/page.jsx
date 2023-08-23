@@ -8,7 +8,7 @@ import Feedbacks from './MainPage/Feedbacks/Feedbacks';
 // import Promotions from './components/Promotions/Promotions';
 // import ContactForm from './components/ContactForm/ContactForm';
 import Portfolio from './MainPage/Portfolio/Portfolio';
-// import FooterImage from './components/FooterImage/FooterImage';
+import FooterImage from './MainPage/FooterImage/FooterImage';
 // import NotFaund from './NotFoundPage/NotFound';
 
 export default function Home() {
@@ -21,16 +21,7 @@ export default function Home() {
       <Portfolio />
       <Feedbacks />
 
-     
-
-      {/* <Portfolio /> */}
-      <Feedbacks />
-      {/* <ContactForm />
-      <Promotions />
-     
-      <ToastContainer /> */}
-      {/* <NotFaund/> */}
- <FooterImage />
+      <FooterImage />
     </main>
   );
 }

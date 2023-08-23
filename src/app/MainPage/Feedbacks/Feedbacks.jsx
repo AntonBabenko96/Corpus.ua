@@ -1,4 +1,3 @@
-
 'use client';
 
 // import { useState } from 'react';
@@ -16,7 +15,6 @@ async function getFeedbacks() {
 
   return response.json();
 }
-
 
 export default async function Feedbacks() {
   // const [showModal, setShowModal] = useState(false);
@@ -38,14 +36,15 @@ export default async function Feedbacks() {
         <Container className={s.feedbacksContainer}>
           <h1 className={s.title}>відгуки</h1>
           <FeedbacksSlider feedbacks={feedbacks} />
-          <button className={s.commentBtn}
-          // onClick={handleOpenModal}
+          <button
+            className={s.commentBtn}
+            // onClick={handleOpenModal}
           >
             Залишити відгук
           </button>
         </Container>
       </section>
       {/* {showModal && <FeedbackModal handleCloseModal={handleCloseModal} />} */}
-
+    </>
   );
 }
