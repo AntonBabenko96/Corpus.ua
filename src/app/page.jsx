@@ -2,28 +2,35 @@
 // import 'react-toastify/dist/ReactToastify.css';
 
 import AboutUs from './MainPage/AboutUs/AboutUs';
-import Hero from './MainPage/Hero/Hero';
+// import Hero from './MainPage/Hero/Hero';
 import Advantages from './MainPage/Advantages/Advantages';
 import Feedbacks from './MainPage/Feedbacks/Feedbacks';
 // import Promotions from './components/Promotions/Promotions';
 // import ContactForm from './components/ContactForm/ContactForm';
-// import Portfolio from './MainPage/Portfolio/Portfolio';
+import Portfolio from './MainPage/Portfolio/Portfolio';
 // import FooterImage from './components/FooterImage/FooterImage';
 // import NotFaund from './NotFoundPage/NotFound';
 
 export default function Home() {
   return (
     <main>
-      <Hero />
+      {/* <Hero /> */}
       <AboutUs />
       <Advantages />
+
+      <Portfolio />
+      <Feedbacks />
+
+     
+
       {/* <Portfolio /> */}
       <Feedbacks />
       {/* <ContactForm />
       <Promotions />
-      <FooterImage/>
+     
       <ToastContainer /> */}
       {/* <NotFaund/> */}
+ <FooterImage />
     </main>
   );
 }

@@ -1,57 +1,74 @@
-// @import '../../../styles/index.scss';
+$desktop: 1199px;
+$tablet: 768px;
+
+.sliderWrapper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+
+  @media (min-width: $tablet) {
+    width: 768px;
+    margin-bottom: 56px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1170px;
+    margin-bottom: 86px;
+  }
+}
+
+.title {
+  color: var(--dark-text-color);
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-bottom: 55px;
+
+  @media (min-width: $tablet) {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 59px;
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.blackAccent {
+  width: 179px;
+  height: 100%;
+  background-color: var(--dark-background-color);
+  position: absolute;
+  bottom: -30px;
+  right: -60px;
+
+  @media (min-width: $tablet) {
+    bottom: -56px;
+    right: -120px;
+    width: 300px;
+    height: 350px;
+  }
+
+  @media (min-width: $desktop) {
+    bottom: -86px;
+    right: -120px;
+    width: 512px;
+    height: 505px;
+  }
+}
+
+.porfolioWrapper {
+  position: relative;
+}
 
 // .portfolio {
-//   position: relative;
-//   margin-top: 120px;
-//   padding-bottom: 60px;
-
-//   @include media-min(tablet) {
-//     padding: 60px 60px;
-//   }
-
-//   @include media-min(desktop) {
-//     padding: 0 135px;
-//     padding-bottom: 85px;
-//   }
-// }
-
-// .blackAccent {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   width: 512px;
-//   height: 505px;
-//   background: #263238;
-//   backdrop-filter: blur(5.5px);
-//   display: none;
-
-//   @include media-min(desktop) {
-//     display: block;
-//   }
-// }
-
-// .title {
-//   display: block;
-//   width: 100%;
-//   margin-bottom: 32px;
-
-//   font-family: 'Montserrat';
-//   font-style: normal;
-//   font-weight: 700;
-//   font-size: 20px;
-//   line-height: calc(27 / 20);
-//   letter-spacing: 0.05em;
-//   color: #263238;
-//   text-shadow: 0px 50px 100px #ffffff;
-
-//   @include media-min(tablet) {
-//     font-size: 32px;
-//   }
-
-//   @include media-min(desktop) {
-//     margin-bottom: 60px;
-//     font-weight: 600;
-//     font-size: 40px;
-//     line-height: calc(49 / 40);
-//   }
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
 // }

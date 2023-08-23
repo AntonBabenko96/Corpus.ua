@@ -4,6 +4,7 @@ $tablet: 768px;
 .swiper {
   min-width: 320px;
   height: 300px;
+
   @media (min-width: $tablet) {
     height: 300px;
     width: 420px;

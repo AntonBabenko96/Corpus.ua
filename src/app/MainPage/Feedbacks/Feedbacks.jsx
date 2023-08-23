@@ -1,3 +1,4 @@
+
 'use client';
 
 // import { useState } from 'react';
@@ -8,12 +9,14 @@ import s from './Feedbacks.module.scss';
 
 async function getFeedbacks() {
   const response = await fetch(`https://korpus.onrender.com/api/feedbacks/`);
+
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }
 
   return response.json();
 }
+
 
 export default async function Feedbacks() {
   // const [showModal, setShowModal] = useState(false);
@@ -43,6 +46,6 @@ export default async function Feedbacks() {
         </Container>
       </section>
       {/* {showModal && <FeedbackModal handleCloseModal={handleCloseModal} />} */}
-    </>
+
   );
 }
