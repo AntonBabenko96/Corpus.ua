@@ -2,14 +2,14 @@
 
 import { useRef } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 import StarList from '../StarList/StarList';
 import s from './FeedbacksSlider.module.scss';
 
 import 'swiper/css';
 
-export default function FeedbacksSlider({ feedbacks }) {
+const FeedbacksSlider = ({ feedbacks }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const isTablet = useMediaQuery('(min-width: 768px)');
@@ -22,6 +22,7 @@ export default function FeedbacksSlider({ feedbacks }) {
         loop
         spaceBetween={20}
         autoplay={{ delay: 5000 }}
+        speed={1000}
         breakpoints={{
           768: {
             slidesPerView: 2,
@@ -167,4 +168,6 @@ export default function FeedbacksSlider({ feedbacks }) {
       </div>
     </>
   );
-}
+};
+
+export default FeedbacksSlider;

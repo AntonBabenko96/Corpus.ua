@@ -1,15 +1,13 @@
 'use client';
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/swiper-react.mjs';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+// Styles must use direct files imports
+import 'swiper/swiper.scss'; // core Swiper
+import 'swiper/modules/navigation/navigation.scss'; // Navigation module
+import 'swiper/modules/pagination/pagination.scss'; // Pagination module
 import styles from './Slider.module.scss';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export default ({ feedbacks }) => {
   return (
