@@ -26,15 +26,14 @@ export default ({ images }) => {
             slidesPerView: 1,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 30,
           },
         }}
       >
         {images.map((image, index) => (
-          <SwiperSlide className={styles.swiperSlide}>
+          <SwiperSlide className={styles.swiperSlide} key={index}>
             <Image
-              key={index}
               src={image.url}
               className={styles.slide}
               alt={`Slide ${index}`}
