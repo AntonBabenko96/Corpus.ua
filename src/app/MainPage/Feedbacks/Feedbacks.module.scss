@@ -1,34 +1,53 @@
 .feedbacks {
-  margin-bottom: 100px;
+
+  padding-bottom: 60px;
+}
+
+.feedbacksContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-  color: var(--dark-text-color);
-  text-shadow: 0px 50px 100px var(--white-color);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 2px;
-  margin-bottom: 84px;
-  margin-top: 120px;
+  margin-bottom: 32px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 60px;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
 }
 
-.feedbacksBtn {
-  display: block;
-  width: 270px;
+.commentBtn {
+  width: 343px;
   height: 64px;
-  padding: 8px 22px;
-  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 18px 73px;
+  color: var(--white-color);
   background-color: var(--dark-background-color);
-  font-family: Open Sans;
+  border: none;
   font-size: 20px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1px;
-  color: var(--light-text-color);
-  margin-top: 50px;
-  margin-left: auto;
+  scale: 1;
+  transition: scale 300ms ease;
+
+  &:hover,
+  &:focus {
+    scale: 1.1;
+    color: var(--primary-accent-color);
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 0;
+  }
 }

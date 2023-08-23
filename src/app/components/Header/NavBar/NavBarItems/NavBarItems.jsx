@@ -6,6 +6,8 @@ import s from './NavBarItems.module.scss';
 
 export default function NavBarItems({
   item,
+  categories,
+  handleMenuToggle,
   showInnerMenu,
   handleShowInnerMenu,
   handleHideInnerMenu,
@@ -15,26 +17,23 @@ export default function NavBarItems({
   return (
     <>
       {item.text === 'каталог' && (
-        <li
-          className={s.categoryItem}
-          onMouseEnter={handleShowInnerMenu}
-        >
+        <li className={s.categoryItem} onMouseEnter={handleShowInnerMenu}>
           <div className={s.linkBox}>
-          <Link href={item.link} className={s.navLink}>
-            {item.text}
-          </Link>
-          <button className={`${s.navBtn} ${showInnerMenu ? s.rotate : ''}`}>
-            <svg
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 32 32"
-              className={s.vectorIcon}
-            >
-              <path d="M22.12 11.453l-6.12 6.107-6.12-6.107-1.88 1.88 8 8 8-8-1.88-1.88z"></path>
-            </svg>
-          </button>
+            <Link href={item.link} className={s.navLink}>
+              {item.text}
+            </Link>
+            <button className={`${s.navBtn} ${showInnerMenu ? s.rotate : ''}`}>
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 32 32"
+                className={s.vectorIcon}
+              >
+                <path d="M22.12 11.453l-6.12 6.107-6.12-6.107-1.88 1.88 8 8 8-8-1.88-1.88z"></path>
+              </svg>
+            </button>
           </div>
           {showInnerMenu && (
             <div
@@ -45,7 +44,11 @@ export default function NavBarItems({
               <ul className={s.innerList}>
                 {item.childrens.map(({ id, text, link }) => (
                   <li key={id} className={s.innerItem}>
-                    <Link href={link} className={s.navLink}>
+                    <Link
+                      href={link}
+                      className={s.navLink}
+                      onClick={isMobile && handleMenuToggle}
+                    >
                       {text}
                     </Link>
                   </li>
@@ -61,7 +64,11 @@ export default function NavBarItems({
             isMobile && item.id === '6' && s.contact
           }`}
         >
-          <Link href={item.link} className={s.navLink}>
+          <Link
+            href={item.link}
+            className={s.navLink}
+            onClick={isMobile && handleMenuToggle}
+          >
             {item.text}
           </Link>
         </li>

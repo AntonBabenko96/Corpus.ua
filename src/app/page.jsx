@@ -4,7 +4,6 @@
 import AboutUs from './MainPage/AboutUs/AboutUs';
 // import Hero from './MainPage/Hero/Hero';
 import Advantages from './MainPage/Advantages/Advantages';
-import FooterImage from './MainPage/FooterImage/FooterImage';
 import Feedbacks from './MainPage/Feedbacks/Feedbacks';
 // import Promotions from './components/Promotions/Promotions';
 // import ContactForm from './components/ContactForm/ContactForm';
@@ -18,10 +17,20 @@ export default function Home() {
       {/* <Hero /> */}
       <AboutUs />
       <Advantages />
+
       <Portfolio />
       <Feedbacks />
 
-      <FooterImage />
+     
+
+      {/* <Portfolio /> */}
+      <Feedbacks />
+      {/* <ContactForm />
+      <Promotions />
+     
+      <ToastContainer /> */}
+      {/* <NotFaund/> */}
+ <FooterImage />
     </main>
   );
 }

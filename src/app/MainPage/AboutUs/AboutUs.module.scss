@@ -1,9 +1,6 @@
 .aboutUs {
   padding-top: 60px;
   padding-bottom: 109px;
-  display: flex;
-  justify-content: end;
-  position: relative;
   color: var(--light-text-color);
   overflow: hidden;
 
@@ -18,30 +15,42 @@
   }
 }
 
+.aboutUsContainer {
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
 .wrapper {
-  width: 95%;
+  min-width: 359px;
   height: 738px;
-  padding-top: 408px;
+  padding-top: 400px;
   padding-bottom: 91px;
   background-color: var(--dark-background-color);
   position: relative;
-  left: 16;
+  top: 0;
+  right: -16px;
+
+  @media screen and (max-width: 767px) {
+    max-width: 448px;
+  }
 
   @media screen and (min-width: 768px) {
-    width: 86%;
+    width: 640px;
     height: 540px;
     padding-top: 48px;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 82%;
+    width: 941px;
     height: 812px;
     padding-top: 80px;
   }
 }
 
-.aboutUsContainer {
+.inner {
   height: 247px;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -54,7 +63,6 @@
   }
 
   @media screen and (min-width: 1200px) {
-    max-width: 480;
     gap: 36px;
     padding-left: 456px;
   }
@@ -80,7 +88,7 @@
 }
 
 .text {
-  letter-spacing: 1px;
+  letter-spacing: 0.8;
 
   @media screen and (min-width: 1200px) {
     font-size: 18px;
@@ -88,7 +96,7 @@
 }
 
 .border {
-  width: 342px;
+  width: 326px;
   height: 328px;
   background-color: transparent;
   border-top: 1px solid var(--primary-accent-color);
@@ -96,14 +104,15 @@
   border-bottom: 1px solid var(--primary-accent-color);
   position: absolute;
   top: 25px;
-  left: 0;
+  left: 32px;
 
   @media screen and (min-width: 768px) {
-    width: 246px;
+    width: 226px;
     border-top: 2px solid var(--primary-accent-color);
     border-right: 2px solid var(--primary-accent-color);
     border-bottom: 2px solid var(--primary-accent-color);
     top: 60px;
+    left: 128px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -111,35 +120,40 @@
     border-right: 5px solid var(--primary-accent-color);
     border-bottom: 5px solid var(--primary-accent-color);
     width: 375px;
-    height: 575px;
+    height: 580px;
     top: 89px;
+    left: 258px;
   }
 }
 
 .leftImage {
+  width: 334px;
+  height: 324px;
   position: absolute;
   top: 48px;
-  left: -16px;
+  left: 0;
 
   @media screen and (min-width: 768px) {
     top: 80px;
-    left: -108px;
+    left: 0;
   }
 
   @media screen and (min-width: 1200px) {
     width: 568px;
     height: 580px;
     top: 116px;
-    left: -224px;
+    left: 30px;
   }
 }
 
 .rightImage {
+  width: 262px;
+  height: 219px;
   position: absolute;
-  bottom: 0;
+  bottom: -109px;
 
   @media screen and (max-width: 767px) {
-    right: -108px;
+    left: 205px;
   }
 
   @media screen and (min-width: 768px) {
@@ -147,5 +161,11 @@
     max-width: 600px;
     height: auto;
     right: 12px;
+    bottom: -72px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    right: -82px;
+    bottom: -124px;
   }
 }

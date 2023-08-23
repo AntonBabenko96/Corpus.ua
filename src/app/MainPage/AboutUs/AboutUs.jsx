@@ -4,10 +4,10 @@ import s from './AboutUs.module.scss';
 
 export default function AboutUs() {
   return (
-    <section className={s.aboutUs}>
-      <div className={s.wrapper}>
-        <Container>
-          <div className={s.aboutUsContainer}>
+    <section className={s.aboutUs} id="about">
+      <Container className={s.aboutUsContainer}>
+        <div className={s.wrapper}>
+          <div className={s.inner}>
             <h2 className={s.title}>korpus</h2>
             <p className={s.text}>
               Ми команда талановитих дизайнерів та майстрів, що втілюють
@@ -23,23 +23,23 @@ export default function AboutUs() {
               забеспечуємо довговічність та естетичність.
             </p>
           </div>
-          <div className={s.border}></div>
-          <Image
-            src="/images/aboutUs/aboutUs1@2x.jpg"
-            width={1000}
-            height={1000}
-            alt="Зображення інтер'єру"
-            className={s.leftImage}
-          />
-        </Container>
-      </div>
-      <Image
-        src="/images/aboutUs/aboutUs2@2x.png"
-        width={780}
-        height={660}
-        alt="Зображення тумби"
-        className={s.rightImage}
-      />
+        </div>
+        <div className={s.border}></div>
+        <Image
+          src="/images/aboutUs/aboutUs1@2x.jpg"
+          width={1000}
+          height={1000}
+          alt="Зображення інтер'єру"
+          className={s.leftImage}
+        />
+        <Image
+          src="/images/aboutUs/aboutUs2@2x.png"
+          width={780}
+          height={660}
+          alt="Зображення тумби"
+          className={s.rightImage}
+        />
+      </Container>
     </section>
   );
 }
