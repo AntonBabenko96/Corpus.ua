@@ -1,25 +1,40 @@
-'use client'
-import Slider from './slider/Slider';
+'use client';
+import Slider from './Slider/Slider';
 import styles from './Portfolio.module.scss';
-import {TestData} from '../../../../data/productData'
+import Container from '@/app/components/Container/Container';
 
-// const images = [
-//   { id: '1', src: '/images/portfolio/image31.jpg', desc: 'furniture' },
-//   { id: '2', src: '/images/portfolio/image32.jpg', desc: 'furniture' },
-//   { id: '3', src: '/images/portfolio/image31.jpg', desc: 'furniture' },
-//   { id: '4', src: '/images/portfolio/image32.jpg', desc: 'furniture' },
-// ];
+const images = [
+  {
+    url: 'https://shurup.net.ua/image/cache/data/59/31/556dd0b8bd066cbc447358d21a3f09b0-750x560.jpg',
+  },
+  {
+    url: 'https://shurup.net.ua/image/cache/data/53/31/03501e32f6511402783d7cc00ffa1f16-750x560.jpg',
+  },
+  {
+    url: 'https://shurup.net.ua/image/cache/data/60/31/684300077caf87e4ae06259441a4c0a5-750x560.jpg',
+  },
+  {
+    url: 'https://shurup.net.ua/image/cache/data/64/31/2395e7268c445bf480f1475d7b660d68-750x560.jpg',
+  },
+  {
+    url: 'https://shurup.net.ua/image/cache/data/64/31/2395e7268c445bf480f1475d7b660d68-750x560.jpg',
+  },
+];
 
 const Portfolio = () => {
-  const images = TestData.map((item) => item.images[0]);
   return (
-    <section className={styles.portfolio} id="projects">
-      <div className={styles.blackAccent}></div>
-      <h2 className={styles.title}>НАШІ ПРОЕКТИ</h2>
-      <Slider images={images} />
+    <section className={styles.portfolio}>
+      <Container>
+        <div className={styles.porfolioWrapper}>
+          <div className={styles.blackAccent}></div>
+          <h2 className={styles.title}>НАШІ ПРОЕКТИ</h2>
+          <div className={styles.sliderWrapper}>
+            <Slider images={images} />
+          </div>
+        </div>
+      </Container>
     </section>
   );
 };
 
 export default Portfolio;
-

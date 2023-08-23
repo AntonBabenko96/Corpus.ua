@@ -11,11 +11,10 @@ import styles from './Slider.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default ({ images }) => {
+export default ({ feedbacks }) => {
   return (
     <>
       <Swiper
-        className={styles.swiper}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         autoplay={{ delay: 7000 }}
         speed={1000}
@@ -31,19 +30,10 @@ export default ({ images }) => {
           },
         }}
       >
-        {images.map((image, index) => (
-          <SwiperSlide className={styles.swiperSlide}>
-            <Image
-              key={index}
-              src={image.url}
-              className={styles.slide}
-              alt={`Slide ${index}`}
-              width={1000}
-              height={800}
-            />
-            <Link href={`/`} className={styles.aboutButton}>
-              Детальніше
-            </Link>
+        {feedbacks.map((item, index) => (
+          <SwiperSlide className={styles.feedbacksWrapper}>
+            <h4 className={styles.name}>{item.name}</h4>
+            <p className={styles.text}>{item.comment}</p>
           </SwiperSlide>
         ))}
       </Swiper>
