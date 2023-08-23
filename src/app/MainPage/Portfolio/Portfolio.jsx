@@ -1,7 +1,15 @@
 'use client';
-import Slider from './Slider/Slider';
+
 import styles from './Portfolio.module.scss';
 import Container from '@/app/components/Container/Container';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const images = [
   {
@@ -29,7 +37,38 @@ const Portfolio = () => {
           <div className={styles.blackAccent}></div>
           <h2 className={styles.title}>НАШІ ПРОЕКТИ</h2>
           <div className={styles.sliderWrapper}>
-            <Slider images={images} />
+            <Swiper
+              className={styles.swiper}
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              autoplay={{ delay: 7000 }}
+              speed={1000}
+              navigation
+              loop
+              breakpoints={{
+                375: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+              }}
+            >
+              {images.map((image, index) => (
+                <SwiperSlide className={styles.swiperSlide} key={index}>
+                  <Image
+                    src={image.url}
+                    className={styles.slide}
+                    alt={`Slide ${index}`}
+                    width={1000}
+                    height={800}
+                  />
+                  <Link href={`/`} className={styles.aboutButton}>
+                    Детальніше
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </Container>
