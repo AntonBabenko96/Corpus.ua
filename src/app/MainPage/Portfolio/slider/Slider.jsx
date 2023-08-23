@@ -14,6 +14,7 @@ import Link from 'next/link';
 export default ({ images }) => {
   return (
     <>
+      {' '}
       <Swiper
         className={styles.swiper}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -26,7 +27,7 @@ export default ({ images }) => {
             slidesPerView: 1,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 30,
           },
         }}

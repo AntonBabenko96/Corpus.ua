@@ -28,9 +28,8 @@ export default ({ images }) => {
         }}
       >
         {images.map((image, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <Image
-              key={index}
               src={image.url}
               className={styles.slide}
               alt={`Slide ${index}`}
