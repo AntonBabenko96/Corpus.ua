@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 import StarList from '../StarList/StarList';
 import s from './FeedbacksSlider.module.scss';
