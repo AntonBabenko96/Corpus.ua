@@ -1,5 +1,5 @@
 import CatalogList from './components/CatalogList/CatalogList';
-import CatalogItem from './components/CatalogItem/CtalogItem';
+import CatalogItem from './components/CatalogItem/CatalogItem';
 
 async function getProductItem(id) {
   const response = await fetch(
