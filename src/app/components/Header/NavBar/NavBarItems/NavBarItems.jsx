@@ -48,7 +48,7 @@ export default function NavBarItems({
                     <Link
                       href={link}
                       className={s.navLink}
-                      onClick={isMobile && handleMenuToggle}
+                      onClick={handleMenuToggle}
                     >
                       {text}
                     </Link>
@@ -65,10 +65,7 @@ export default function NavBarItems({
             isMobile && item.id === '6' && s.contact
           }`}
         >
-          <Link
-            href={item.link}
-            legacyBehavior={true}
-          >
+          <Link href={item.link} legacyBehavior={true}>
             <ScrollLink
               className={s.navLink}
               to={item.scrollLink}
@@ -76,7 +73,7 @@ export default function NavBarItems({
               smooth={true}
               offset={-50}
               duration={500}
-              onClick={isMobile && handleMenuToggle}
+              onClick={handleMenuToggle}
             >
               {item.text}
             </ScrollLink>
