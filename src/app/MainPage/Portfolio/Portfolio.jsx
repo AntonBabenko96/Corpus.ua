@@ -31,7 +31,7 @@ const images = [
 
 const Portfolio = () => {
   return (
-    <section className={styles.portfolio}>
+    <section className={styles.portfolio} id='projects'>
       <Container>
         <div className={styles.porfolioWrapper}>
           <div className={styles.blackAccent}></div>

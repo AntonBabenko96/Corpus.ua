@@ -1,7 +1,7 @@
-import FeedbackForm from './FeedbackForm/FeedbackForm';
+// import FeedbackForm from './FeedbackForm/FeedbackForm';
 import s from './FeedbackModal.module.scss';
 
-export default function FeedbackModal({ handleCloseModal }) {
+export default function FeedbackModal({ children, handleCloseModal }) {
   return (
     <div className={s.overlay}>
       <div className={s.modalWrapper}>
@@ -18,7 +18,8 @@ export default function FeedbackModal({ handleCloseModal }) {
           </svg>
         </button>
         <p className={s.text}>Заповніть свої дані і залиште відгук:</p>
-        <FeedbackForm handleCloseModal={handleCloseModal} />
+        {children}
+        {/* <FeedbackForm handleCloseModal={handleCloseModal} /> */}
       </div>
     </div>
   );

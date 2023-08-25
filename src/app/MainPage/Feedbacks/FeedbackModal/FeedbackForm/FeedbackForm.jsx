@@ -1,14 +1,14 @@
-// 'use client';
+'use client';
 
-// import { useState } from 'react';
+import React, { useState } from 'react';
 import s from './FeedbackForm.module.scss';
 
-// const initialState = {
-//   userName: '',
-//   phone: '',
-//   comment: '',
-//   rating: 0,
-// };
+const initialState = {
+  userName: '',
+  phone: '',
+  comment: '',
+  rating: 0,
+};
 
 // async function postFeedback(formData) {
 //   const { userName, phone, rating, comment } = formData;
@@ -33,27 +33,33 @@ import s from './FeedbackForm.module.scss';
 //   return response.json();
 // }
 
-export default function FeedbackForm() {
-  // const [formData, setFormData] = useState(initialState);
+export default function FeedbackForm({ postFeedback, handleCloseModal }) {
+  const [formData, setFormData] = useState(initialState);
 
-  // function handleChange({ target }) {
-  //   const { name, value } = target;
-  //   setFormData(prevState => ({ ...prevState, [name]: value }));
-  // }
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
+  }
 
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-  //   await postFeedback(formData);
-  //   setFormData(initialState);
-  //   handleCloseModal();
-  // }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await postFeedback(formData);
+    setFormData(initialState);
+    handleCloseModal();
+  }
 
-  // const { userName, phone, comment } = formData;
+  const { userName, phone, comment } = formData;
 
   return (
-    <form className={s.form} action='https://korpus.onrender.com/api/feedbacks/' method='post'>
+    <form
+      className={s.form}
+      // action='https://korpus.onrender.com/api/feedbacks/'
+      // method='post'
+      // encType='application/json'
+      // target='_blank'
+    >
       <div className={s.inner}>
-        {/* {!userName && ( */}
+        {!userName && (
           <svg
             width="4"
             height="4"
@@ -66,15 +72,15 @@ export default function FeedbackForm() {
               fill="#D81B60"
             />
           </svg>
-        {/* )} */}
+        )}
         <input
           className={s.input}
           type="text"
-          name="name"
+          name="userName"
           placeholder="Ім`я"
-          // value={userName}
-          // onChange={handleChange}
-          required="true"
+          value={userName}
+          onChange={handleChange}
+          required={true}
           minLength={2}
           maxLength={15}
           pattern="^[а-яА-Яa-zA-Z0-9]+$"
@@ -82,7 +88,7 @@ export default function FeedbackForm() {
         />
       </div>
       <div className={s.inner}>
-        {/* {!phone && ( */}
+        {!phone && (
           <svg
             width="4"
             height="4"
@@ -95,21 +101,21 @@ export default function FeedbackForm() {
               fill="#D81B60"
             />
           </svg>
-        {/* )} */}
+        )}
         <input
           className={s.input}
           type="text"
           name="phone"
           placeholder="+38 (000) 000 00 00"
-          // value={phone}
-          // onChange={handleChange}
-          required="true"
+          value={phone}
+          onChange={handleChange}
+          required={true}
           pattern="[\+]\d{2}\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}"
           title="Номер телефону має бути у форматі +38 (000) 000 00 00."
         />
       </div>
       <div className={s.inner}>
-        {/* {!comment && ( */}
+        {!comment && (
           <svg
             width="4"
             height="4"
@@ -122,15 +128,15 @@ export default function FeedbackForm() {
               fill="#D81B60"
             />
           </svg>
-        {/* )} */}
+        )}
         <textarea
           className={s.input}
           name="comment"
           rows={1}
           placeholder="Ваш відгук"
-          // value={comment}
-          // onChange={handleChange}
-          required="true"
+          value={comment}
+          onChange={handleChange}
+          required={true}
           minLength={5}
           title="Коментар має бути не менше п'яти символів."
         />
@@ -143,7 +149,7 @@ export default function FeedbackForm() {
             name="rating"
             value="5"
             className={s.ratingItem}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
           <label htmlFor="ratingItem5" className={s.ratingLabel}></label>
           <input
@@ -152,7 +158,7 @@ export default function FeedbackForm() {
             name="rating"
             value="4"
             className={s.ratingItem}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
           <label htmlFor="ratingItem4" className={s.ratingLabel}></label>
           <input
@@ -161,7 +167,7 @@ export default function FeedbackForm() {
             name="rating"
             value="3"
             className={s.ratingItem}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
           <label htmlFor="ratingItem3" className={s.ratingLabel}></label>
           <input
@@ -170,7 +176,7 @@ export default function FeedbackForm() {
             name="rating"
             value="2"
             className={s.ratingItem}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
           <label htmlFor="ratingItem2" className={s.ratingLabel}></label>
           <input
@@ -179,12 +185,12 @@ export default function FeedbackForm() {
             name="rating"
             value="1"
             className={s.ratingItem}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
           <label htmlFor="ratingItem1" className={s.ratingLabel}></label>
         </div>
       </div>
-      <button className={s.sendBtn} type="submit" >
+      <button className={s.sendBtn} type="submit" onClick={handleSubmit}>
         Відправити
       </button>
     </form>

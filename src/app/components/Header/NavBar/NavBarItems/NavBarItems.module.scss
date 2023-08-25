@@ -5,6 +5,7 @@
   color: var(--light-text-color);
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
 
   &:hover,
   &:focus-within {
@@ -143,7 +144,6 @@
   padding: 0;
   background-color: transparent;
   border: none;
-  cursor: pointer;
   transition: transform 350ms ease-in;
 }
 
