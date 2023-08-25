@@ -76,7 +76,7 @@ export default function NavBarItems({
               smooth={true}
               offset={-50}
               duration={500}
-              onClick={isMobile && handleMenuToggle}
+              onClick={isMobile ? handleMenuToggle : () => {}}
             >
               {item.text}
             </ScrollLink>

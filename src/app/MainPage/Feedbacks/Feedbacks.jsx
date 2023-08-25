@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from '@/app/components/Container/Container';
 import FeedbacksSlider from './FeedbacksSlider/FeedbacksSlider';
 import FeedbackModal from './FeedbackModal/FeedbackModal';
@@ -51,10 +51,17 @@ async function postFeedback(formData) {
 //   rating: 0,
 // };
 
-export default async function Feedbacks() {
+export default function Feedbacks() {
   const [showModal, setShowModal] = useState(false);
+  const [feedbacks, setFeedbacks] = useState([]);
   // const [formData, setFormData] = useState(initialState);
-  const feedbacks = await getFeedbacks();
+
+  useEffect(async () => {
+    const feedbacksList = await getFeedbacks();
+    if (feedbacksList) {
+      setFeedbacks(feedbacksList);
+    }
+  }, [feedbacks]);
 
   // function handleChange(e) {
   //   e.preventDefault();
