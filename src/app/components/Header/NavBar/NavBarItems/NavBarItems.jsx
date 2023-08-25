@@ -2,6 +2,7 @@
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import s from './NavBarItems.module.scss';
 
 export default function NavBarItems({
@@ -66,10 +67,19 @@ export default function NavBarItems({
         >
           <Link
             href={item.link}
-            className={s.navLink}
-            onClick={isMobile && handleMenuToggle}
+            legacyBehavior={true}
           >
-            {item.text}
+            <ScrollLink
+              className={s.navLink}
+              to={item.scrollLink}
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+              onClick={isMobile && handleMenuToggle}
+            >
+              {item.text}
+            </ScrollLink>
           </Link>
         </li>
       )}

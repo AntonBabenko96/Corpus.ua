@@ -1,5 +1,4 @@
 .feedbacks {
-
   padding-bottom: 60px;
 }
 
@@ -16,10 +15,14 @@
   text-transform: capitalize;
 
   @media screen and (min-width: 1200px) {
+    font-size: 48px;
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 1200px) {
     margin-bottom: 60px;
     font-family: Montserrat;
     font-size: 40px;
-    font-weight: 600;
     line-height: normal;
     letter-spacing: 2px;
   }
@@ -40,6 +43,7 @@
   letter-spacing: 1px;
   scale: 1;
   transition: scale 300ms ease;
+  cursor: pointer;
 
   &:hover,
   &:focus {
