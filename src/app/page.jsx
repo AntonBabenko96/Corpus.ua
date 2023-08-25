@@ -2,7 +2,7 @@
 // import 'react-toastify/dist/ReactToastify.css';
 
 import AboutUs from './MainPage/AboutUs/AboutUs';
-// import Hero from './MainPage/Hero/Hero';
+import Hero from './MainPage/Hero/Hero';
 import Advantages from './MainPage/Advantages/Advantages';
 import Feedbacks from './MainPage/Feedbacks/Feedbacks';
 // import Promotions from './components/Promotions/Promotions';
@@ -14,13 +14,11 @@ import FooterImage from './MainPage/FooterImage/FooterImage';
 export default function Home() {
   return (
     <main>
-      {/* <Hero /> */}
+      <Hero />
       <AboutUs />
       <Advantages />
-
       <Portfolio />
       <Feedbacks />
-
       <FooterImage />
     </main>
   );
