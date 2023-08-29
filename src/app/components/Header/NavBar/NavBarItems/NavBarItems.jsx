@@ -48,7 +48,7 @@ export default function NavBarItems({
                     <Link
                       href={link}
                       className={s.navLink}
-                      onClick={handleMenuToggle}
+                      onClick={isMobile ? handleMenuToggle : () => {}}
                     >
                       {text}
                     </Link>
