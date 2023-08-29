@@ -1,73 +1,62 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from '@/app/components/Container/Container';
 import FeedbacksSlider from './FeedbacksSlider/FeedbacksSlider';
 import FeedbackModal from './FeedbackModal/FeedbackModal';
 import FeedbackForm from './FeedbackModal/FeedbackForm/FeedbackForm';
 import s from './Feedbacks.module.scss';
 
-async function getFeedbacks() {
-  const response = await fetch(`https://korpus.onrender.com/api/feedbacks/`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return response.json();
-}
-
 async function postFeedback(formData) {
-  console.log(formData);
   const { userName, phone, rating, comment } = formData;
+  console.log(formData);
+  const params = {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: userName,
+      phone,
+      rating: Number(rating),
+      comment,
+    }),
+  };
 
   try {
-    const response = await fetch(`https://korpus.onrender.com/api/feedbacks/`, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify({
-        name: userName,
-        phone,
-        rating: Number(rating),
-        comment,
-      }),
-    });
+    const response = await fetch(
+      "https://korpus.onrender.com/api/feedbacks/",
+      params
+    );
 
     if (!response.ok) {
       throw new Error('Failed to add comment');
+    } else {
+      const res = await response.json();
+      console.log(res);
     }
-    console.log(response);
-    // return response.json();
   } catch (error) {
     alert('Failed to send request');
   }
 }
 
-// const initialState = {
-//   userName: '',
-//   phone: '',
-//   comment: '',
-//   rating: 0,
-// };
-
 export default async function Feedbacks() {
   const [showModal, setShowModal] = useState(false);
-  // const [formData, setFormData] = useState(initialState);
-  const feedbacks = await getFeedbacks();
+  const [feedbacks, setFeedbacks] = useState([]);
 
-  // function handleChange(e) {
-  //   e.preventDefault();
-  //   const { name, value } = e.target;
-  //   setFormData(prevState => ({ ...prevState, [name]: value }));
-  // }
+  useEffect(() => {
+    (async () => {
 
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-  //   await postFeedback(formData);
-  //   setFormData(initialState);
-  //   handleCloseModal();
-  // }
+      const response = await fetch(
+        `https://korpus.onrender.com/api/feedbacks/`
+      );
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const result = await response.json()
+      setFeedbacks(result);
+    })();
+  }, []);
 
   function handleOpenModal() {
     setShowModal(true);

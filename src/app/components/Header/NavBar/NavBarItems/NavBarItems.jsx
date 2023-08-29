@@ -48,7 +48,7 @@ export default function NavBarItems({
                     <Link
                       href={link}
                       className={s.navLink}
-                      onClick={handleMenuToggle}
+                      onClick={isMobile ? handleMenuToggle : () => {}}
                     >
                       {text}
                     </Link>
@@ -73,7 +73,7 @@ export default function NavBarItems({
               smooth={true}
               offset={-50}
               duration={500}
-              onClick={handleMenuToggle}
+              onClick={isMobile ? handleMenuToggle : () => {}}
             >
               {item.text}
             </ScrollLink>

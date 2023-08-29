@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import s from './FeedbackForm.module.scss';
 
 const initialState = {
@@ -12,11 +12,11 @@ const initialState = {
 
 // async function postFeedback(formData) {
 //   const { userName, phone, rating, comment } = formData;
-
-//   const response = await fetch(`https://korpus.onrender.com/api/feedbacks/`, {
+//   console.log(formData);
+//   const params = {
 //     method: 'post',
 //     headers: {
-//       'content-type': 'application/json',
+//       'Content-Type': 'application/json',
 //     },
 //     body: JSON.stringify({
 //       name: userName,
@@ -24,13 +24,23 @@ const initialState = {
 //       rating: Number(rating),
 //       comment,
 //     }),
-//   });
+//   };
 
-//   if (!response.ok) {
-//     throw new Error('Failed to add comment');
+//   try {
+//     const response = await fetch(
+//       "https://korpus.onrender.com/api/feedbacks/",
+//       params
+//     );
+
+//     if (!response.ok) {
+//       throw new Error('Failed to add comment');
+//     } else {
+//       const res = await response.json();
+//       console.log(res);
+//     }
+//   } catch (error) {
+//     alert('Failed to send request');
 //   }
-//   console.log(response);
-//   return response.json();
 // }
 
 export default function FeedbackForm({ postFeedback, handleCloseModal }) {
@@ -51,13 +61,7 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
   const { userName, phone, comment } = formData;
 
   return (
-    <form
-      className={s.form}
-      // action='https://korpus.onrender.com/api/feedbacks/'
-      // method='post'
-      // encType='application/json'
-      // target='_blank'
-    >
+    <form className={s.form}>
       <div className={s.inner}>
         {!userName && (
           <svg

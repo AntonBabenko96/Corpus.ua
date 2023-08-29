@@ -1,5 +1,3 @@
-'use client';
-
 import NavBar from './NavBar/NavBar';
 import Logo from './Logo/Logo';
 import Container from '../Container/Container';
