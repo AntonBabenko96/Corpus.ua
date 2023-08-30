@@ -61,7 +61,7 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
   const { userName, phone, comment } = formData;
 
   return (
-    <form className={s.form}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <div className={s.inner}>
         {!userName && (
           <svg
@@ -194,7 +194,7 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
           <label htmlFor="ratingItem1" className={s.ratingLabel}></label>
         </div>
       </div>
-      <button className={s.sendBtn} type="submit" onClick={handleSubmit}>
+      <button className={s.sendBtn} type="submit" >
         Відправити
       </button>
     </form>

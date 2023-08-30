@@ -21,15 +21,17 @@ async function postFeedback(formData) {
       rating: Number(rating),
       comment,
     }),
+    mode: 'cors',
   };
 
   try {
     const response = await fetch(
-      "https://korpus.onrender.com/api/feedbacks/",
+      'https://korpus.onrender.com/api/feedbacks/',
       params
     );
 
     if (!response.ok) {
+      console.log(response);
       throw new Error('Failed to add comment');
     } else {
       const res = await response.json();
@@ -46,14 +48,13 @@ export default async function Feedbacks() {
 
   useEffect(() => {
     (async () => {
-
       const response = await fetch(
         `https://korpus.onrender.com/api/feedbacks/`
       );
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
-      const result = await response.json()
+      const result = await response.json();
       setFeedbacks(result);
     })();
   }, []);
