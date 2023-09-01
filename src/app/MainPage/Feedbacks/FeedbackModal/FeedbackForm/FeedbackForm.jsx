@@ -61,7 +61,7 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
   const { userName, phone, comment } = formData;
 
   return (
-    <form className={s.form}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <div className={s.inner}>
         {!userName && (
           <svg
@@ -110,12 +110,12 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
           className={s.input}
           type="text"
           name="phone"
-          placeholder="+38 (000) 000 00 00"
+          placeholder="+380*********"
           value={phone}
           onChange={handleChange}
           required={true}
-          pattern="[\+]\d{2}\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}"
-          title="Номер телефону має бути у форматі +38 (000) 000 00 00."
+          pattern="^\+380\d{9}$"
+          title="Номер телефону має бути у форматі +380*********."
         />
       </div>
       <div className={s.inner}>
@@ -194,7 +194,7 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
           <label htmlFor="ratingItem1" className={s.ratingLabel}></label>
         </div>
       </div>
-      <button className={s.sendBtn} type="submit" onClick={handleSubmit}>
+      <button className={s.sendBtn} type="submit" >
         Відправити
       </button>
     </form>

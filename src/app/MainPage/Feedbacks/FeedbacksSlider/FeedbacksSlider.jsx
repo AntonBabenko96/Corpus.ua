@@ -3,11 +3,16 @@
 import { useRef } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper';
+// import { Navigation, Autoplay } from 'swiper';
 import StarList from '../StarList/StarList';
 import s from './FeedbacksSlider.module.scss';
 
+import SwiperCore, { Navigation, Autoplay } from 'swiper/core';
+import 'swiper/swiper-bundle.min.css';
+
 import 'swiper/css';
+
+SwiperCore.use([Navigation, Autoplay]);
 
 const FeedbacksSlider = ({ feedbacks }) => {
   const prevRef = useRef(null);
@@ -18,7 +23,7 @@ const FeedbacksSlider = ({ feedbacks }) => {
   return (
     <>
       <Swiper
-        modules={[Navigation, Autoplay]}
+        // modules={[Navigation, Autoplay]}
         loop
         spaceBetween={20}
         autoplay={{ delay: 5000 }}
@@ -35,11 +40,16 @@ const FeedbacksSlider = ({ feedbacks }) => {
         }}
         direction="horizontal"
         className={s.slider}
-        onInit={swiper => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-          swiper.navigation.init();
-          swiper.navigation.update();
+        // onInit={swiper => {
+        //   swiper.params.navigation.prevEl = prevRef.current;
+        //   swiper.params.navigation.nextEl = nextRef.current;
+        //   swiper.navigation.init();
+        //   swiper.navigation.update();
+        // }}
+
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
         }}
       >
         {feedbacks.map(item => {
@@ -71,7 +81,7 @@ const FeedbacksSlider = ({ feedbacks }) => {
         })}
       </Swiper>
       <div className={s.arrowWrapper}>
-        <div className={`${s.arrowBtn} prev`} ref={prevRef}>
+        <div className={s.arrowBtn} ref={prevRef}>
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +93,7 @@ const FeedbacksSlider = ({ feedbacks }) => {
             <path d="M20.547 9.88l-1.88-1.88-8 8 8 8 1.88-1.88-6.107-6.12 6.107-6.12z"></path>
           </svg>
         </div>
-        <div className={`${s.arrowBtn} next`} ref={nextRef}>
+        <div className={s.arrowBtn} ref={nextRef}>
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
