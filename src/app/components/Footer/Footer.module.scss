@@ -30,6 +30,7 @@
 .itemLink {
   $tablet: 768px;
   color: var(--light-text-color);
+  text-transform: capitalize;
 
   &:hover {
     color: var(--primary-accent-color);

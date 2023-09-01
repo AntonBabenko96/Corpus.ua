@@ -43,10 +43,10 @@ export default function NavBarItems({
               onMouseLeave={handleHideInnerMenu}
             >
               <ul className={s.innerList}>
-                {item.childrens.map(({ id, text, link }) => (
+                {categories.map(({ _id: id, name, text }) => (
                   <li key={id} className={s.innerItem}>
                     <Link
-                      href={link}
+                      href={name}
                       className={s.navLink}
                       onClick={isMobile ? handleMenuToggle : () => {}}
                     >

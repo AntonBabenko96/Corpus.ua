@@ -110,12 +110,12 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
           className={s.input}
           type="text"
           name="phone"
-          placeholder="+38 (000) 000 00 00"
+          placeholder="+380*********"
           value={phone}
           onChange={handleChange}
           required={true}
-          pattern="[\+]\d{2}\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}"
-          title="Номер телефону має бути у форматі +38 (000) 000 00 00."
+          pattern="^\+380\d{9}$"
+          title="Номер телефону має бути у форматі +380*********."
         />
       </div>
       <div className={s.inner}>

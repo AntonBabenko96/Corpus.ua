@@ -39,7 +39,7 @@ export default async function Footer() {
               {categoryList.map(el => (
                 <li className={styles.item}>
                   <Link href={`/${el.name}`} className={styles.itemLink}>
-                    {el.name}
+                    {el.text}
                   </Link>
                 </li>
               ))}
