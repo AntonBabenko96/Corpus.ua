@@ -8,41 +8,13 @@
   {
     "id": "2",
     "text": "каталог",
-    "link": "/",
-    "childrens": [
-      {
-        "id": "26",
-        "text": "кухні",
-        "link": "kitchen"
-      },
-      {
-        "id": "27",
-        "text": "шафи",
-        "link": "cupboard"
-      },
-      {
-        "id": "28",
-        "text": "тумби",
-        "link": "nightstand"
-      },
-      {
-        "id": "29",
-        "text": "комоди",
-        "link": "commode"
-      }
-    ]
+    "link": "/"
   },
   {
     "id": "3",
     "text": "наші проекти",
     "link": "/#projects",
     "scrollLink": "projects"
-  },
-  {
-    "id": "4",
-    "text": "акції",
-    "link": "/#promotions",
-    "scrollLink": "promotions"
   },
   {
     "id": "5",
