@@ -3,14 +3,12 @@
 import { useRef } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation, Autoplay } from 'swiper';
+import SwiperCore, { Navigation, Autoplay } from 'swiper/core';
 import StarList from '../StarList/StarList';
 import s from './FeedbacksSlider.module.scss';
 
-import SwiperCore, { Navigation, Autoplay } from 'swiper/core';
-import 'swiper/swiper-bundle.min.css';
-
 import 'swiper/css';
+import 'swiper/swiper-bundle.min.css';
 
 SwiperCore.use([Navigation, Autoplay]);
 
@@ -23,7 +21,6 @@ const FeedbacksSlider = ({ feedbacks }) => {
   return (
     <>
       <Swiper
-        // modules={[Navigation, Autoplay]}
         loop
         spaceBetween={20}
         autoplay={{ delay: 5000 }}
@@ -40,13 +37,6 @@ const FeedbacksSlider = ({ feedbacks }) => {
         }}
         direction="horizontal"
         className={s.slider}
-        // onInit={swiper => {
-        //   swiper.params.navigation.prevEl = prevRef.current;
-        //   swiper.params.navigation.nextEl = nextRef.current;
-        //   swiper.navigation.init();
-        //   swiper.navigation.update();
-        // }}
-
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
