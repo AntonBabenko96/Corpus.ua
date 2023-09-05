@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollLink from '../ScrollLink/ScrollLink';
 import Container from '../Container/Container';
 import styles from './Footer.module.scss';
 import logo from '../../../image/Logo.png';
@@ -27,10 +28,34 @@ export default async function Footer() {
           <div className={styles.aboutUs}>
             <h3 className={styles.title}>Про нас</h3>
             <ul className={styles.list}>
-              <li className={styles.item}>Про Компанію</li>
-              <li className={styles.item}>Наші проекти</li>
+              <li className={styles.item}>
+                <ScrollLink
+                  className={styles.item}
+                  link="/#about"
+                  scrollLink="about"
+                >
+                  Про Компанію
+                </ScrollLink>
+              </li>
+              <li className={styles.item}>
+                <ScrollLink
+                  className={styles.item}
+                  link="/#projects"
+                  scrollLink="projects"
+                >
+                  Наші проекти
+                </ScrollLink>
+              </li>
               {/* <li className={styles.item}>Акції</li> */}
-              <li className={styles.item}>Відгуки</li>
+              <li className={styles.item}>
+                <ScrollLink
+                  className={styles.item}
+                  link="/#feedbacks"
+                  scrollLink="feedbacks"
+                >
+                  Відгуки
+                </ScrollLink>
+              </li>
             </ul>
           </div>
           <div className={styles.catalog}>
