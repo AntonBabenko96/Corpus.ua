@@ -1,8 +1,8 @@
 'use client';
 
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import Link from 'next/link';
-import { Link as ScrollLink } from 'react-scroll';
+import ScrollLink from '@/app/components/ScrollLink/ScrollLink';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import s from './NavBarItems.module.scss';
 
 export default function NavBarItems({
@@ -65,19 +65,15 @@ export default function NavBarItems({
             isMobile && item.id === '6' && s.contact
           }`}
         >
-          <Link href={item.link} legacyBehavior={true}>
-            <ScrollLink
-              className={s.navLink}
-              to={item.scrollLink}
-              spy={true}
-              smooth={true}
-              offset={-50}
-              duration={500}
-              onClick={isMobile ? handleMenuToggle : () => {}}
-            >
-              {item.text}
-            </ScrollLink>
-          </Link>
+          <ScrollLink
+            className={s.navLink}
+            link={item.link}
+            scrollLink={item.scrollLink}
+            isMobile={isMobile}
+            handleMenuToggle={handleMenuToggle}
+          >
+            {item.text}
+          </ScrollLink>
         </li>
       )}
     </>
