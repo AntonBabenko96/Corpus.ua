@@ -46,7 +46,7 @@ export default function NavBarItems({
                 {categories.map(({ _id: id, name, text }) => (
                   <li key={id} className={s.innerItem}>
                     <Link
-                      href={name}
+                      href={`/${name}`}
                       className={s.navLink}
                       onClick={isMobile ? handleMenuToggle : () => {}}
                     >
