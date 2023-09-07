@@ -10,39 +10,6 @@ const initialState = {
   rating: 0,
 };
 
-// async function postFeedback(formData) {
-//   const { userName, phone, rating, comment } = formData;
-//   console.log(formData);
-//   const params = {
-//     method: 'post',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       name: userName,
-//       phone,
-//       rating: Number(rating),
-//       comment,
-//     }),
-//   };
-
-//   try {
-//     const response = await fetch(
-//       "https://korpus.onrender.com/api/feedbacks/",
-//       params
-//     );
-
-//     if (!response.ok) {
-//       throw new Error('Failed to add comment');
-//     } else {
-//       const res = await response.json();
-//       console.log(res);
-//     }
-//   } catch (error) {
-//     alert('Failed to send request');
-//   }
-// }
-
 export default function FeedbackForm({ postFeedback, handleCloseModal }) {
   const [formData, setFormData] = useState(initialState);
 
@@ -194,7 +161,7 @@ export default function FeedbackForm({ postFeedback, handleCloseModal }) {
           <label htmlFor="ratingItem1" className={s.ratingLabel}></label>
         </div>
       </div>
-      <button className={s.sendBtn} type="submit" >
+      <button className={s.sendBtn} type="submit">
         Відправити
       </button>
     </form>
