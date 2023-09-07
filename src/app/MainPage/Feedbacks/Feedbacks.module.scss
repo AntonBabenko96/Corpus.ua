@@ -55,3 +55,20 @@
     margin-right: 0;
   }
 }
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.noReviews {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 18px;
+}

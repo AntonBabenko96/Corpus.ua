@@ -1,15 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Container from '@/app/components/Container/Container';
 import FeedbacksSlider from './FeedbacksSlider/FeedbacksSlider';
 import FeedbackModal from './FeedbackModal/FeedbackModal';
 import FeedbackForm from './FeedbackModal/FeedbackForm/FeedbackForm';
+import Image from 'next/image';
 import s from './Feedbacks.module.scss';
 
 async function postFeedback(formData) {
   const { userName, phone, rating, comment } = formData;
-  console.log(formData);
   const params = {
     method: 'post',
     headers: {
@@ -31,14 +32,14 @@ async function postFeedback(formData) {
     );
 
     if (!response.ok) {
-      console.log(response);
-      throw new Error('Failed to add comment');
+      const res = await response.json();
+      Notify.failure(res.message);
     } else {
       const res = await response.json();
-      console.log(res);
+      Notify.success(res.message);
     }
   } catch (error) {
-    alert('Failed to send request');
+    Notify.failure('Failed to send request');
   }
 }
 
@@ -74,7 +75,21 @@ export default async function Feedbacks() {
       <section className={s.feedbacks} id="feedbacks">
         <Container className={s.feedbacksContainer}>
           <h1 className={s.title}>відгуки</h1>
-          <FeedbacksSlider feedbacks={feedbacks} />
+          {!feedbacks && (
+            <div className={s.inner}>
+              <Image
+                className={s.noReviews}
+                src="/images/feedbacks/reviews.png"
+                alt="reviews"
+                width={260}
+                height={260}
+              />
+              <p className={s.text}>
+                Відгуків поки що немає. Залиште свій відгук першими!
+              </p>
+            </div>
+          )}
+          {feedbacks && <FeedbacksSlider feedbacks={feedbacks} />}
           <button className={s.commentBtn} onClick={handleOpenModal}>
             Залишити відгук
           </button>
