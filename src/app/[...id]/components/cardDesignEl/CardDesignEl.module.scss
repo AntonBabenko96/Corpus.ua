@@ -17,8 +17,6 @@ $tablet: 768px;
 
 .designElLast {
   position: relative;
-  margin-bottom: 180px;
-  height: 375px;
 
   @media (min-width: $tablet) {
     height: 430px;
@@ -31,8 +29,6 @@ $tablet: 768px;
 }
 .designElFirst {
   position: relative;
-  margin-bottom: 180px;
-  height: 375px;
 
   @media (min-width: $tablet) {
     height: 430px;
@@ -45,8 +41,6 @@ $tablet: 768px;
 }
 .designElSecond {
   position: relative;
-  margin-bottom: 180px;
-  height: 375px;
 
   @media (min-width: $tablet) {
     height: 430px;
