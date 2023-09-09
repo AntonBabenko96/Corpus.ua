@@ -1,4 +1,3 @@
-// import FeedbackForm from './FeedbackForm/FeedbackForm';
 import s from './FeedbackModal.module.scss';
 
 export default function FeedbackModal({ children, handleCloseModal }) {
@@ -19,7 +18,6 @@ export default function FeedbackModal({ children, handleCloseModal }) {
         </button>
         <p className={s.text}>Заповніть свої дані і залиште відгук:</p>
         {children}
-        {/* <FeedbackForm handleCloseModal={handleCloseModal} /> */}
       </div>
     </div>
   );
