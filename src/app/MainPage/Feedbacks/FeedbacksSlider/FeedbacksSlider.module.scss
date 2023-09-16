@@ -83,10 +83,11 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--dark-background-color);
   box-shadow: 0px 4px 10px 0px rgba(13, 50, 68, 0.3);
-  text-align: center;
   scale: 1;
   transition: scale 300ms ease;
   cursor: pointer;
@@ -94,6 +95,11 @@
   &:hover,
   &:focus {
     scale: 1.2;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 32px;
+    height: 32px;
   }
 }
 
